@@ -88,7 +88,7 @@ user-select: none; /* Standard */
             position: absolute;
             margin-left: 0;
             height: 400px;
-            left: 30px;
+            left: 10%;
             top:150px;
         }
 /*        wave banner starts*/
@@ -544,11 +544,11 @@ user-select: none; /* Standard */
     .headline-1{
     position: absolute;
     top: 350px;  
-    left:630px;
+    left:50%;
     width: 24em;
     margin: 0 auto;
     border-right: 2px solid rgba(255,255,255,.75);
-    font-size: 4rem;
+    font-size: 3rem;
     text-align: center;
     white-space: nowrap;
     overflow: hidden;
@@ -558,11 +558,11 @@ user-select: none; /* Standard */
     .headline-2{
     position: absolute;
     top: 420px;  
-    left:630px;
+    left:50%;
     width: 24em;
     margin: 0 auto;
     border-right: 2px solid rgba(255,255,255,.75);
-    font-size: 4rem;
+    font-size: 3rem;
     text-align: center;
     white-space: nowrap;
     overflow: hidden;
@@ -577,7 +577,7 @@ user-select: none; /* Standard */
 }
 @keyframes typewriter{
   from{width: 0;}
-  to{width: 5em;}
+  to{width: 5.25em;}
 }
 @keyframes blinkTextCursor{
   from{border-right-color: rgba(255,255,255,.75);}
@@ -589,7 +589,7 @@ user-select: none; /* Standard */
             
             top:900px;
             width: inherit;
-            height:800px;
+            height:auto;
             z-index:4;
             padding-left: .1%;
             padding-right: .1%;
@@ -805,11 +805,18 @@ user-select: none; /* Standard */
         .image-gallery-wrapper{
         
             width: 100%;
-            height:1200px;    
-            background: var(--primary_color_accent);
+               
+/*            background: var(--primary_color_accent);*/
+/*            background-color: #F8F8FF;*/
+            background-image:url(splash_2.png) ;
+/*
+            background-image:
+          linear-gradient(to bottom, rgba(0,0,255,0.02), rgba(0,0,255,0.04)),
+          url('splash_2.png');
+*/
             
             height:auto;
-            margin: :0;
+            margin-top: 50px;
             
         }
         
@@ -969,7 +976,7 @@ user-select: none; /* Standard */
   display: flex;
   flex-wrap: wrap;
   list-style: none;
-    padding:0;
+  padding-top:4%;
 }
 
 .image-gallery-wrapper li {
@@ -1274,7 +1281,7 @@ user-select: none; /* Standard */
             position: relative;
             
             width: inherit;
-            height:900px;
+            height:auto;
             z-index:4;
             padding-left: .1%;
             padding-right: .1%;
@@ -1798,10 +1805,8 @@ button:active {
     
     <main>
          <div class="header">
-<!--
         <h1 class="headline-1 anim-typewriter">You dream</h1>
         <h1 class="headline-2 anim-typewriter">We execute</h1>
--->
         <div class="cover" >
             <div class="waveWrapper waveAnimation">
               <div class="waveWrapperInner bgTop">
@@ -1869,7 +1874,7 @@ button:active {
                 <p><i class="fas fa-tools"></i>Maintenance</p>
             </div>
         </div>
-        <div class="product-slider-wrapper"  id="product-slider-wrapper" >
+        <div class="product-slider-wrapper"  id="product-slider-wrapper" style="height:0;width:0; display:none;">
             
             <div class="product-slider-pic" data-aos="fade-right">
                 <h1 style=" color:#135d8a;">Our Products</h1>
@@ -1905,11 +1910,11 @@ button:active {
         </div>
         
         
-        <div class="image-gallery-wrapper">
+        <div class="image-gallery-wrapper" >
             <h1 style=" color:#135d8a;text-align: center; margin:30px;">Image Gallery</h1>
 
             <div>
-                <ul data-aos="slide-up">
+                <ul data-aos="slide-up" aos-duration="5000">
               <li>
                 <img src="hotelchain.PNG" loading="lazy">
               </li>
@@ -1940,9 +1945,9 @@ button:active {
         
         <div class="packages-wrapper">
             <h1 style=" color:#135d8a;text-align: center; margin:30px;">Packages</h1>
-        <div class="packages">
-        <div class="pricing pricing-palden">
-            <div class="pricing-item features-item ja-animate" data-animation="move-from-bottom" data-delay="item-0" style="min-height: 497px;">
+        <div class="packages" data-aos="fade-right">
+        <div class="pricing pricing-palden" >
+            <div class="pricing-item features-item ja-animate" data-animation="move-from-bottom" data-delay="item-0" style="min-height: 397px;">
                 <div class="pricing-deco">
                     <svg class="pricing-deco-img" enable-background="new 0 0 300 100" height="100px" id="Layer_1" preserveAspectRatio="none" version="1.1" viewBox="0 0 300 100" width="300px" x="0px" xml:space="preserve" y="0px">
                         <path class="deco-layer deco-layer--1" d="M30.913,43.944c0,0,42.911-34.464,87.51-14.191c77.31,35.14,113.304-1.952,146.638-4.729c48.654-4.056,69.94,16.218,69.94,16.218v54.396H30.913V43.944z" fill="#FFFFFF" opacity="0.6"></path>
@@ -1982,7 +1987,7 @@ button:active {
                 </ul>
                 <button class="pricing-action">Choose plan</button>
             </div>
-            <div class="pricing-item features-item ja-animate" data-animation="move-from-bottom" data-delay="item-2" style="min-height: 497px;">
+            <div class="pricing-item features-item ja-animate" data-animation="move-from-bottom" data-delay="item-2" style="min-height: 397px;">
                 <div class="pricing-deco">
                     <svg class="pricing-deco-img" enable-background="new 0 0 300 100" height="100px" id="Layer_1" preserveAspectRatio="none" version="1.1" viewBox="0 0 300 100" width="300px" x="0px" xml:space="preserve" y="0px">
                         <path class="deco-layer deco-layer--1" d="M30.913,43.944c0,0,42.911-34.464,87.51-14.191c77.31,35.14,113.304-1.952,146.638-4.729c48.654-4.056,69.94,16.218,69.94,16.218v54.396H30.913V43.944z" fill="#FFFFFF" opacity="0.6"></path>
