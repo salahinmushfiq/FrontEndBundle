@@ -169,16 +169,19 @@ user-select: none; /* Standard */
 
         0% {background-color: linear-gradient(rgba(255, 255, 255,.2) , rgba(255, 255, 255,0.1));
             border-radius: 5px;
+            color: white;
         
         }
         33% {background-color: #2997d3;
         border-radius: 13px 5px 13px 5px;
+            color: white;
         }
          77% {background-color: #2997d3;
-;
+              color: white;
         border-radius: 5px 13px 5px 13px;
         }
         100% {background-color: linear-gradient(rgba(255, 255, 255,.2) , rgba(255, 255, 255,0.1));
+            color: white;
         border-radius: 5px;
         }
     }
@@ -476,7 +479,7 @@ user-select: none; /* Standard */
         
         
     }
-    .nav-links li a{
+    .nav-links li {
         color: white;
         text-decoration: none;
         font-size: 18px;
@@ -765,7 +768,7 @@ user-select: none; /* Standard */
         }
         
         .pointer p{
-            cursor:context-menu;
+            cursor:url(click3.png);
         }
         .pointer::after{
             content: "";
@@ -1051,12 +1054,14 @@ user-select: none; /* Standard */
             background-position: center;
             background-size: contain;
             height:auto;
+            cursor: url(click3.png);
         }
        .packages{
             color: #7a90ff;
             padding: 2em 0 8em;
             position: relative;
             -webkit-font-smoothing: antialiased;
+            
         }
         
         .pricing {
@@ -1081,17 +1086,19 @@ user-select: none; /* Standard */
             text-align: center;
             -webkit-flex: 0 1 330px;
             flex: 0 1 330px;
+            
         }
         
         .pricing-action {
             color: inherit;
             border: none;
             background: none;
-            cursor: pointer;
+            
         }
         
         .pricing-action:focus {
             outline: none;
+            
         }
         
         .pricing-feature-list {
@@ -1100,7 +1107,7 @@ user-select: none; /* Standard */
         
         .pricing-palden .pricing-item {
             font-family: 'Open Sans', sans-serif;
-            cursor: default;
+            cursor: url(click3.png);
             color: #84697c;
             background: #fff;
             box-shadow: 0 0 10px rgba(46, 59, 125, 0.23);
@@ -1802,12 +1809,12 @@ button:active {
                <div class="line line3"></div>
            </div>
             <ul class="nav-links">
-               <li class="btn btn-item"><a href="#">Click 1</a></li>
-               <li class="btn btn-item"><a href="#">Click 2</a></li>
-               <li class="btn btn-item"><a href="#">Click 3</a></li>
-               <li class="btn btn-item"><a href="#">Click 4</a></li>
-               <li class="btn btn-item"><a href="#">Click 5</a></li>
-               <li class="btn btn-item"><a href="#">Click 6</a></li>
+               <li class="btn btn-item homeBtn">Home</li>
+               <li class="btn btn-item productBtn">Products</li>
+               <li class="btn btn-item developmentBtn">Development</li>
+               <li class="btn btn-item galleryBtn">Gallery</li>
+               <li class="btn btn-item packagesBtn">Packages</li>
+               <li class="btn btn-item contactBtn">Contacts</li>
             </ul>
         </nav>
         </div>
@@ -1888,7 +1895,7 @@ button:active {
             <h1 style=" color:#135d8a;text-align: center; margin:30px;">Image Gallery</h1>
 
             <div>
-                <ul>
+                <ul data-aos="slide-up">
               <li>
                 <img src="hotelchain.PNG" loading="lazy">
               </li>
@@ -1986,14 +1993,14 @@ button:active {
         
         </div>
         
-        <div class="contacts-wrapper" style="position:relative; height:600px;width:100%; ">
+        <div class="contacts-wrapper" div="#contacts" style="position:relative; height:600px;width:100%;" data-aos="slide-up">
             
              <div class="contacts" style="display:flex; flex-direction: row;width:100%;absolute; margin-top:200px;height:60%;">
                  <div class="contact-us" style="flex:1;height:100%;width:100%;text-align: center;margin-right:50px;">
                      <h3 style=" color:#135d8a;text-align: center; margin:30px;">Contact Us</h3>
                      <p style=" color:#135d8a;text-align: center; margin:30px;">We want to be a part of your journey.</p>
-                     <ul style="list-style-type: none;width: 50%;display:inline-flex; ">
-                        <li style="width:100%;"> <i class="fab fa-facebook-square" style="font-size: 40px;color:#135d8a; "></i></li>
+                     <ul style="list-style-type: none;width: 50%;display:inline-flex; " data-aos="slide-right">
+                        <li style="width:100%;" > <i class="fab fa-facebook-square" style="font-size: 40px;color:#135d8a; "></i></li>
                           <li style="width:100%;"><i class="fab fa-instagram-square" style="font-size: 40px;color:#135d8a;"></i></li>
                          <li style="width:100%;"><i class="fab fa-linkedin" style="font-size: 40px;color:#135d8a;"></i></li>
                      </ul>
@@ -2095,6 +2102,42 @@ setTimeout(()=>{
     
     
 }) ;  
+    
+    
+       $(".homeBtn").click(function() {
+    $('html,body').animate({
+        scrollTop: $(".header").offset().top},
+        'slow');
+});  
+    
+   
+     $(".packagesBtn").click(function() {
+    $('html,body').animate({
+        scrollTop: $(".packages-wrapper").offset().top},
+        'slow');
+});
+      $(".productBtn").click(function() {
+    $('html,body').animate({
+        scrollTop: $(".product-wrapper").offset().top},
+        'slow');
+});
+    $(".developmentBtn").click(function() {
+    $('html,body').animate({
+        scrollTop: $(".development-wrapper").offset().top},
+        'slow');
+});
+   
+    $(".galleryBtn").click(function() {
+    $('html,body').animate({
+        scrollTop: $(".image-gallery-wrapper").offset().top},
+        'slow');
+});
+     $(".contactBtn").click(function() {
+    $('html,body').animate({
+        scrollTop: $(".contacts").offset().top},
+        'slow');
+});
+    
 });
     
    
