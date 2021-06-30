@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+<title>Sliding Door Effect</title>
+<style>
+    body{
+        margin:0px;
+        padding:0px;
+    }
+    nav{
+        height: 10vh;
+        background:  #5b78c7;
+        position:relative;
+    }
+    .nav-links{
+        display: flex;
+        width:50%;
+        background-color: grey;
+        height:100%;
+        margin:2px;
+        justify-content: space-around;
+        align-items: center;
+        margin-left: auto;
+        
+        
+    }
+    .nav-links li a{
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+        margin-left:0px;
+        
+        
+    }
+    .nav-links li{
+        list-style: none;
+        width:100%;
+        
+    }
+    
+/*    navbar button effect*/
+    .btn-item{
+        
+        border-top: 2px;
+        
+        border-top-style: solid;
+        border-top-color: darkgray;
+        border-bottom: 2px;
+        border-bottom-style: solid;
+        border-bottom-color: darkgray;
+        border-bottom-width: 100%;
+        transition: all 0.2s ease;
+        
+        width: 100%;
+        height:50%;
+        margin:5px;
+        text-align: center;
+        padding-top: 15px; 
+        padding-bottom: 5px; 
+        margin-left:auto;
+        font-weight: 500;
+    }
+    
+    .btn-item:hover{
+        
+        
+        border-top-style: solid;
+        border-top-color: darkgray;
+        border-bottom: 2px;
+        border-bottom-style: solid;
+        border-bottom-color: darkgray;
+        border-bottom-width: 0;
+        border-top-width: 6px;
+    }
+/*
+    .btn-item:hover::before,
+.btn-item:hover::after {
+    
+    border: 2px solid black;
+}
+*/
+/*    navbar button effect end*/
+    
+    @media screen and (max-width: 768px){
+        
+        .btn-item{
+        
+        border-top: 0;
+        
+        border-top-style: solid;
+        border-top-color: darkgray;
+        border-bottom: 0;
+        border-bottom-style: solid;
+        border-bottom-color: darkgray;
+        border-bottom-width: 100%;
+        transition: all 0.4s ease-out;
+        
+        width: 90%;
+        
+        
+        text-align: center;
+        padding-top: 10%; 
+        padding-bottom: 5px; 
+        margin-left:auto;
+        margin-right:auto;
+        font-weight: 500;
+        border-left-width: 4px;
+        border-right-width: 4px;
+        border-left-style: solid;
+        border-left-color: darkgray;
+        border-right-style: solid;
+        border-right-color: darkgray;
+    }
+        .btn-item:hover{
+        
+        
+        border-right-style: solid;
+        border-right-color: darkgray;
+        
+        border-left-style: solid;
+        border-left-color: darkgray;
+        border-left-width: 12px;
+        border-right-width: 12px;
+        border-top-width: 0;
+        width: 87%;    
+            
+    }
+        
+        
+/*        responsible for bubble effect*/
+        .nav-links{
+            position:fixed;
+            flex-direction:column;
+            width:100%;
+            height:90vh;
+            top:10vh;
+            margin-right: 0;
+            transform: translateX(100vh);
+            transition: all 1s ease-out;
+        }
+        .nav-links.open{
+            transform: translateX(0);
+            transition: all 1s ease-out;
+        }
+        /*        responsible for bubble effect*/
+        .line{
+            width:30px;
+            height:3px;
+            background:white;
+            margin: 5px;
+            
+        }
+        ul{
+            padding-right:0px;
+            padding-left:0px;
+            
+        }
+        
+       
+        .hamburger{
+            position: absolute;
+            cursor: pointer;
+            right: 5%;
+            top:25%;
+            transform:translate(-5%,50%);
+            z-index: 2;
+            display: block;
+            
+        }
+        .hamburger div{
+            transition: all 0.3s ease;
+        }
+        
+        .nav-links li{
+            opacity:0;
+        }
+       .nav-links li a{
+            font-size: 25px;
+        }
+        .nav-links li:nth-child(1){
+            transition: all 0.5 2s;
+        }
+        .nav-links li:nth-child(2){
+            transition: all 0.5 4s;
+        }
+        .nav-links li:nth-child(3){
+            transition: all 0.5 6s;
+        }
+        .nav-links li:nth-child(4){
+            transition: all 0.5 8s;
+        }
+        .nav-links li:nth-child(5){
+            transition: all 0.5 10s;
+        }
+        li.fade{
+            opacity:1;
+        }
+        .toggle .line1{
+            transform: rotate(-45deg) translate(-5px,6px);
+        }
+        .toggle .line2{
+            opacity: 0;
+        }
+        .toggle .line3{
+            transform: rotate(45deg) translate(-5px,-6px);
+        }
+    } 
+    
+</style>
+</head>
+<body>
+   <nav>
+       <div class="hamburger">
+           <div class="line line1"></div>
+           <div class="line line2"></div>
+           <div class="line line3"></div>
+       </div>
+            <ul class="nav-links">
+               <li class="btn-item"><a href="#">Click 1</a></li>
+               <li class="btn-item"><a href="#">Click 2</a></li>
+               <li class="btn-item"><a href="#">Click 3</a></li>
+               <li class="btn-item"><a href="#">Click 4</a></li>
+               <li class="btn-item"><a href="#">Click 5</a></li>
+               <li class="btn-item"><a href="#">Click 6</a></li>
+            </ul>
+   </nav> 
+    <script>
+        const hamburger= document.querySelector(".hamburger");
+        const navLinks= document.querySelector(".nav-links");
+        const links= document.querySelectorAll(".nav-links li");
+        
+        hamburger.addEventListener("click",()=>{
+            navLinks.classList.toggle("open");
+            
+            links.forEach(function(element){
+            
+                element.classList.toggle("fade");
+            });
+            
+            hamburger.classList.toggle("toggle");
+        });
+        
+        
+    </script>
+</body>    
+</html>

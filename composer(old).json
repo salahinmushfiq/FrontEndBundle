@@ -1,0 +1,11 @@
+{
+    "require": {
+        "kreait/firebase-php": "4.39.0",
+        "ahsankhatri/firestore-php": "^2.0"
+    },
+    "config": {
+        "platform": {
+            "php": "7.4.12"
+        }
+    }
+}
