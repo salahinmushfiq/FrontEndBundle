@@ -1886,7 +1886,7 @@ button:active {
                             <div class="modal-content" style="border-radius: 10px;
   box-shadow: 0px 0px 30px #999;height:600px;background: transparent;">
                               <div class="modal-header">
-                                <h5 class="modal-title" style="color:#135d8a;font-weight: bold;" id="modalTitle">Title</h5>
+<!--                                <h5 class="modal-title" style="color:#135d8a;font-weight: bold;" id="modalTitle">Title</h5>-->
                                 <button type="button" class="close" id="modalClose" 
                                         
                                         onclick=closeModal();
@@ -2250,11 +2250,11 @@ function galleryImageOnClick(e){
     var target = e.target || e.srcElement,
     text = target.textContent || target.innerText; 
     console.log(target.src);
-    let splitted=(target.src.split("www/"));
-    let title=splitted[1].split(".");
+//    let splitted=(target.src.split("www/"));
+//    let title=splitted[1].split(".");
     
     document.getElementById("gallery-image-modal-image").src=target.src;
-    document.getElementById("gallery-image-modal-title").innerHTML=title[0].toUpperCase();
+//    document.getElementById("gallery-image-modal-title").innerHTML=title[0].toUpperCase();
     document.getElementById("gallery-image-modal").style.display = "block";
     
     
