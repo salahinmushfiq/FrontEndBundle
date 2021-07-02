@@ -121,7 +121,12 @@ const gallery_image_modal_close=document.getElementById("gallery-image-modal-clo
 const gallery_image_modal_go_to=document.getElementById("gallery-image-modal-go-to")
 const gallery_image_modal_image=document.getElementById("gallery-image-modal-image");
 const gallery_image_modal=document.getElementById("gallery-image-modal");
+const load=document.getElementById("loading");
 
+function loadDone(){
+    
+      load.style.display="none";
+}
 
 
 

@@ -13,7 +13,8 @@
 
 
 </head>
-<body>
+<body onload="loadDone()">
+    <div id="loading"></div>
 <!--    cursor follower-->
     <div class="circleWrapper" position:relative; style="width: 100%; overflow-x: hidden;">
         <span id="circle" class="circle">
@@ -120,7 +121,7 @@
                           </div>
             
             <div>
-                <ul data-aos="slide-up" aos-duration="5000"  data-aos-mirror="true" style="padding:0;">
+                <ul class="image-gallery-wrapper-ul" data-aos="slide-up" aos-duration="5000"  data-aos-mirror="true" style="padding:0;">
                   <li>
                     <img src="images/hotelchain.PNG" id="Hotelchainbd.com">
                   </li>
@@ -149,7 +150,7 @@
             
      </div>
         
-        <div class="packages-wrapper">
+        <div class="packages-wrapper" id="packages-wrapper">
             <h1 class="section-h1">Packages</h1>
         <div class="packages" data-aos="fade-right"  data-aos-mirror="true">
         <div class="pricing pricing-palden" >
