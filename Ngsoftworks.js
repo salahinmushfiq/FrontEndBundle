@@ -21,6 +21,18 @@
 
 jQuery(document).ready(function() {
 
+    //ripple effect starts
+     
+       $('.contacts').ripples({
+            resolution: 512,
+            dropRadius: 20,
+            perturbance: 0.04,
+        });
+    
+    //ripple effect ends
+    
+    
+    
     // cursor follower starts//
     
 var mouseX = 0, mouseY = 0;
