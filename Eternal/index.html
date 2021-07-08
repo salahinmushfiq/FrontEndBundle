@@ -1,0 +1,2077 @@
+<html>
+<head>
+    <link rel="shortcut icon" href="images/logoCropped.png" />
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+
+      <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="fontawesome-free-5.15.3-web/css/all.css"/>
+    <title>E-commerce</title>  
+<!--    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />-->
+<style>
+    body{
+            margin-right:0;
+            margin-left:0;
+            margin-top:0;
+            margin-bottom:0;
+            padding-right:0;
+            padding-left:0;
+            width: 100%;
+            cursor:url("images/finger_3.png"),auto;
+            overflow-x: hidden;
+            -webkit-user-select: none; /* Safari */        
+            -moz-user-select: none; /* Firefox */
+            -ms-user-select: none; /* IE10+/Edge */
+            user-select: none; /* Standard */
+            overflow-x: hidden;
+            
+        }
+    
+    h1{
+        color:burlywood;
+    
+    }
+    @keyframes expandGalleryImage {
+        0% {
+            
+            transform: scale(1) ;
+            opacity:1;
+/*            background: rgba(0,0,0,0.1);*/
+        }
+        50%{
+            transform: scale(.5);
+            opacity:.5;
+/*            background: rgba(0,0,0,0.2);*/
+            
+        }
+        50%{
+            transform: scale(.8);
+            opacity:.8;
+/*            background: rgba(0,0,0,0.3);*/
+            
+        }
+        75%{
+            transform: scale(.5);
+            opacity:.5;
+/*            background: rgba(0,0,0,0.2);*/
+            
+        }
+         100% {
+            
+            transform: scale(1) ;
+             opacity:1;
+/*            background: rgba(0,0,0,0.1);  */
+        }
+        
+    }
+    
+    @keyframes productsSlideChange{
+   
+        
+        
+        0%{
+            transform: translateY(0);
+            opacity:1;
+        }
+        50%{
+           transform: translateY(5%);
+            opacity:.5;
+        
+        }
+        100%{
+           transform: translateY(0);
+            opacity:1;
+        
+        }
+    
+    }
+    
+    
+    .main{
+            
+            height:auto;
+            width: 100%;
+            display: grid;
+            grid-template-columns: auto;
+            grid-gap: 10px;
+            box-sizing: border-box;
+        
+            display: grid;
+        } 
+    .cover{
+        position:relative;
+        width: 70%;
+        background-color:dimgray;
+        height:700px;
+    }
+    .nav-wrapper{
+        position: absolute;
+        position: fixed;
+        top:0;
+        width: 100%;
+        background:  transparent;
+        z-index:5;
+    }
+    nav{
+        height: 7vh;
+        background-color:dimgrey;
+        opacity: .8;
+        position:relative;
+        z-index:5;
+    }
+    .nav-links{
+        
+        
+        width:80%;
+/*        background-color: grey;*/
+        background: transparent;
+        height:inherit;
+        margin:0px;
+        position:fixed;
+        align-items: center;
+        margin-left: auto;
+        padding: 0;
+        flex-direction: row;
+        display: flex;
+        justify-content: space-around;
+        z-index:5;
+    }
+    .nav-links li a{
+        color: white;
+        text-decoration: none;
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 4vh;
+        color: burlywood;
+        z-index:5;
+     }
+    
+    .nav-links li{
+        
+        list-style: none;
+        width: inherit;
+        height:inherit;
+        margin-left: 15px;
+        margin-top:10px;
+        margin-bottom:10px;
+          }
+    
+/* navbar button hover effect   */
+    .btn-item{
+        
+        background-color: transparent;
+        
+        transition: all 0.2s ease;
+        
+        display: block;
+        width: inherit;
+        height: 90%;
+        
+        text-align: center;
+    }
+    
+    .btn-item:hover{
+        
+        
+        
+        
+        border-color: dimgrey;
+        transform: rotateX(15deg);
+/*        box-shadow: 0 15px 15px lightblue;*/
+
+        transition: all .5s ease-out;
+    }
+    html[data-useragent*='Android'] body {
+    background-color: silver;
+        border-top: 1em solid blue;
+}
+/* navbar button hover effect   */
+    @media screen and (max-width: 768px){
+        
+/*        responsible for bubble effect*/
+        .drawer{
+            margin-right:auto; 
+            margin-left:auto; 
+            margin-bottom: auto;
+            margin-top: auto;
+            width:100%;
+            height: inherit;
+            background-color: dimgray;
+            
+        }
+        
+        .nav-links{
+            position:fixed;
+            flex-direction:column;
+            width:50%;
+            height:100vh;
+            color:white;
+            top:0;
+            left:50%;
+/*            align-content: center;*/
+            clip-path:circle(0 at 90% -10%); 
+            -webkit-clip-path:circle(0 at 90% 0%);
+            
+            transition: all 1s ease-out;
+            text-align: center;
+            opacity: 0.9;
+            padding:0;
+            justify-content: center;
+            background-color:dimgray;
+            
+        }
+        .btn-item{
+           
+           width: 100%;
+           margin-left:auto; margin-right:auto;    
+           padding:0;
+           height:70px;
+        }
+        .btn-item:hover{
+        
+        width:97%;
+        border-color: dimgrey;
+        transform: rotateY(15deg);
+        box-shadow: -15px 0 15px lightblue;
+
+            transition: all 1s ease-out;
+        }
+        .nav-links.open{
+            clip-path:circle(1000px at 90% 10%); 
+            -webkit-clip-path:circle(1000px at 90% 10%);
+            transition: all 1s ease-out;
+            
+        }
+        /*        responsible for bubble effect*/
+        .line{
+            width:30px;
+            height:3px;
+            background:white;
+            margin: 5px;
+            
+            
+        }
+        .hamburger{
+            position: fixed;
+            cursor: pointer;
+            right: 5%;
+            top:0%;
+            transform:translate(-5%,50%);
+            z-index: 100;
+            display: block;
+            
+        }
+        .hamburger div{
+            transition: all 0.3s ease;
+        }
+        
+        .nav-links li{
+            height:70px;
+            opacity:0;
+
+        }
+       .nav-links li a{
+            font-size: 25px;
+            
+            line-height: 70px;
+            vertical-align: middle;
+        }
+        .nav-links li:nth-child(1){
+            transition: all 0.5 2s;
+        }
+        .nav-links li:nth-child(2){
+            transition: all 0.5 4s;
+        }
+        .nav-links li:nth-child(3){
+            transition: all 0.5 6s;
+        }
+        .nav-links li:nth-child(4){
+            transition: all 0.5 8s;
+        }
+        .nav-links li:nth-child(5){
+            transition: all 0.5 10s;
+        }
+        li.fade{
+            opacity:1;
+        }
+        .toggle .line1{
+            transform: rotate(-45deg) translate(-5px,6px);
+        }
+        .toggle .line2{
+            opacity: 0;
+        }
+        .toggle .line3{
+            transform: rotate(45deg) translate(-5px,-6px);
+        }
+               
+        
+} 
+    
+    
+    
+    
+    
+    /*image gallery starts         */
+        
+.cover{
+        
+    width: 100%;
+    background-image:url(images/hotelchain.PNG);
+    background-image:url(images/mainCover2.jpg);
+/*    background-image:url(images/mainCover1.jpg);*/
+    background-repeat: no-repeat;
+    background-blend-mode: lighten;
+    height:auto;
+    margin-top: -30px;
+    overflow: hidden; 
+    margin-bottom:30px;
+    background-size: contain;
+            
+}
+        
+/*        // BASIC*/
+
+.cover ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding-top:4%;
+  transform: rotate(25deg);
+  width: 60%;
+  margin-left: auto;
+  height:auto;  
+  overflow: hidden; 
+  padding-bottom:4%;
+  
+/*  background-size: cover;    */
+}
+
+.cover li {
+  height: 40vh;
+  flex-grow: 1;
+  margin: 15px; 
+  
+}
+
+.cover li:last-child {
+  
+  flex-grow: 10;
+}
+
+.cover img {
+  max-height: 100%;
+  min-width: 100%;
+  object-fit: cover;
+  vertical-align: bottom;
+  border-radius: 15px;
+  border-style: solid;
+  border-color:whitesmoke;
+  border-width: 5px;
+  background-color:aliceblue;    
+   
+}
+
+.cover img:hover {
+    
+   transform: scale(1.02);
+   transition-duration:1s;
+   transition-timing-function: ease-in-out;
+    
+} 
+
+.modal-image{
+    height:auto;
+    width:80%;
+    
+}    
+
+    
+.gallery{
+   
+    
+    width:100%;
+    min-height:600px;
+    position: relative;
+    
+    align-content: center;
+
+    overflow: hidden;
+    z-index: 2;
+    
+    
+}    
+    
+
+
+.gallery ul{
+    position: absolute;
+    display:flex;
+    flex-direction: row;
+/*    flex-wrap: nowrap;*/
+    height:auto;
+    
+    width:90%;
+    list-style: none;
+    min-height:600px;
+/*    background-color: antiquewhite;*/
+    right:5%;
+    left:5%;
+    padding: 0;
+    margin-top:100px;
+        
+}    
+.gallery ul li:nth-child(3){
+    
+     flex:1.5;
+     width:100%;
+     height:auto;
+     background-image:url("images/hotelchain%20Cropped.jpg");    
+     background-image:url("images/featuredImage4.jpg");    
+    
+        
+}
+.gallery ul li:nth-child(1){
+    
+     flex:1.5;
+     width:100%;
+     height:auto;
+     background-image:url("images/travelerchoice%20Cropped.jpg");  
+     background-image:url("images/featuredImage2.jpg"); 
+
+    
+}
+.gallery ul li:nth-child(2){
+    
+    
+     flex:1;
+     width:100%;
+     height:auto;
+     margin-left:15px;
+     margin-right:15px;
+     background-image:url("images/1-removebg-preview_3.png");  
+     background-image:url("images/featuredImage3.jpg"); 
+     
+
+        
+}
+.gallery ul li{
+     
+     background-repeat: no-repeat;
+     background-size: contain;
+     background-position:center;
+     position: relative;
+    
+}
+.gallery ul li:hover{
+    
+        transform: scale(1.02);
+        transition-duration:.5s;
+        transform-style:preserve-3d;
+        transition-timing-function: ease-in;
+        
+    
+}    
+    
+.gallery ul li:nth-child(1) h1,.gallery ul li:nth-child(3) h1{
+    
+/*     position:absolute;*/
+     align-content: center;
+      
+     width:100%;
+     height:50px;
+     text-align: center;
+     margin-top:400px;
+        
+}
+.gallery ul li:nth-child(2) h1{
+     position:absolute;
+     top:200px;
+
+     width:100%;
+     height:50px;
+     text-align: center;
+    
+}  
+    
+
+    
+/*
+    .products-wrapper{
+       
+         display:block;
+         margin-right:auto;
+         margin-left:auto;
+        
+         width: 100%;
+         height:900px;
+         position:relative;
+         margin-top:40%;
+    
+    }
+*/
+
+.products-wrapper{
+        position: relative;
+        width:100%;
+        height:2000px;
+        padding:0;
+        margin:0;
+}    
+.products-rows{
+        
+        position: relative;
+        width:100%;
+        height:1900px;
+        grid-template-columns: auto;
+        grid-gap: 180px;
+        box-sizing: border-box;
+        margin-left:auto;
+        margin-right:auto;
+        display: grid;
+        align-content: center;
+        padding: 5px;
+    
+}    
+.products {
+    
+        position: relative;
+        width:100%;
+        height:600px;
+        grid-template-columns: auto;
+        grid-gap: 10px;
+        box-sizing: border-box;
+        margin-left:auto;
+        margin-right:auto;
+        display: grid;
+        align-content: center;
+        padding: 5px;
+           
+    
+}
+.products:nth-child(1) ul h1,.products:nth-child(2) ul h1,.products:nth-child(3) ul h1{
+    
+        position: absolute;
+        height:30px;
+        top:82%;
+        z-index: 20;
+        grid-template-columns: auto auto auto auto;
+        grid-gap: 10px;
+        box-sizing: border-box;
+        display: grid;
+        width:20%;
+        text-align: center;
+        
+           
+    
+}
+ .products-wrapper h1:nth-child(1){
+            
+        width: 100%; text-align: center; top:0px;z-index:2;position:absolute; margin:0;
+     
+            
+}   
+
+.product-type-selector{
+    
+    position:relative; 
+    margin-top:120px;
+    height:50px; 
+    width:100%;
+    background: transparent;
+    z-index:2;
+    grid-template-columns: auto auto auto auto;
+    
+    box-sizing: border-box;
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    opacity:0.8;
+    
+    
+} 
+/*
+.product-type-selector button:nth-child(1):before{
+    
+    content: "";
+    position: absolute;
+    right:80%;
+    top:30px;
+    width:30px;
+    height:70%;
+    border-bottom-right-radius: 30px;
+    transform: scaleX(1);
+    
+    background: white;
+    
+} 
+*/
+.product-type-selector button:nth-child(1){
+    
+   
+    background: dimgray;
+    width: 10%;
+    height:100%; 
+    border-bottom-left-radius: 25px;
+    
+    color:burlywood;
+    
+    
+}  
+    .product-type-selector button:nth-child(2){
+    
+    
+
+    height:100%; 
+    width:10%;
+    background: dimgray;
+    
+    color:burlywood;
+        
+/*    margin-left:40%;*/
+    
+} 
+    .product-type-selector button:nth-child(3){
+    
+    
+    height:100%; 
+    width:10%;
+    background: dimgray;
+    border-bottom-right-radius: 25px;
+    
+    color:burlywood;  
+    
+} 
+
+
+    .products ul{
+        top:300px;
+    }
+
+    
+    
+    .products ul:nth-child(3){
+    
+        background-color:burlywood;
+        background-blend-mode:exclusion;
+        grid-template-columns: auto auto auto auto;
+        grid-gap: 10px;
+        box-sizing: border-box;
+        display: grid;
+        width:80%;
+        height:inherit;
+        list-style: none;
+        padding:0;
+        position:absolute;
+        
+        margin-left: 10%;
+        margin-right:10%;
+        border-radius: 5px;
+
+        padding-top:100px;
+        
+     }
+    .products ul:nth-child(4){
+    
+        background-color: coral;
+        grid-template-columns: auto auto auto auto;
+        grid-gap: 10px;
+        box-sizing: border-box;
+        display: grid;
+        width:80%;
+        height:inherit;
+        list-style: none;
+        padding:0;
+        position:absolute;
+        
+        margin-left: 10%;
+        margin-right:10%;
+        border-radius: 5px;
+  
+    }
+    .products ul:nth-child(5){
+    
+        background-color: dodgerblue;
+        grid-template-columns: auto auto auto auto;
+        grid-gap: 5px;
+        box-sizing: border-box;
+        display: grid;
+        width:80%;
+        height:inherit;
+        list-style: none;
+        padding:0;
+        position: absolute;
+        margin-left: 10%;
+        margin-right:10%;
+        
+        border-radius: 5px;
+    
+     }
+     .products ul:nth-child(6){
+    
+        background-color: darkslategrey;
+        grid-template-columns: auto auto auto auto;
+        grid-gap: 5px;
+        box-sizing: border-box;
+        display: grid;
+        width:80%;
+        height:inherit;
+        list-style: none;
+        padding:0;
+        position: absolute;
+        
+        margin-left: 10%;
+        margin-right:10%;
+            
+        border-radius: 5px; 
+         
+    
+     }
+    .products ul:nth-child(7){
+    
+        background-image: white;
+        background-color: white;
+        grid-template-columns: auto auto auto auto;
+        grid-gap: 5px;
+        box-sizing: border-box;
+        display: grid;
+        width:80%;
+        height:inherit;
+        list-style: none;
+        padding:0;
+        position: absolute;
+        
+        margin-left: 10%;
+        margin-right:10%;
+            
+        border-radius: 5px; 
+    
+     }
+    
+    .active-product-slide{
+    
+        z-index: 2;
+        animation-name: productsSlideChange;
+        animation-duration: 1s;
+        
+        transform: translate(100);
+        animation-iteration-count:1;
+        
+    }
+    .under-product-slide{
+        
+        z-index: 1;
+       
+    }
+    .products ul li{
+    
+
+        
+        width:90%;
+        height:100%;
+        margin-left:5%;
+        margin-right:5%;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        
+        
+     }
+
+    
+/*    first row starts*/    
+    
+/*    first slides starts*/
+
+/* here .products:nth-child(1) defines this is row 1. ul:nth-child(3) means the first slide and li is the individual elements meaning pictures itself from left to right*/    
+     
+    .products:nth-child(1) ul:nth-child(3) li:nth-child(1){
+        background-image: url("images/productsMen1.jpg");
+     }
+    .products:nth-child(1) ul:nth-child(3) li:nth-child(2){
+        background-image: url("images/productsMen2.jpg");
+    
+    }
+    .products:nth-child(1) ul:nth-child(3) li:nth-child(3){
+        
+        background-image: url("images/productsMen11.jpg");
+     }
+   
+    .products:nth-child(1) ul:nth-child(3) li:nth-child(4){
+        background-image: url("images/productsMen3.jpg.crdownload");
+    
+    }
+    
+    
+    /*    first slides ends*/
+    
+    
+    /*    second slides starts*/
+    
+    
+    .products:nth-child(1) ul:nth-child(4) li:nth-child(1){
+        background-image: url("images/productsMen1.jpg");
+    
+    }
+     .products:nth-child(1) ul:nth-child(4) li:nth-child(2){
+        background-image: url("images/productsMen2.jpg");
+    
+    }
+    .products:nth-child(1) ul:nth-child(4) li:nth-child(3){
+        
+        background-image: url("images/productsMen11.jpg");
+    
+    }
+   
+    .products:nth-child(1) ul:nth-child(4) li:nth-child(4){
+        background-image: url("images/productsMen3.jpg.crdownload");
+    
+    }
+    
+    
+    /*    second slides ends*/
+    
+    /*    third slides starts*/
+    
+    
+    .products:nth-child(1) ul:nth-child(5) li:nth-child(1){
+        background-image: url("images/productsMen1.jpg");
+    
+    }
+     .products:nth-child(1) ul:nth-child(5) li:nth-child(2){
+        background-image: url("images/productsMen2.jpg");
+    
+    }
+    .products:nth-child(1) ul:nth-child(5) li:nth-child(3){
+        
+        background-image: url("images/productsMen11.jpg");
+    
+    }
+   
+    .products:nth-child(1) ul:nth-child(5) li:nth-child(4){
+        background-image: url("images/productsMen3.jpg.crdownload");
+    
+    }
+    
+    
+    /*    third slides ends*/
+    
+        /*    fourth slides starts*/
+    
+    
+    .products:nth-child(1) ul:nth-child(6) li:nth-child(1){
+        background-image: url("images/productsMen1.jpg");
+    
+    }
+     .products:nth-child(1) ul:nth-child(6) li:nth-child(2){
+        background-image: url("images/productsMen2.jpg");
+    
+    }
+    .products:nth-child(1) ul:nth-child(6) li:nth-child(3){
+        
+        background-image: url("images/productsMen11.jpg");
+    
+    }
+   
+    .products:nth-child(1) ul:nth-child(6) li:nth-child(4){
+        background-image: url("images/productsMen3.jpg.crdownload");
+    
+    }
+    
+    
+    /*    fourth slides ends*/
+    
+    /*    first row ends */ 
+    
+    /*    second row starts */ 
+    
+    /*  first slide starts*/
+    
+    
+    .products:nth-child(2) ul:nth-child(3) li:nth-child(1){
+        background-image: url("images/productsMen10.jpg");
+    
+    }
+    .products:nth-child(2) ul:nth-child(3) li:nth-child(2){
+        background-image: url("images/productsMen4.jpg");
+    
+    }
+    .products:nth-child(2) ul:nth-child(3) li:nth-child(3){
+        background-image: url("images/productsMen7.jpg");
+    
+    }
+    .products:nth-child(2) ul:nth-child(3) li:nth-child(4){
+        background-image: url("images/productsMen6.jpg");
+    
+    }
+    
+    /*  first slide ends*/
+    
+    /*  second slide starts*/
+    
+    
+    .products:nth-child(2) ul:nth-child(4) li:nth-child(1){
+        background-image: url("images/productsMen10.jpg");
+    
+    }
+    .products:nth-child(2) ul:nth-child(4) li:nth-child(2){
+        background-image: url("images/productsMen4.jpg");
+    
+    }
+    .products:nth-child(2) ul:nth-child(4) li:nth-child(3){
+        background-image: url("images/productsMen7.jpg");
+    
+    }
+    .products:nth-child(2) ul:nth-child(4) li:nth-child(4){
+        background-image: url("images/productsMen6.jpg");
+    
+    }
+    
+    /*  second slide ends*/
+    
+    
+     /*  third slide starts*/
+    
+    
+    .products:nth-child(2) ul:nth-child(5) li:nth-child(1){
+        background-image: url("images/productsMen10.jpg");
+    
+    }
+    .products:nth-child(2) ul:nth-child(5) li:nth-child(2){
+        background-image: url("images/productsMen4.jpg");
+    
+    }
+    .products:nth-child(2) ul:nth-child(5) li:nth-child(3){
+        background-image: url("images/productsMen7.jpg");
+    
+    }
+    .products:nth-child(2) ul:nth-child(5) li:nth-child(4){
+        background-image: url("images/productsMen6.jpg");
+    
+    }
+    
+    /*  third slide ends*/
+    
+     /*  fourth slide starts*/
+    
+    
+    .products:nth-child(2) ul:nth-child(6) li:nth-child(1){
+        background-image: url("images/productsMen10.jpg");
+    
+    }
+    .products:nth-child(2) ul:nth-child(6) li:nth-child(2){
+        background-image: url("images/productsMen4.jpg");
+    
+    }
+    .products:nth-child(2) ul:nth-child(6) li:nth-child(3){
+        background-image: url("images/productsMen7.jpg");
+    
+    }
+    .products:nth-child(2) ul:nth-child(6) li:nth-child(4){
+        background-image: url("images/productsMen6.jpg");
+    
+    }
+    
+    /*  fourth slide ends*/
+    
+    
+    /*    second row ends */ 
+    
+    /*    third row starts */ 
+    
+    /*   first slide starts */ 
+    
+    
+    .products:nth-child(3) ul:nth-child(3) li:nth-child(1){
+        background-image: url("images/productsMen11.jpg");
+    
+    }
+    .products:nth-child(3) ul:nth-child(3) li:nth-child(2){
+        background-image: url("images/productsMen12.jpg");
+    
+    }
+    .products:nth-child(3) ul:nth-child(3) li:nth-child(3){
+        background-image: url("images/productsMen13.jpg");
+    
+    }
+    .products:nth-child(3) ul:nth-child(3) li:nth-child(4){
+        background-image: url("images/productsMen14.jpg");
+    
+    }
+    /*   first slide ends */ 
+    
+    /*   second slide starts */ 
+    
+        .products:nth-child(3) ul:nth-child(4) li:nth-child(1){
+            background-image: url("images/productsMen11.jpg");
+
+        }
+        .products:nth-child(3) ul:nth-child(4) li:nth-child(2){
+            background-image: url("images/productsMen12.jpg");
+
+        }
+        .products:nth-child(3) ul:nth-child(4) li:nth-child(3){
+            background-image: url("images/productsMen13.jpg");
+
+        }
+        .products:nth-child(3) ul:nth-child(4) li:nth-child(4){
+            background-image: url("images/productsMen14.jpg");
+
+        }
+    
+    /*   second slide ends */ 
+    
+    /*   third slide starts */ 
+    
+        .products:nth-child(3) ul:nth-child(5) li:nth-child(1){
+            background-image: url("images/productsMen11.jpg");
+
+        }
+        .products:nth-child(3) ul:nth-child(5) li:nth-child(2){
+            background-image: url("images/productsMen12.jpg");
+
+        }
+        .products:nth-child(3) ul:nth-child(5) li:nth-child(3){
+            background-image: url("images/productsMen13.jpg");
+
+        }
+        .products:nth-child(3) ul:nth-child(5) li:nth-child(4){
+            background-image: url("images/productsMen14.jpg");
+
+        }
+    
+    /*   third slide ends */ 
+    
+        /*   fourth slide starts */ 
+    
+        .products:nth-child(3) ul:nth-child(6) li:nth-child(1){
+            background-image: url("images/productsMen11.jpg");
+
+        }
+        .products:nth-child(3) ul:nth-child(6) li:nth-child(2){
+            background-image: url("images/productsMen12.jpg");
+
+        }
+        .products:nth-child(3) ul:nth-child(6) li:nth-child(3){
+            background-image: url("images/productsMen13.jpg");
+
+        }
+        .products:nth-child(3) ul:nth-child(6) li:nth-child(4){
+            background-image: url("images/productsMen14.jpg");
+
+        }
+    
+    /*   fourth slide ends */ 
+    
+    /*   third slide ends */
+    
+    
+    /*    third row ends */ 
+    
+    .products ul:nth-child(6) li{
+    
+/*         background:white;*/
+        background-size: contain;
+    }
+
+    .products ul:nth-child(2) li{
+        position: absolute;
+        left:0px;
+        top:600px;
+/*                bottom: 260px;*/
+        background-image:url(images/next.png);
+        background-size: contain;
+        width:34px;
+        height: 34px;
+        z-index: 3;
+        transform: scaleX(-1);
+        }
+        .products ul:nth-child(8) li{
+        position: absolute;
+        right:0px;
+        top:600px;
+/*                bottom: 260px;*/
+        background-image: url(images/next.png);
+
+        background-size: contain;
+        width:34px;
+        height: 34px;
+        z-index: 3;
+    } 
+    
+     @media (min-width: 769) and (max-width: 1600px){
+    
+        .gallery ul{
+        
+            width:100%;
+            min-height:950px;
+            margin-top:70px;
+            display: flex;
+            flex-direction: row;
+            margin:0;
+            
+        }
+        .gallery h1:nth-child(1){
+        
+            margin-top:50px;
+        }
+        .gallery ul li{
+            
+            background-position:center;
+        }
+   
+            
+            
+        .products-wrapper h1:nth-child(1){
+            
+                width: 100%; text-align: center; margin-top:-100px;margin-bottom:70px;z-index:30;position:  absolute; 
+            
+        }
+        .products-rows{
+        
+
+        height:1300px;
+        grid-template-columns: auto;
+        grid-gap: 70px;
+    
+        } 
+            
+        .products:nth-child(1) ul h1,.products:nth-child(2) ul h1,.products:nth-child(3) ul h1{
+    
+
+            top:100%;
+            width:20%;
+        }  
+            
+        .products {
+    
+/*
+        position: relative;
+        width:100%;
+*/
+        height:600px;
+/*
+        grid-template-columns: auto;
+        grid-gap: 10px;
+        box-sizing: border-box;
+        margin-left:auto;
+        margin-right:auto;
+        display: grid;
+        align-content: center;
+        padding: 5px;
+*/
+           
+    
+        }    
+            
+   
+        
+    }
+    
+    @media screen and (max-width: 768px){
+        
+/*        responsible for bubble effect*/
+        .drawer{
+            margin-right:auto; 
+            margin-left:auto; 
+            margin-bottom: auto;
+            margin-top: auto;
+            width:100%;
+            height: inherit;
+            
+        }
+        .nav-links{
+            position:fixed;
+            flex-direction:column;
+            width:50%;
+            height:100vh;
+            color:white;
+            top:0;
+            left:50%;
+/*            align-content: center;*/
+            clip-path:circle(0 at 90% -10%); 
+            -webkit-clip-path:circle(0 at 90% 0%);
+            
+            transition: all 1s ease-out;
+            text-align: center;
+            opacity: 0.9;
+            padding:0;
+            justify-content: center;
+            background-color:dimgrey;
+            
+        }
+        .btn-item{
+           
+           width: 100%;
+           margin-left:auto; margin-right:auto;    
+           padding:0;
+           height:70px;
+        }
+        .btn-item:hover{
+        
+        width:97%;
+        border-color: dimgrey;
+        transform: rotateY(15deg);
+        box-shadow: -15px 0 15px lightblue;
+
+            transition: all 1s ease-out;
+        }
+        .nav-links.open{
+            clip-path:circle(1000px at 90% 10%); 
+            -webkit-clip-path:circle(1000px at 90% 10%);
+            transition: all 1s ease-out;
+            
+        }
+        /*        responsible for bubble effect*/
+        .line{
+            width:30px;
+            height:3px;
+            background:white;
+            margin: 5px;
+            
+            
+        }
+        .hamburger{
+            position: fixed;
+            cursor: pointer;
+            right: 5%;
+            top:0%;
+            transform:translate(-5%,50%);
+            z-index: 100;
+            display: block;
+            
+        }
+        .hamburger div{
+            transition: all 0.3s ease;
+        }
+        
+        .nav-links li{
+            height:70px;
+            opacity:0;
+
+        }
+       .nav-links li a{
+            font-size: 25px;
+            
+            line-height: 70px;
+            vertical-align: middle;
+        }
+        .nav-links li:nth-child(1){
+            transition: all 0.5 2s;
+        }
+        .nav-links li:nth-child(2){
+            transition: all 0.5 4s;
+        }
+        .nav-links li:nth-child(3){
+            transition: all 0.5 6s;
+        }
+        .nav-links li:nth-child(4){
+            transition: all 0.5 8s;
+        }
+        .nav-links li:nth-child(5){
+            transition: all 0.5 10s;
+        }
+        li.fade{
+            opacity:1;
+        }
+        .toggle .line1{
+            transform: rotate(-45deg) translate(-5px,6px);
+        }
+        .toggle .line2{
+            opacity: 0;
+        }
+        .toggle .line3{
+            transform: rotate(45deg) translate(-5px,-6px);
+        }
+        
+        
+ .gallery{
+   
+    
+    width:100%;
+    min-height:1980px;
+    position: relative;
+    
+    align-content: center;
+
+    overflow: hidden;
+    
+}         
+
+
+.gallery ul{
+    
+    
+    top:150px;
+    display: flex;
+    flex-direction: column;
+    min-height:1800px;
+    margin:0;
+    justify-content: center;
+    
+        
+}   
+.gallery ul li:nth-child(3){
+    
+     flex:1;    
+        
+}
+.gallery ul li:nth-child(1){
+    
+     flex:1;
+
+}
+.gallery ul li:nth-child(2){
+    
+    
+     flex:1.5;
+     margin:0;
+     
+}
+.products ul:nth-child(1){
+        
+        padding:0;
+            
+}   
+/*
+.products ul:nth-child(3){
+        
+        display: grid;
+        grid-template-columns: auto;
+        grid-gap: 10px;
+        box-sizing: border-box;
+        width:80%;
+        margin-left:10%;
+        margin-right:10%;
+        display: grid;
+            
+}  
+*/
+        
+.products ul:nth-child(3),.products ul:nth-child(4),.products ul:nth-child(5),.products ul:nth-child(6){
+        
+        display: grid;
+        grid-template-columns: auto;
+        grid-gap: 10px;
+        box-sizing: border-box;
+        width:80%;
+        margin-left:10%;
+        margin-right:10%;
+        display: grid;
+            
+}        
+
+.products:nth-child(2) ul:nth-child(1) {
+        
+     margin-top:-500px;
+            
+} 
+        
+.products:nth-child(2) ul:nth-child(1) {
+        
+     margin-top:-650px;
+            
+}
+.products:nth-child(2) ul:nth-child(1) {
+        
+     margin-top:-650px;
+            
+}          
+        
+        
+.products ul:nth-child(3) li{
+        
+    
+    width:90%;
+   
+    
+}   
+.products{
+        
+    
+    width:100%;
+    height:1300px;
+    
+        
+}          
+.products-rows{
+        
+    
+    width:100%;
+    height:auto;
+    
+        
+}   
+.products ul{
+  
+   right:0;
+   left:0;
+
+}        
+.products ul:nth-child(3){
+        
+    
+    width:90%;
+    margin-left:5%;
+    margin-right:5%;
+    height:1300px;
+    margin-top:-100px;
+        
+}
+.products ul:nth-child(4){
+        
+    margin-top:-100px;
+    width:90%;
+    margin-left:5%;
+    margin-right:5%;
+    height:1300px;
+    
+        
+}
+.products ul:nth-child(5){
+        
+    
+    margin-top:-100px;
+    width:90%;
+    margin-left:5%;
+    margin-right:5%;
+    height:1300px;
+    
+        
+} 
+        
+.products ul:nth-child(6){
+        
+    
+    margin-top:-100px;
+    width:90%;
+    margin-left:5%;
+    margin-right:5%;
+    height:1300px;
+    
+        
+}        
+        
+} 
+    
+/*
+    .gallery ul li{
+    
+     background-size: white;
+     border-color: grey;
+     border-width: 2px;
+     border-style: solid;    
+        
+    
+    }
+*/
+/*
+    .gallery-item-1,.gallery-item-3{
+       
+        flex:1;
+        width:100%;
+        height:auto;
+        background-size: contain;
+
+    } 
+    .gallery-item-2{
+       
+        flex:1;
+        width:100%;
+        height:auto;
+        background-size: contain;
+
+    } 
+*/
+        
+/*    image Gallery ends    */
+</style>
+      
+</head>
+    
+<body>
+    <div class="main">
+        <div class="header-wrapper">
+           
+                
+            <div class="cover" id="cover" data-aos="fade-up">
+            
+                  <!-- Modal -->
+<!--
+                          <div class="modal" id="gallery-image-modal" role="dialog" >
+                            <div class="modal-dialog" >
+
+                               Modal content
+                              <div class="modal-content" style="border-radius: 15px;width:150%;">
+                                <div class="modal-body">
+                                     <button type="button" style="height:50px;width:50px;float:right; margin-bottom:20px;" class="close" data-dismiss="modal" id="gallery-image-modal-close">&times;</button>
+                                    <img src="#" class="modal-image" id="gallery-image-modal-image"/>
+                                     <button type="button" class="btn btn-primary" style="width:auto;border-radius: 15px;float:right;margin-top:20px;" id="gallery-image-modal-go-to" href="#">Go To</button>
+                                </div>
+                              </div>
+
+                            </div>
+                          </div>
+-->
+            
+            <div>
+                <ul class="cover-ul" style="padding:0;" >
+                  <li data-aos="fade-up" data-aos-mirror="true">
+                    <img src="images/coverOverlayImage6.jpg" id="Hotelchainbd.com">
+                  </li>
+                    <li data-aos="fade-up" data-aos-mirror="true">
+                    <img src="images/coverOverlayImage3.jpg" id="TravelersChoicebd.com">
+                  </li>
+                  <li data-aos="fade-up" data-aos-mirror="true">
+                    <img src="images/coverOverlayImage4.jpg" id="Travelerschoicebd.com">
+                  </li>
+                  <li data-aos="fade-up" data-aos-mirror="true">
+                    <img src="images/coverOverlayImage8.jpg" id="hotelchainbd.com">
+                  </li>                             
+<!--
+                  <li>
+                    <img src="images/shosti.PNG" id="shosti.com.bd">
+                  </li>
+                  <li>
+                    <img src="images/slide-image-2.png" id="hotelchainbd.com">
+                  </li>
+-->
+                    <!--  Adding an empty <li> here so the final photo doesn't stretch like crazy. Try removing it and see what happens!  -->
+                    <li></li>
+                </ul>
+            
+            </div>
+            
+     </div>
+                
+                
+                
+                
+        <div class="nav-wrapper" id="nav-wrapper">
+                    <nav id="nav">
+                    <div class="hamburger">
+                       <div class="line line1"></div>
+                       <div class="line line2"></div>
+                       <div class="line line3"></div>
+                   </div>
+                   <div class="drawer">
+                       <ul class="nav-links" id="nav-links">
+                           <li><a class="btn-item" href="#">Click 1</a></li>
+                           <li><a class="btn-item" href="#">Click 2</a></li>
+                           <li><a class="btn-item" href="#">Click 3</a></li>
+                           <li><a class="btn-item" href="#">Click 4</a></li>
+                           <li><a class="btn-item" href="#">Click 5</a></li>
+                           <li><a class="btn-item" href="#">Click 6</a></li>
+                        </ul>
+                   </div>
+                </nav> 
+                </div>   
+        </div>
+        
+            <div class="gallery" data-aos="fade-up;" aos-duration="5000" data-aos-mirror="true">
+                      <h1 style="width: 100%; text-align: center;position:absolute;">Gallery</h1>
+                  <ul>
+                      
+                    <li title="1st Item">
+<!--                        <h1>1st Item</h1>-->
+                    </li>
+                      
+                    <li>
+<!--                        <h1>2nd Item</h1>-->
+                    </li>
+                    <li>
+<!--                        <h1>3rd Item</h1>-->
+                    </li>
+            
+                      <li>
+<!--                        <h1>4th Item</h1>-->
+                    </li>
+                 </ul>
+            </div>
+                    
+        
+        <div class="products-wrapper">
+            <h1>Products</h1>
+            <div class="product-type-selector">
+                <button>Men</button>
+                <button>Women</button>
+                <button>Kids</button>
+            </div>
+            <div class="products-rows" style="position:relative;" >
+              
+              <div class="products products-row-1" data-aos="fade-up;" aos-duration="5000" data-aos-mirror="true">
+                      
+<!--                        <div class="products-prev"></div>-->
+                    <ul style="list-style: none;">
+                            <li><h2 style="text-align: center;margin-bottom:50px;color:burlywood;">Shirts</h2></li>
+                    </ul>
+                      <ul style="list-style: none;">
+                            <li class="products-slider-prev"></li>
+                        </ul>
+                       
+                      <ul class="active-product-slide">
+
+                            <li class="card">
+                            </li>
+                            <li class="card">
+                            </li>
+                            <li class="card">
+                            </li>             
+                            <li class="card">
+                            </li>
+
+                        </ul>
+                 
+                     
+                      <ul class="under-product-slide">
+
+                            <li class="card">
+                            </li>
+                          <li class="card">
+                            </li>
+                            <li class="card">
+                            </li>
+                            <li class="card">
+                            </li>
+
+                        </ul>
+                
+                     
+                      <ul class="under-product-slide">
+
+                            <li>
+                            </li>
+
+                            <li>
+                            </li>
+                            <li>
+                            </li>
+                            <li>
+                            </li>
+
+                        </ul>
+                      
+                      <ul class="under-product-slide">
+
+                            <li>
+                            </li>
+
+                            <li>
+                            </li>
+                            <li>
+                            </li>
+                            <li>
+                            </li>
+
+                        </ul>
+                      <ul class="under-product-slide"></ul>
+                 
+                      <ul style="list-style: none;">
+                            <li class="products-slider-next">
+                            </li>
+                     </ul>
+                         
+            </div>
+<!--              <h2>Pants</h2>       -->
+              <div class="products products-row-2" data-aos="fade-up;" aos-duration="5000" data-aos-mirror="true">
+                      
+<!--                        <div class="products-prev"></div>-->
+                       
+                    <ul style="list-style: none;">
+                            <li><h2 style="text-align: center;margin-bottom:150px;margin-top:150px;color:burlywood;">Pants</h2></li>
+                    </ul>
+                  
+                        <ul style="list-style: none;">
+                            <li class="products-slider-prev"></li>
+                        </ul>
+                        <ul class="active-product-slide">
+
+                            <li>
+                            </li>
+
+                            <li>
+                            </li>
+                            <li>
+                            </li>             
+                            <li>
+                            </li>
+
+                        </ul>
+                 
+                     
+                      
+                 
+                         <ul class="under-product-slide">
+
+                            <li class="card">
+                            </li>
+
+                            <li class="card">
+                            </li>
+                            <li class="card">
+                            </li>
+                            <li class="card">
+                            </li>
+
+                        </ul>
+                 
+                     
+                      
+                 
+                         <ul class="under-product-slide">
+
+                            <li>
+
+                            </li>
+
+                            <li>
+
+                            </li>
+                            <li>
+
+                            </li>
+                            <li>
+                            </li>
+
+                        </ul>
+                    <ul class="under-product-slide">
+
+                            <li>
+                            </li>
+
+                            <li>
+                            </li>
+                            <li>
+                            </li>
+                            <li>
+                            </li>
+
+                        </ul>
+                        <ul class="under-product-slide">
+                        </ul>
+                 
+                        <ul style="list-style: none;">
+                            <li class="products-slider-next">
+                            </li>
+                        </ul>
+                         
+            </div>    
+<!--                             <h2>Shoes</h2>   -->
+            <div class="products products-row-3" data-aos="fade-up;" aos-duration="5000" data-aos-mirror="true">
+                      
+<!--                        <div class="products-prev"></div>-->
+                        
+                    <ul style="list-style: none;">
+                            <li><h2 style="text-align: center;margin-bottom:150px;margin-top:150px;color:burlywood;">Shoes</h2></li>
+                    </ul>        
+                                
+                        <ul style="list-style: none;">
+                            <li class="products-slider-prev"></li>
+                        </ul>
+                        <ul class="active-product-slide">
+
+                            <li>
+                            </li>
+
+                            <li>
+                            </li>
+                            <li>
+                            </li>             
+                            <li>
+                            </li>
+
+                        </ul>
+                 
+                     
+                      
+                 
+                         <ul class="under-product-slide">
+
+                            <li class="card">
+                            </li>
+
+                            <li class="card">
+                            </li>
+                            <li class="card">
+                            </li>
+                            <li class="card">
+                            </li>
+
+                        </ul>
+                 
+                     
+                      
+                 
+                         <ul class="under-product-slide">
+
+                            <li>
+                            </li>
+
+                            <li>
+                            </li>
+                            <li>
+                            </li>
+                            <li>
+                            </li>
+
+                        </ul>
+                    <ul class="under-product-slide">
+
+                            <li>
+
+                            </li>
+
+                            <li>
+
+                            </li>
+                            <li>
+
+                            </li>
+                            <li>
+
+                            </li>
+
+                        </ul>
+                        <ul class="under-product-slide">
+                        </ul>
+                 
+                        <ul style="list-style: none;">
+                            <li class="products-slider-next">
+                            </li>
+                        </ul>
+                         
+            </div>        
+                
+            </div>
+         </div>   
+         
+             
+        
+        
+        
+        
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>       
+<script>
+const hamburger= document.querySelector(".hamburger");
+const navLinks= document.querySelector(".nav-links");
+const links= document.querySelectorAll(".nav-links li");
+const products= document.querySelectorAll(".products");    
+    
+const productsUL1= products[0].querySelectorAll(".products ul");    
+const productsSliderPrev1= products[0].querySelectorAll(".products-slider-prev");  
+const productsSliderNext1= products[0].querySelectorAll(".products-slider-next");    
+    
+const productsUL2= products[1].querySelectorAll(".products ul");    
+const productsSliderPrev2= products[1].querySelectorAll(".products-slider-prev");  
+const productsSliderNext2= products[1].querySelectorAll(".products-slider-next");  
+    
+const productsUL3= products[2].querySelectorAll(".products ul");    
+const productsSliderPrev3= products[2].querySelectorAll(".products-slider-prev");  
+const productsSliderNext3= products[2].querySelectorAll(".products-slider-next");      
+     
+
+hamburger.addEventListener("click",()=>{
+    navLinks.classList.toggle("open");
+
+    links.forEach(function(element){
+
+        element.classList.toggle("fade");
+    });
+
+    hamburger.classList.toggle("toggle");
+});
+
+    
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+    
+    if(window.screen.width<=768)
+    {
+        if ((document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) && document.getElementById("nav-links").className.includes('open')) {
+        document.getElementById("nav-wrapper").style.background = "dimgrey";
+        document.getElementById("nav-links").style.background = "black";
+
+
+        document.getElementById("nav-wrapper").style.zIndex = "100";
+            document.getElementById("nav-links").style.zIndex = "5";
+        document.getElementById("nav-links").style.width = "50%";
+        document.getElementById("nav-links").style.height = "100%";    
+        document.getElementById("nav-wrapper").style.width = "100%";
+         document.getElementById("nav-wrapper").style.height = "6h";    
+      
+         
+   
+        } 
+        else if ((document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) && !document.getElementById("nav-links").className.includes('open')) {
+        document.getElementById("nav-wrapper").style.background = "dimgrey";
+        document.getElementById("nav-links").style.background = "black";
+
+
+        document.getElementById("nav-wrapper").style.zIndex = "100";
+            document.getElementById("nav-links").style.zIndex = "5";
+        document.getElementById("nav-links").style.width = "50%";
+        
+        document.getElementById("nav-wrapper").style.height = "7h";      
+        document.getElementById("nav-wrapper").style.width = "100%";   
+         
+           
+   
+        }
+         else{
+         
+         document.getElementById("nav-wrapper").style.height = "7h";      
+        document.getElementById("nav-wrapper").style.width = "100%";   
+         
+         }
+    
+    }else{
+         if (document.body.scrollTop > 750 || document.documentElement.scrollTop > 750) {
+            document.getElementById("nav").style.background = "black";
+            document.getElementById("nav").style.height = "6h"; 
+
+
+            
+   
+        }
+        else{
+                document.getElementById("nav").style.background = "dimgray";
+            document.getElementById("nav").style.height = "6h"; 
+        
+        }
+            
+    
+    }
+    
+}    
+    
+//products row 1 starts//    
+productsSliderNext1[0].addEventListener('click',productsNext1OnClick);   
+productsSliderPrev1[0].addEventListener('click',productsPrev1OnClick);   
+    
+    
+function productsNext1OnClick(){
+    
+     
+    console.log("productsNextOnClick");
+     for (i = productsUL1.length-4; i > 0; i--) {
+        if(productsUL1[i].className==="active-product-slide" && (productsUL1.length-4))
+        {
+            
+            productsUL1[i].classList.remove("active-product-slide");
+            productsUL1[i].classList.add("under-product-slide");
+            productsUL1[i+1].classList.remove("under-product-slide");
+            productsUL1[i+1].classList.add("active-product-slide");
+            
+            console.log("from item no.: "+i+" to item no.: "+(i+1));
+            
+        }
+    } 
+}
+function productsPrev1OnClick(){
+    
+     console.log("productsPrevOnClick");
+     for (i = 1; i < productsUL1.length; i++) {
+        if(productsUL1[i].className==="active-product-slide" && i!==1)
+        {
+            
+            productsUL1[i].classList.remove("active-product-slide");
+            productsUL1[i].classList.add("under-product-slide");
+            productsUL1[i-1].classList.remove("under-product-slide");
+            productsUL1[i-1].classList.add("active-product-slide");
+            
+            console.log("from item no.: "+i+" to item no.: "+(i-1));
+            
+        }
+    } 
+}    
+
+//products row 1 ends//     
+
+productsSliderNext2[0].addEventListener('click',productsNext2OnClick);   
+productsSliderPrev2[0].addEventListener('click',productsPrev2OnClick);   
+    
+    
+function productsNext2OnClick(){
+    
+     
+    console.log("productsNextOnClick");
+     for (i = productsUL2.length-4; i > 0; i--) {
+        if(productsUL2[i].className==="active-product-slide" && (productsUL2.length-4))
+        {
+            
+            productsUL2[i].classList.remove("active-product-slide");
+            productsUL2[i].classList.add("under-product-slide");
+            productsUL2[i+1].classList.remove("under-product-slide");
+            productsUL2[i+1].classList.add("active-product-slide");
+            
+            console.log("from item no.: "+i+" to item no.: "+(i+1));
+            
+        }
+    } 
+}
+function productsPrev2OnClick(){
+    
+     console.log("productsPrevOnClick");
+     for (i = 1; i < productsUL2.length; i++) {
+        if(productsUL2[i].className==="active-product-slide" && i!==1)
+        {
+            
+            productsUL2[i].classList.remove("active-product-slide");
+            productsUL2[i].classList.add("under-product-slide");
+            productsUL2[i-1].classList.remove("under-product-slide");
+            productsUL2[i-1].classList.add("active-product-slide");
+            
+            console.log("from item no.: "+i+" to item no.: "+(i-1));
+            
+        }
+    } 
+}    
+
+    
+productsSliderNext3[0].addEventListener('click',productsNext3OnClick);   
+productsSliderPrev3[0].addEventListener('click',productsPrev3OnClick);       
+    
+function productsNext3OnClick(){
+    
+     
+    console.log("productsNextOnClick");
+     for (i = productsUL3.length-4; i > 0; i--) {
+        if(productsUL3[i].className==="active-product-slide" && (productsUL3.length-4))
+        {
+            
+            productsUL3[i].classList.remove("active-product-slide");
+            productsUL3[i].classList.add("under-product-slide");
+            productsUL3[i+1].classList.remove("under-product-slide");
+            productsUL3[i+1].classList.add("active-product-slide");
+            
+            console.log("from item no.: "+i+" to item no.: "+(i+1));
+            
+        }
+    } 
+}    
+
+function productsPrev3OnClick(){
+    
+     console.log("productsPrevOnClick");
+     for (i = 1; i < productsUL3.length; i++) {
+        if(productsUL3[i].className==="active-product-slide" && i!==1)
+        {
+            
+            productsUL3[i].classList.remove("active-product-slide");
+            productsUL3[i].classList.add("under-product-slide");
+            productsUL3[i-1].classList.remove("under-product-slide");
+            productsUL3[i-1].classList.add("active-product-slide");
+            
+            console.log("from item no.: "+i+" to item no.: "+(i-1));
+            
+        }
+    } 
+}    
+    
+AOS.init();    
+</script>
+    </div>
+</body>    
+</html>
