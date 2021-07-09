@@ -343,6 +343,7 @@
         
 /*        Animation Ends*/
         
+        
         body{
             margin-right:0;
             margin-left:0;
@@ -1084,13 +1085,17 @@
         height:600px;
         width:100%;
 }       
-        .contacts{
-           display:flex; flex-direction: row;width:100%; margin-top:200px;height:60%;
-        }    
+.contacts{
+           display:flex; 
+           flex-direction: row;
+           width:100%; 
+           margin-top:200px;
+           height:60%;
+}    
         
-        .contact-us{
+.contact-us{
            flex:1;height:100%;width:100%;text-align: center;margin-right:50px;
-        }
+}
 .inputGroup {
   position: relative;
   margin-bottom: 30px;
@@ -1532,8 +1537,8 @@ button {
     
     .contacts{
       padding:20px;
-      flex-direction: column; 
-        height:auto;
+      flex-direction: row; 
+      height:auto;
         
         
     }
