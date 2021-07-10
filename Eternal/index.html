@@ -344,7 +344,7 @@
     margin-top: -30px;
     overflow: hidden; 
     margin-bottom:30px;
-    background-size: contain;
+    background-size: cover;
             
 }
         
@@ -379,7 +379,7 @@
 
 .cover img {
   max-height: 100%;
-  min-width: 100%;
+  width: 100%;
   object-fit: cover;
   vertical-align: bottom;
   border-radius: 15px;
@@ -1681,6 +1681,7 @@
         margin-left:10%;
         margin-right:10%;
         display: grid;
+        overflow-y: hidden;
             
 }        
 
@@ -1773,7 +1774,20 @@
     height:1300px;
     
         
-}        
+} 
+        
+.cover ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding-top:4%;
+  transform: rotate(0deg) translateY(100px);
+          
+        
+}
+        
+        
+        
         
 } 
     
