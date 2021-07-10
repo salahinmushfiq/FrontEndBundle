@@ -179,13 +179,10 @@
     .btn-item{
         
         background-color: transparent;
-        
         transition: all 0.2s ease;
-        
         display: block;
         width: inherit;
         height: 90%;
-        
         text-align: center;
     }
     
@@ -195,13 +192,15 @@
         
         
         border-color: dimgrey;
-        transform: rotateX(15deg);
+/*        transform: rotateX(15deg);*/
 /*        box-shadow: 0 15px 15px lightblue;*/
-
+        color:aliceblue;
         transition: all .5s ease-out;
+        text-decoration: underline overline;
+        
     }
     html[data-useragent*='Android'] body {
-    background-color: silver;
+        background-color: silver;
         border-top: 1em solid blue;
 }
 /* navbar button hover effect   */
@@ -251,9 +250,7 @@
         width:97%;
         border-color: dimgrey;
         transform: rotateY(15deg);
-        box-shadow: -15px 0 15px lightblue;
-
-            transition: all 1s ease-out;
+        transition: all 1s ease-out;
         }
         .nav-links.open{
             clip-path:circle(1000px at 90% 10%); 
@@ -629,7 +626,7 @@
    
     background: whitesmoke;
     background-blend-mode:darken;
-    width: 10%;
+    width: 20%;
     height:100%; 
     border-bottom-left-radius: 25px;
     
@@ -642,7 +639,7 @@
     
 
     height:100%; 
-    width:10%;
+    width:20%;
     background-color: whitesmoke;
     
     color:burlywood;
@@ -654,7 +651,7 @@
     
     
     height:100%; 
-    width:10%;
+    width:20%;
     background-color: whitesmoke;
     border-bottom-right-radius: 25px;
     
@@ -1535,9 +1532,12 @@
         width:97%;
         border-color: dimgrey;
         transform: rotateY(15deg);
-        box-shadow: -15px 0 15px lightblue;
+        color: aliceblue;
+        text-decoration: overline underline;
+        
+/*        box-shadow: -15px 0 15px lightblue;*/
 
-            transition: all 1s ease-out;
+        transition: all 1s ease-out;
         }
         .nav-links.open{
             clip-path:circle(1000px at 90% 10%); 
@@ -2549,15 +2549,16 @@ function menTypeSelectorCLicked(){
                 console.log(productsTypesDIV[i].querySelector(".products-rows"));
                 
                 productsTypesDIV[i].style.style = "opacity:1;";  
-                productsTypesDIV[i].style.transform = "translateX(0%)";
-                productsTypesDIV[i].style.transition = "all 3s";
+                productsTypesDIV[i].style.transform = "translateX(0%) scale(1)";
+                productsTypesDIV[i].style.transition = "all 2s";
 
             }
              else if(productsTypesDIV[i].className==="products-type2-wrapper"){
 
                 productsTypesDIV[i].style.style = "opacity:0;";  
-                productsTypesDIV[i].style.transform = "translateX(100%)";
-                productsTypesDIV[i].style.transition = "all 3s";
+                productsTypesDIV[i].style.transform = "translateX(100%) scale(0)" ;
+                 
+                productsTypesDIV[i].style.transition = "all 2s";
              }
      } 
 
@@ -2576,15 +2577,15 @@ function womenTypeSelectorCLicked(){
                 console.log("women type found");
                 console.log(productsTypesDIV[i].querySelector(".products-rows"));
                 productsTypesDIV[i].style.style = "opacity:1;";  
-                productsTypesDIV[i].style.transform = "translateX(0%)";
-                productsTypesDIV[i].style.transition = "all 3s";
+                productsTypesDIV[i].style.transform = "translateX(0%) scale(1)";
+                productsTypesDIV[i].style.transition = "all 2s";
 
             }
             else if(productsTypesDIV[i].className==="products-type1-wrapper"){
                 
                 productsTypesDIV[i].style.style = "opacity:0;";  
-                productsTypesDIV[i].style.transform = "translateX(100%)";
-                productsTypesDIV[i].style.transition = "all 3s";
+                productsTypesDIV[i].style.transform = "translateX(100%) scale(0)" ;
+                productsTypesDIV[i].style.transition = "all 2s";
 
             }
      } 
