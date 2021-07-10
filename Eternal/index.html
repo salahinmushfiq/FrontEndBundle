@@ -594,7 +594,7 @@
     height:50px; 
     width:100%;
     background: transparent;
-    z-index:2;
+    z-index:1;
     grid-template-columns: auto auto auto auto;
     
     box-sizing: border-box;
@@ -687,6 +687,21 @@
         padding-top:100px;
         
      }
+/*
+    .products ul:nth-child(3)::after{
+        
+        content: "";
+        position: absolute;
+        background:dimgrey;
+        background-blend-mode:lighten;
+        opacity: 0.5;
+        height:15%;
+        width:100%;
+        bottom:0;
+        
+     }
+*/
+    
     .products ul:nth-child(4){
     
         background-color: whitesmoke;
@@ -764,6 +779,69 @@
     
      }
     
+    
+    .products ul:nth-child(3) li,.products ul:nth-child(4) li,.products ul:nth-child(5) li,.products ul:nth-child(6) li{
+    
+         position:relative;
+    
+    }
+    .products ul:nth-child(3) li::after,.products ul:nth-child(4) li::after,.products ul:nth-child(5) li::after,.products ul:nth-child(6) li::after{
+    
+        content:"Track Id: 01111";
+        
+        position: absolute;
+        background:whitesmoke;
+        background-blend-mode:exclusion;
+        opacity: 0.9;
+        height:5%;
+        width:100%;
+        color:burlywood;
+        bottom:0;
+        font-weight: bold;
+        transform: scaleY(0);
+
+    
+    }
+    .products ul:nth-child(3) li::before,.products ul:nth-child(4) li::before,.products ul:nth-child(5) li::before,.products ul:nth-child(6) li::before{
+    
+        content:"Price: NAN";
+        
+        position: absolute;
+        background:whitesmoke;
+        background-blend-mode:exclusion;
+        opacity: 0.9;
+        height:5%;
+        width:100%;
+        color:burlywood;
+        bottom:5%;
+        font-weight: bold;
+        transform: scaleY(0);
+        
+
+    
+    }
+    .products ul:nth-child(3) li:hover::before,.products ul:nth-child(4) li:hover::before,.products ul:nth-child(5) li:hover::before,.products ul:nth-child(6) li:hover::before{
+    
+        transform: scaleY(1);
+        
+        transition: all 1s;
+
+    
+    }
+    
+    
+    .products ul:nth-child(3) li:hover::after,.products ul:nth-child(4) li:hover::after,.products ul:nth-child(5) li:hover::after,.products ul:nth-child(6) li:hover::after{
+    
+        transform: scaleY(1);
+        
+        transition: all 1s;
+
+    
+    }
+    
+    
+    
+    
     .active-product-slide{
     
         z-index: 2;
@@ -802,9 +880,16 @@
 
 /* here .products:nth-child(1) defines this is row 1. ul:nth-child(3) means the first slide and li is the individual elements meaning pictures itself from left to right*/    
      
+
+    
+    
     .products-type1-wrapper .products:nth-child(1) ul:nth-child(3) li:nth-child(1){
         background-image: url("images/productsMen1.jpg");
+
      }
+
+    
+    
     .products-type1-wrapper .products:nth-child(1) ul:nth-child(3) li:nth-child(2){
         background-image: url("images/productsMen2.jpg");
     
