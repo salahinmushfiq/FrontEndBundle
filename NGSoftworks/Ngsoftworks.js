@@ -1,18 +1,18 @@
 
-    const hamburger= document.querySelector(".hamburger");
-    const navLinks= document.querySelector(".nav-links");
-    const links= document.querySelectorAll(".nav-links li");
+const hamburger= document.querySelector(".hamburger");
+const navLinks= document.querySelector(".nav-links");
+const links= document.querySelectorAll(".nav-links li");
 
-    hamburger.addEventListener("click",()=>{
-        navLinks.classList.toggle("open");
+hamburger.addEventListener("click",()=>{
+    navLinks.classList.toggle("open");
 
-        links.forEach(function(element){
+    links.forEach(function(element){
 
-            element.classList.toggle("fade");
-        });
+        element.classList.toggle("fade");
+    });
 
         hamburger.classList.toggle("toggle");
-    });
+});
 
     // cursor follower//
 
