@@ -1126,8 +1126,8 @@ button {
            
            <ul class="nav-links">
                <li><a class="btn-item homeBtn" href="#">Home</a></li>
-<!--               <li><a class="btn-item servicesBtn" href="#">Services</a></li>-->
-               <li><a class="btn-item reviewsBtn" href="#">Reviews</a></li>
+               <li><a class="btn-item servicesBtn" href="#">Services</a></li>
+<!--               <li><a class="btn-item reviewsBtn" href="#">Reviews</a></li>-->
                <li><a class="btn-item contactsBtn" href="#">Contacts</a></li>
             </ul>
        </div>
@@ -1754,16 +1754,12 @@ jQuery(document).ready(function() {
 });  
     
    
-//     $(".servicesBtn").click(function() {
-//    $('html,body').animate({
-//        scrollTop: $(".service-wrapper").offset().top},
-//        'slow');
-//});
-      $(".reviewsBtn").click(function() {
+     $(".servicesBtn").click(function() {
     $('html,body').animate({
-        scrollTop: $(".reviews-wrapper").offset().top},
+        scrollTop: $(".service-wrapper").offset().top},
         'slow');
 });
+
     $(".contactsBtn").click(function() {
     $('html,body').animate({
         scrollTop: $(".contacts-wrapper").offset().top},
