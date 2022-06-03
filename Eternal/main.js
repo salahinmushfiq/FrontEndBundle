@@ -129,7 +129,8 @@ function scrollFunction() {
             document.getElementById("nav-wrapper").style.background = "black";
             document.getElementById("nav-links").style.background = "black";
             document.getElementById("nav").style.background = "black";
-            document.getElementById("nav").style.height = "6vh";
+            document.getElementById("nav").style.height = "6vh+5px";
+            document.getElementById("nav-links").style.height =  "6vh+5px";
             document.getElementById("nav").style.transition= "300ms linear";
             const nodes = document.querySelectorAll('.nav-links a');
 
