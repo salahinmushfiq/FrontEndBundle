@@ -296,6 +296,7 @@ html {
            top:0;
            transition: all .5s;  
            height:6vh;
+            background: black;
         }
         li.fade{
             opacity:1;
@@ -328,7 +329,7 @@ html {
         background-repeat: no-repeat;
         background-blend-mode: lighten;
         height:auto;
-        margin-top: -30px;
+        
         overflow: hidden; 
         margin-bottom:30px;
         background-size: cover;
@@ -343,6 +344,7 @@ html {
     }
     
     .cover-right{
+        margin-top:250px;
         flex:2;
         width: 100%;
     } 

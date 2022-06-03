@@ -109,6 +109,7 @@ function scrollFunction() {
         }else if((document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) && !document.getElementById("nav-links").className.includes('open')){
 //                document.getElementById("nav-wrapper").style.background = "transparent";
                 document.getElementById("nav-links").style.background = "black";
+            
                 document.getElementById("nav-wrapper").style.background = "black";
                 document.getElementById("nav-wrapper").style.zIndex = "100";
                 
@@ -140,6 +141,7 @@ function scrollFunction() {
         }else{
                 document.getElementById("nav-wrapper").style.background = "transparent";
                 document.getElementById("nav-links").style.background = "transparent";
+                document.getElementById("nav").style.background = "black";
                 const nodes = document.querySelectorAll('.nav-links a');
                 document.getElementById("nav").style.height = "8vh"; 
                 document.getElementById("nav").style.transition= "300ms linear";
