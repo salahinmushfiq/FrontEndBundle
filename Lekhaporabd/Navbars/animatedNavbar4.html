@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Animated Navbar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <style>
+        section {
+            height: 200vh;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .menu {
+            font-family: sans-serif;
+            position: relative;
+            min-height: 48px;
+            max-width: 1024px;
+            margin: 0 auto;
+            z-index: 9;
+        }
+
+        .menu .main-menu {
+            z-index: 2;
+            top: 48px;
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            margin: 0;
+            padding: 0 48px;
+            height: auto;
+            box-sizing: border-box;
+            /* overflow: hidden; */
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+            -webkit-transition-delay: 1s;
+            transition-delay: 1s;
+            background-color: #000;
+            transition: background 0.45s linear, max-height 0.35s ease-in 200ms;
+            max-height: 0;
+        }
+
+        .tm:checked ~ .main-menu {
+            visibility: visible;
+            max-height: 100%;
+            -webkit-transition-delay: 1s;
+            transition-delay: 1s;
+            background: #000;
+            transition: background 0.35s linear, max-height 0.35s ease-in-out 200ms;
+            height: 100%;
+        }
+
+        .menu a.logo {
+            position: fixed;
+            top: 0;
+            left: 48px;
+            width: auto;
+            z-index: 999;
+        }
+
+        .menu input[type="checkbox"],
+        .menu ul span.drop-icon {
+            display: none;
+        }
+
+        /* .menu li,
+        [for="tm"],
+        .menu .sub-menu {
+            border-style: solid;
+            border-color: rgba(255, 255, 255, 0.11);
+        } */
+
+        /* .menu li,
+        [for="tm"] {
+            border-width: 0 0 1px;
+        } */
+
+        .menu .sub-menu {
+            background-color: #444;
+            /* 	border-width: 1px 1px 0; */
+            margin: 0 1em;
+        }
+
+        .menu .sub-menu li:last-child {
+            /* 	border-width: 0; */
+        }
+
+        .menu li,
+        [for="tm"],
+        .menu a {
+            color: white;
+            overflow: hidden;
+        }
+
+        [for="tm"] {
+            background: #000;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 99;
+            padding: 0 70px;
+            line-height: 48px;
+            height: 48px;
+        }
+
+        .menu a {
+            padding: 1em 20px;
+            font-weight: 100;
+            display: inline-block;
+            width: 100%;
+            transition: all .125s ease-in-out;
+            text-transform: uppercase;
+            text-decoration: none;
+            overflow: hidden;
+            font-weight: 400;
+            font-family: 'Roboto', sans-serif;
+            font-synthesis: none;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            -moz-font-feature-settings: 'liga', 'kern';
+            direction: ltr;
+            font-size: 15px;
+        }
+
+        .menu ul li:focus,
+        .menu ul li:hover,
+        .current-menu-item {
+            color: #000;
+            background-color: white;
+        }
+
+        .menu ul li:hover a {
+            color: #000;
+        }
+
+        @media only screen and (min-width: 1024px) {
+            .menu .main-menu,
+            .tm:checked ~ .main-menu {
+                display: block;
+                opacity: 1;
+                max-height: initial;
+                top: 0;
+                visibility: visible;
+                max-height: initial;
+                background-color: #000;
+                height: 60px;
+                padding-left: 0;
+                padding-right: 0;
+                text-align: right;
+                max-width: 1024px;
+                margin: 0 auto;
+            }
+            [for="tm"],
+            .menu label.drop-icon {
+                display: none;
+            }
+            .menu ul span.drop-icon {
+                display: inline-block;
+            }
+            .menu li {
+                display: inline-block;
+                position: relative;
+                vertical-align: middle;
+                opacity: 1;
+                pointer-events: auto;
+                -webkit-transform: none;
+                transform: none;
+                width: auto;
+                height: 58px;
+            }
+            .menu .main-menu>li {
+                opacity: 1;
+            }
+            .menu ul li:hover,
+            .current-menu-item {
+                background-color: rgba(255, 255, 255, 0);
+            }
+            .menu ul li:hover a {
+                color: white;
+            }
+        }
+
+        .main-menu>li {
+            height: 48px;
+            /* 	border-bottom: 1px solid #333; */
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.35s ease-out, transform 0.35s ease-out;
+        }
+
+        .main-menu>li:nth-child(9) {
+            transition-delay: 450ms, 450ms
+        }
+
+        .main-menu>li:nth-child(8) {
+            transition-delay: 400ms, 400ms
+        }
+
+        .main-menu>li:nth-child(7) {
+            transition-delay: 350ms, 350ms
+        }
+
+        .main-menu>li:nth-child(6) {
+            transition-delay: 300ms, 300ms
+        }
+
+        .main-menu>li:nth-child(5) {
+            transition-delay: 250ms, 250ms
+        }
+
+        .main-menu>li:nth-child(4) {
+            transition-delay: 200ms, 200ms
+        }
+
+        .main-menu>li:nth-child(3) {
+            transition-delay: 150ms, 150ms
+        }
+
+        .main-menu>li:nth-child(2) {
+            transition-delay: 100ms, 100ms
+        }
+
+        .main-menu>li:nth-child(1) {
+            transition-delay: 50ms, 50ms
+        }
+
+        .tm:checked ~ .main-menu>li,
+        .tm:target ~ .main-menu>li {
+            opacity: 1;
+            pointer-events: auto;
+            -webkit-transform: none;
+            transform: none
+        }
+
+        .tm:checked ~ .main-menu>li:nth-child(1),
+        .tm:target ~ .main-menu>li:nth-child(1) {
+            transition-delay: 250ms, 250ms
+        }
+
+        .tm:checked ~ .main-menu>li:nth-child(2),
+        .tm:target ~ .main-menu>li:nth-child(2) {
+            transition-delay: 300ms, 300ms
+        }
+
+        .tm:checked ~ .main-menu>li:nth-child(3),
+        .tm:target ~ .main-menu>li:nth-child(3) {
+            transition-delay: 350ms, 350ms
+        }
+
+        .tm:checked ~ .main-menu>li:nth-child(4),
+        .tm:target ~ .main-menu>li:nth-child(4) {
+            transition-delay: 400ms, 400ms
+        }
+
+        .tm:checked ~ .main-menu>li:nth-child(5),
+        .tm:target ~ .main-menu>li:nth-child(5) {
+            transition-delay: 450ms, 450ms
+        }
+
+        .tm:checked ~ .main-menu>li:nth-child(6),
+        .tm:target ~ .main-menu>li:nth-child(6) {
+            transition-delay: 500ms, 500ms
+        }
+
+        .tm:checked ~ .main-menu>li:nth-child(7),
+        .tm:target ~ .main-menu>li:nth-child(7) {
+            transition-delay: 550ms, 550ms
+        }
+
+        .tm:checked ~ .main-menu>li:nth-child(8),
+        .tm:target ~ .main-menu>li:nth-child(8) {
+            transition-delay: 600ms, 600ms
+        }
+
+        .tm:checked ~ .main-menu>li:nth-child(9),
+        .tm:target ~ .main-menu>li:nth-child(9) {
+            transition-delay: 650ms, 650ms
+        }
+
+
+        /* here */
+
+        [for="tm"] .menu-toggle {
+            top: 15px;
+            z-index: 2;
+            right: 45px;
+            width: 22px;
+            height: 4px;
+            padding: 8px 0;
+            cursor: pointer;
+            border-radius: 50%;
+            position: absolute;
+        }
+
+        [for="tm"] .menu-toggle span {
+            height: 2px;
+            display: block;
+            overflow: hidden;
+            text-indent: 100%;
+            background: #ffffff;
+            white-space: nowrap;
+            transition: background 0.3s ease-in-out;
+        }
+
+        [for="tm"] .menu-toggle::before,
+        [for="tm"] .menu-toggle::after {
+            left: 0;
+            content: '';
+            width: 22px;
+            height: 2px;
+            background: #ffffff;
+            position: absolute;
+            transform-origin: center center;
+            transition: width 0.2s ease-in-out, background 0.2s ease-in-out, top 0.2s ease-in-out, bottom 0.2s ease-in-out, left 0.2s ease-in-out, right 0.2s ease-in-out, transform 0.2s ease-in-out;
+        }
+
+        [for="tm"] .menu-toggle::before {
+            top: 0px;
+        }
+
+        [for="tm"] .menu-toggle::after {
+            bottom: 2px;
+        }
+
+        .tm:checked ~ [for="tm"] .menu-toggle span {
+            background: rgba(255, 255, 255, 0);
+        }
+
+        .tm:checked ~ [for="tm"] .menu-toggle::before {
+            top: 10px;
+            transform: rotate(-45deg);
+        }
+
+        .tm:checked ~ [for="tm"] .menu-toggle::after {
+            bottom: 8px;
+            -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+
+        .tm:checked ~ [for="tm"] .menu-toggle::before,
+        .tm:checked ~ [for="tm"] .menu-toggle::after {
+            width: 26px;
+            background: #fff;
+        }
+
+        .tm:checked ~ [for="tm"] .menu-toggle:hover span,
+        .tm:checked ~ [for="tm"] .menu-toggle:focus span,
+        .tm:checked ~ [for="tm"] .menu-toggle:active span {
+            background: rgba(255, 255, 255, 0);
+        }
+
+
+        .tm:checked ~ [for="tm"] .menu-toggle:hover span,
+        .tm:checked ~ [for="tm"] .menu-toggle:focus span,
+        .tm:checked ~ [for="tm"] .menu-toggle:active span {
+            background: rgba(255, 255, 255, 0);
+        }
+
+        .menu a.logo img {
+            max-height: 20px;
+            height: 20px;
+            display: block;
+        }
+
+        @media (min-width: 1024px) {
+            .menu {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+            }
+            .menu:before {
+                content: '';
+                position: fixed;
+                z-index: 1;
+                width: 100%;
+                height: 60px;
+                background: #000;
+                left: 0;
+            }
+            .menu a {
+                width: auto;
+                padding: 0 15px;
+                line-height: 60px;
+            }
+            .menu a.logo {
+                position: relative;
+                padding: 0;
+                left: 0;
+            }
+            .menu a.logo img {
+                height: auto;
+                width: 135px;
+                max-height: initial;
+                padding: 15px 0;
+                display: inline-block;
+                vertical-align: middle;
+            }
+            .menu ul li a:before,
+            .current-menu-item:before {
+                content: '';
+                display: inline-block;
+                height: 1px;
+                background-color: white;
+                width: 80%;
+                position: absolute;
+                top: auto;
+                bottom: 5px;
+                left: 10%;
+                transition: opacity .4s ease;
+                opacity: 0;
+            }
+            .menu ul li:hover a:before,
+            .current-menu-item:before {
+                opacity: 1;
+            }
+        }
+
+        .main-menu {
+            -ms-overflow-style: none;
+            overflow: -moz-scrollbars-none;
+        }
+        .main-menu::-webkit-scrollbar {
+            display: none;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+    </style>
+</head>
+<body>
+
+<nav id="menu" class="menu">
+    <a href="#0" class="logo"> <img src="https://static.codepen.io/assets/logos/codepen-logo-eccd67a3067908687f74b7725787a321b0a13ce18601ba839aaab2bd8df9d772.svg" height="24">
+    </a>
+    <input type="checkbox" id="tm" class="tm">
+    <label for="tm" id="toggle-menu">
+        <div class="menu-toggle"><span>Menu</span></div>
+    </label>
+    <ul class="main-menu cf">
+        <li><a href="index.html#">Link</a></li>
+        <li><a href="index.html#2">Link</a></li>
+        <li><a href="index.html#3">Link</a></li>
+        <li><a href="index.html#4">Link</a></li>
+        <li><a href="index.html#5">Link</a></li>
+        <li><a href="index.html#6">Link</a></li>
+    </ul>
+</nav>
+<main>
+    <section></section>
+</main>
+
+<script src="jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+<script>
+
+    $( "li" ).hover(
+        function() {
+            $(this).find("span").stop().animate({
+                width:"100%",
+                opacity:"1",
+            }, 400, function () {
+            })
+        }, function() {
+            $(this).find("span").stop().animate({
+                width:"0%",
+                opacity:"0",
+            }, 400, function () {
+            })
+        }
+    );
+</script>
+</body>
+</html>

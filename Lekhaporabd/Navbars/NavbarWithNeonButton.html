@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <STYLE>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: consolas, sans-serif;
+        }
+
+        :root {
+            --bg-color: #031321;
+            --primary-color: #2196f3;
+            --secondary-color: #255784;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background: royalblue;
+        }
+
+        .btn {
+            position: relative;
+            display: block;
+            padding: 5px 5px;
+            margin: 15px 5px;
+            color: #9dc02e;
+            /*text-transform: uppercase;*/
+
+            text-decoration: none;
+            font-size: 2rem;
+            overflow: hidden;
+            transition: 0.2s;
+        }
+        .btn:hover {
+            color: white;
+            background: #9dc02e;
+            box-shadow: 0 0 20px #9dc02e, 0 0 80px #9dc02e,
+            0 0 160px #9dc02e, 0 0 320px #9dc02e;
+            transition-delay: 1s;
+        }
+
+        .btn span {
+            position: absolute;
+            display: block;
+        }
+        .btn span:nth-child(1) {
+            top: 0;
+            transform: translateX(-115%);
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, #9dc02e);
+        }
+        .btn:hover span:nth-child(1) {
+            transform: translateX(100%);
+            transition: 1s;
+        }
+        .btn span:nth-child(3) {
+            bottom: 0;
+            transform: translateX(100%);
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(270deg, transparent, #9dc02e);
+        }
+        .btn:hover span:nth-child(3) {
+            transform: translateX(-115%);
+            transition: 1s 0.5s;
+        }
+        .btn span:nth-child(2) {
+            right: 0;
+            transform: translateY(-130%);
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, transparent, #9dc02e);
+        }
+        .btn:hover span:nth-child(2) {
+            transform: translateY(100%);
+            transition: 1s 0.25s;
+        }
+        .btn span:nth-child(4) {
+            left: 0;
+            transform: translateY(100%);
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(360deg, transparent, #9dc02e);
+        }
+        .btn:hover span:nth-child(4) {
+            transform: translateY(-130%);
+            transition: 1s 0.75s;
+        }
+        .btn:hover a {
+           color:white;
+        }
+        @media only screen and (max-width: 1200px) {
+            .btn{
+                height: 80%;
+                width: 60%;
+                padding: 5px 5px;
+                margin-bottom: 30px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+           .navbar-collapse{
+               left:auto;
+               right: auto;
+               color: grey;
+           }
+        }
+
+  </STYLE>
+</head>
+<body>
+<!--Navbar-->
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: white;width: 100%;top:0px; position: absolute; ">
+
+    <!-- Navbar brand -->
+    <img class="navbar-brand" src="../logo.jpg" style="position: relative;float: left; height: 100%; width:100px;margin-right: 60%;"  href="#"/>
+
+    <!-- Collapse button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+            aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span style="background-color: white;" class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="basicExampleNav" style="position: relative; ">
+
+        <!-- Links -->
+        <ul class="navbar-nav mr-auto" >
+            <li class="nav-item active">
+                <a href="#" class="btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    Home
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    About
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    Contacts
+                </a>
+            </li>
+
+
+        </ul>
+        <!-- Links -->
+
+
+    </div>
+    <!-- Collapsible content -->
+
+</nav>
+<!--/.Navbar-->
+</body>
+</html>

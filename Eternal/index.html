@@ -1,1920 +1,27 @@
 <html>
 <head>
-    <link rel="shortcut icon" href="images/logoCropped.png" />
-        <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    
+      <link rel="shortcut icon" href="images/eternal_logo.JPG" />
+      <meta content="width=device-width, initial-scale=1" name="viewport" />
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <!-- Our project just needs Font Awesome Solid + Brands -->
+      <script defer src="js/brands.js"></script>
+      <script defer src="js/solid.js"></script>
+      <script defer src="js/fontawesome.js"></script>
 
       <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="fontawesome-free-5.15.3-web/css/all.css"/>
-    <title>E-commerce</title>  
+    <link rel="stylesheet" href="main.css"> 
+    <title>Eternal</title>  
 <!--    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />-->
-<style>
-    body{
-            margin-right:0;
-            margin-left:0;
-            margin-top:0;
-            margin-bottom:0;
-            padding-right:0;
-            padding-left:0;
-            width: 100%;
-            cursor:url("images/finger_3.png"),auto;
-            overflow-x: hidden;
-            -webkit-user-select: none; /* Safari */        
-            -moz-user-select: none; /* Firefox */
-            -ms-user-select: none; /* IE10+/Edge */
-            user-select: none; /* Standard */
-            overflow-x: hidden;
-            
-        }
-    
-    h1{
-        color:burlywood;
-    
-    }
-    #loading{
-            
-            position:fixed;
-            width:100%;
-            height:100%;
-/*            background:#fff url('https://i.gifer.com/77M0.gif') no-repeat center;*/
-/*            background:#ffff url('https://i.gifer.com/Bd2z.gif') no-repeat center contain;*/
-            background:#f7f8fa url('https://i.gifer.com/Vwcv.gif') no-repeat center;
-            
-            background-size: contain;
-            z-index: 99999;
-            overflow-x: hidden;
-            
-    }
-    
-    
-    @keyframes expandGalleryImage {
-        0% {
-            
-            transform: scale(1) ;
-            opacity:1;
-/*            background: rgba(0,0,0,0.1);*/
-        }
-        50%{
-            transform: scale(.5);
-            opacity:.5;
-/*            background: rgba(0,0,0,0.2);*/
-            
-        }
-        50%{
-            transform: scale(.8);
-            opacity:.8;
-/*            background: rgba(0,0,0,0.3);*/
-            
-        }
-        75%{
-            transform: scale(.5);
-            opacity:.5;
-/*            background: rgba(0,0,0,0.2);*/
-            
-        }
-         100% {
-            
-            transform: scale(1) ;
-             opacity:1;
-/*            background: rgba(0,0,0,0.1);  */
-        }
-        
-    }
-    
-    @keyframes productsSlideChange{
-   
-        
-        
-        0%{
-            transform: translateY(0);
-            opacity:1;
-        }
-        50%{
-           transform: translateY(5%);
-            opacity:.5;
-        
-        }
-        100%{
-           transform: translateY(0);
-            opacity:1;
-        
-        }
-    
-    }
-    
-    
-    .main{
-            
-            height:auto;
-            width: 100%;
-            display: grid;
-            grid-template-columns: auto;
-            grid-gap: 10px;
-            box-sizing: border-box;
-        
-            display: grid;
-            
-        } 
-    .cover{
-        position:relative;
-        width: 70%;
-        background-color:dimgray;
-        height:700px;
-    }
-    .nav-wrapper{
-        position: absolute;
-        position: fixed;
-        top:0;
-        width: 100%;
-        background:  transparent;
-        z-index:5;
-        right:0;
-    }
-    nav{
-        height: 7vh;
-        background-color:dimgrey;
-        opacity: .8;
-        position:relative;
-        z-index:5;
-    }
-    .nav-links{
-        
-        
-        width:80%;
-/*        background-color: grey;*/
-        background: transparent;
-        height:inherit;
-        margin:0px;
-        position:fixed;
-        align-items: center;
-        margin-left: auto;
-        padding: 0;
-        flex-direction: row;
-        display: flex;
-        justify-content: space-around;
-        z-index:5;
-    }
-    .nav-links li a{
-        color: white;
-        text-decoration: none;
-        font-size: 20px;
-        font-weight: 600;
-        line-height: 4vh;
-        color: burlywood;
-        z-index:5;
-     }
-    
-    .nav-links li{
-        
-        list-style: none;
-        width: inherit;
-        height:inherit;
-        margin-left: 15px;
-        margin-top:10px;
-        margin-bottom:10px;
-          }
-    
-/* navbar button hover effect   */
-    .btn-item{
-        
-        background-color: transparent;
-        transition: all 0.2s ease;
-        display: block;
-        width: inherit;
-        height: 90%;
-        text-align: center;
-    }
-    
-    .btn-item:hover{
-        
-        
-        
-        
-        border-color: dimgrey;
-/*        transform: rotateX(15deg);*/
-/*        box-shadow: 0 15px 15px lightblue;*/
-        color:aliceblue;
-        transition: all .5s ease-out;
-        text-decoration: underline overline;
-        
-    }
-    html[data-useragent*='Android'] body {
-        background-color: silver;
-        border-top: 1em solid blue;
-}
-/* navbar button hover effect   */
-    @media screen and (max-width: 768px){
-        
-/*        responsible for bubble effect*/
-        .drawer{
-            margin-right:auto; 
-            margin-left:auto; 
-            margin-bottom: auto;
-            margin-top: auto;
-            width:100%;
-            height: inherit;
-            background-color: dimgray;
-            
-        }
-        
-        .nav-links{
-            position:fixed;
-            flex-direction:column;
-            width:50%;
-            height:100vh;
-            color:white;
-            top:0;
-            left:50%;
-/*            align-content: center;*/
-            clip-path:circle(0 at 90% -10%); 
-            -webkit-clip-path:circle(0 at 90% 0%);
-            
-            transition: all 1s ease-out;
-            text-align: center;
-            opacity: 0.9;
-            padding:0;
-            justify-content: center;
-            background-color:dimgray;
-            
-        }
-        .btn-item{
-           
-           width: 100%;
-           margin-left:auto; margin-right:auto;    
-           padding:0;
-           height:70px;
-        }
-        .btn-item:hover{
-        
-        width:97%;
-        border-color: dimgrey;
-        transform: rotateY(15deg);
-        transition: all 1s ease-out;
-        }
-        .nav-links.open{
-            clip-path:circle(1000px at 90% 10%); 
-            -webkit-clip-path:circle(1000px at 90% 10%);
-            transition: all 1s ease-out;
-            
-        }
-        /*        responsible for bubble effect*/
-        .line{
-            width:30px;
-            height:3px;
-            background:white;
-            margin: 5px;
-            
-            
-        }
-        .hamburger{
-            position: fixed;
-            cursor: pointer;
-            right: 5%;
-            top:0%;
-            transform:translate(-5%,50%);
-            z-index: 100;
-            display: block;
-            
-        }
-        .hamburger div{
-            transition: all 0.3s ease;
-        }
-        
-        .nav-links li{
-            height:70px;
-            opacity:0;
 
-        }
-       .nav-links li a{
-            font-size: 25px;
-            
-            line-height: 70px;
-            vertical-align: middle;
-        }
-        .nav-links li:nth-child(1){
-            transition: all 0.5 2s;
-        }
-        .nav-links li:nth-child(2){
-            transition: all 0.5 4s;
-        }
-        .nav-links li:nth-child(3){
-            transition: all 0.5 6s;
-        }
-        .nav-links li:nth-child(4){
-            transition: all 0.5 8s;
-        }
-        .nav-links li:nth-child(5){
-            transition: all 0.5 10s;
-        }
-        li.fade{
-            opacity:1;
-        }
-        .toggle .line1{
-            transform: rotate(-45deg) translate(-5px,6px);
-        }
-        .toggle .line2{
-            opacity: 0;
-        }
-        .toggle .line3{
-            transform: rotate(45deg) translate(-5px,-6px);
-        }
-               
-        
-} 
-    
-    
-    
-    
-    
-    /*image gallery starts         */
-        
-.cover{
-        
-    width: 100%;
-    background-image:url(images/hotelchain.PNG);
-    background-image:url(images/mainCover2.jpg);
-/*    background-image:url(images/mainCover1.jpg);*/
-    background-repeat: no-repeat;
-    background-blend-mode: lighten;
-    height:auto;
-    margin-top: -30px;
-    overflow: hidden; 
-    margin-bottom:30px;
-    background-size: cover;
-            
-}
-        
-/*        // BASIC*/
-
-.cover ul {
-  display: flex;
-  flex-wrap: wrap;
-  list-style: none;
-  padding-top:4%;
-  transform: rotate(25deg);
-  width: 60%;
-  margin-left: auto;
-  height:auto;  
-  overflow: hidden; 
-  padding-bottom:4%;
-  
-/*  background-size: cover;    */
-}
-
-.cover li {
-  height: 40vh;
-  flex-grow: 1;
-  margin: 15px; 
-  
-}
-
-.cover li:last-child {
-  
-  flex-grow: 10;
-}
-
-.cover img {
-  max-height: 100%;
-  width: 100%;
-  object-fit: cover;
-  vertical-align: bottom;
-  border-radius: 15px;
-  border-style: solid;
-  border-color:whitesmoke;
-  border-width: 5px;
-  background-color:aliceblue;    
-   
-}
-
-.cover img:hover {
-    
-   transform: scale(1.02);
-   transition-duration:1s;
-   transition-timing-function: ease-in-out;
-    
-} 
-
-.modal-image{
-    height:auto;
-    width:80%;
-    
-}    
-
-    
-.gallery{
-   
-    
-    width:100%;
-    min-height:600px;
-    position: relative;
-    
-    align-content: center;
-
-    overflow: hidden;
-    z-index: 2;
-    
-    
-}    
-    
-
-
-.gallery ul{
-    position: absolute;
-    display:flex;
-    flex-direction: row;
-/*    flex-wrap: nowrap;*/
-    height:auto;
-    
-    width:90%;
-    list-style: none;
-    min-height:600px;
-/*    background-color: antiquewhite;*/
-    right:5%;
-    left:5%;
-    padding: 0;
-    margin-top:100px;
-        
-}    
-.gallery ul li:nth-child(3){
-    
-     flex:1.5;
-     width:100%;
-     height:auto;
-     background-image:url("images/hotelchain%20Cropped.jpg");    
-     background-image:url("images/featuredImage4.jpg");    
-    
-        
-}
-.gallery ul li:nth-child(1){
-    
-     flex:1.5;
-     width:100%;
-     height:auto;
-     background-image:url("images/travelerchoice%20Cropped.jpg");  
-     background-image:url("images/featuredImage2.jpg"); 
-
-    
-}
-.gallery ul li:nth-child(2){
-    
-    
-     flex:1;
-     width:100%;
-     height:auto;
-     margin-left:15px;
-     margin-right:15px;
-     background-image:url("images/1-removebg-preview_3.png");  
-     background-image:url("images/featuredImage3.jpg"); 
-     
-
-        
-}
-.gallery ul li{
-     
-     background-repeat: no-repeat;
-     background-size: contain;
-     background-position:center;
-     position: relative;
-    
-}
-.gallery ul li:hover{
-    
-        transform: scale(1.02);
-        transition-duration:.5s;
-        transform-style:preserve-3d;
-        transition-timing-function: ease-in;
-        
-    
-}    
-    
-.gallery ul li:nth-child(1) h1,.gallery ul li:nth-child(3) h1{
-    
-/*     position:absolute;*/
-     align-content: center;
-      
-     width:100%;
-     height:50px;
-     text-align: center;
-     margin-top:400px;
-        
-}
-.gallery ul li:nth-child(2) h1{
-     position:absolute;
-     top:200px;
-
-     width:100%;
-     height:50px;
-     text-align: center;
-    
-}  
-    
-
-    
-/*
-    .products-wrapper{
-       
-         display:block;
-         margin-right:auto;
-         margin-left:auto;
-        
-         width: 100%;
-         height:900px;
-         position:relative;
-         margin-top:40%;
-    
-    }
-*/
-
-.products-wrapper{
-        position: relative;
-        width:100%;
-        height:2000px;
-        padding:0;
-        margin:0;
-}    
-.products-rows{
-        
-        position: relative;
-        width:100%;
-        height:1900px;
-        grid-template-columns: auto;
-        grid-gap: 180px;
-        box-sizing: border-box;
-        margin-left:auto;
-        margin-right:auto;
-        display: grid;
-        align-content: center;
-        padding: 5px;
-    
-}    
-.products {
-    
-        position: relative;
-        width:100%;
-        height:600px;
-        grid-template-columns: auto;
-        grid-gap: 10px;
-        box-sizing: border-box;
-        margin-left:auto;
-        margin-right:auto;
-        display: grid;
-        align-content: center;
-        padding: 5px;
-           
-    
-}
-.products:nth-child(1) ul h1,.products:nth-child(2) ul h1,.products:nth-child(3) ul h1{
-    
-        position: absolute;
-        height:30px;
-        top:82%;
-        z-index: 20;
-        grid-template-columns: auto auto auto auto;
-        grid-gap: 10px;
-        box-sizing: border-box;
-        display: grid;
-        width:20%;
-        text-align: center;
-        
-           
-    
-}
- .products-wrapper h1:nth-child(1){
-            
-        width: 100%; text-align: center; top:0px;z-index:2;position:absolute; margin:0;
-     
-            
-}   
-
-.product-type-selector{
-    
-    position:relative; 
-    margin-top:120px;
-    height:50px; 
-    width:100%;
-    background: transparent;
-    z-index:1;
-    grid-template-columns: auto auto auto auto;
-    
-    box-sizing: border-box;
-    display:flex;
-    flex-direction: row;
-    justify-content: center;
-    opacity:0.8;
-    
-    
-} 
-/*
-.product-type-selector button:nth-child(1):before{
-    
-    content: "";
-    position: absolute;
-    right:80%;
-    top:30px;
-    width:30px;
-    height:70%;
-    border-bottom-right-radius: 30px;
-    transform: scaleX(1);
-    
-    background: white;
-    
-} 
-*/
-.product-type-selector button:nth-child(1){
-    
-   
-    background: whitesmoke;
-    background-blend-mode:darken;
-    width: 20%;
-    height:100%; 
-    border-bottom-left-radius: 25px;
-    
-    color:burlywood;
-    
-    
-}  
-    .product-type-selector button:nth-child(2){
-    
-    
-
-    height:100%; 
-    width:20%;
-    background-color: whitesmoke;
-    
-    color:burlywood;
-        
-/*    margin-left:40%;*/
-    
-} 
-    .product-type-selector button:nth-child(3){
-    
-    
-    height:100%; 
-    width:20%;
-    background-color: whitesmoke;
-    border-bottom-right-radius: 25px;
-    
-    color:burlywood;  
-    
-} 
-
-
-    .products ul{
-        top:300px;
-    }
-
-    
-    
-    .products ul:nth-child(3){
-    
-        background-color:whitesmoke;
-        background-blend-mode:exclusion;
-        grid-template-columns: auto auto auto auto;
-        grid-gap: 10px;
-        box-sizing: border-box;
-        display: grid;
-        width:80%;
-        height:inherit;
-        list-style: none;
-        padding:0;
-        position:absolute;
-        
-        margin-left: 10%;
-        margin-right:10%;
-        border-radius: 5px;
-
-        padding-top:100px;
-        
-     }
-/*
-    .products ul:nth-child(3)::after{
-        
-        content: "";
-        position: absolute;
-        background:dimgrey;
-        background-blend-mode:lighten;
-        opacity: 0.5;
-        height:15%;
-        width:100%;
-        bottom:0;
-        
-     }
-*/
-    
-    .products ul:nth-child(4){
-    
-        background-color: whitesmoke;
-        grid-template-columns: auto auto auto auto;
-        grid-gap: 10px;
-        box-sizing: border-box;
-        display: grid;
-        width:80%;
-        height:inherit;
-        list-style: none;
-        padding:0;
-        position:absolute;
-        
-        margin-left: 10%;
-        margin-right:10%;
-        border-radius: 5px;
-  
-    }
-    .products ul:nth-child(5){
-    
-        background-color: whitesmoke;
-        grid-template-columns: auto auto auto auto;
-        grid-gap: 5px;
-        box-sizing: border-box;
-        display: grid;
-        width:80%;
-        height:inherit;
-        list-style: none;
-        padding:0;
-        position: absolute;
-        margin-left: 10%;
-        margin-right:10%;
-        
-        border-radius: 5px;
-    
-     }
-     .products ul:nth-child(6){
-    
-        background-color: whitesmoke;
-        grid-template-columns: auto auto auto auto;
-        grid-gap: 5px;
-        box-sizing: border-box;
-        display: grid;
-        width:80%;
-        height:inherit;
-        list-style: none;
-        padding:0;
-        position: absolute;
-        
-        margin-left: 10%;
-        margin-right:10%;
-            
-        border-radius: 5px; 
-         
-    
-     }
-    .products ul:nth-child(7){
-    
-        background-image: white;
-        background-color: white;
-        grid-template-columns: auto auto auto auto;
-        grid-gap: 5px;
-        box-sizing: border-box;
-        display: grid;
-        width:80%;
-        height:inherit;
-        list-style: none;
-        padding:0;
-        position: absolute;
-        
-        margin-left: 10%;
-        margin-right:10%;
-            
-        border-radius: 5px; 
-    
-     }
-    
-    
-    .products ul:nth-child(3) li,.products ul:nth-child(4) li,.products ul:nth-child(5) li,.products ul:nth-child(6) li{
-    
-         position:relative;
-    
-    }
-    .products ul:nth-child(3) li::after,.products ul:nth-child(4) li::after,.products ul:nth-child(5) li::after,.products ul:nth-child(6) li::after{
-    
-        content:"Track Id: 01111";
-        
-        position: absolute;
-        background:whitesmoke;
-        background-blend-mode:exclusion;
-        opacity: 0.9;
-        height:5%;
-        width:100%;
-        color:burlywood;
-        bottom:0;
-        font-weight: bold;
-        transform: scaleY(0);
-
-    
-    }
-    .products ul:nth-child(3) li::before,.products ul:nth-child(4) li::before,.products ul:nth-child(5) li::before,.products ul:nth-child(6) li::before{
-    
-        content:"Price: NAN";
-        
-        position: absolute;
-        background:whitesmoke;
-        background-blend-mode:exclusion;
-        opacity: 0.9;
-        height:5%;
-        width:100%;
-        color:burlywood;
-        bottom:5%;
-        font-weight: bold;
-        transform: scaleY(0);
-        
-
-    
-    }
-    .products ul:nth-child(3) li:hover::before,.products ul:nth-child(4) li:hover::before,.products ul:nth-child(5) li:hover::before,.products ul:nth-child(6) li:hover::before{
-    
-        transform: scaleY(1);
-        
-        transition: all 1s;
-
-    
-    }
-    
-    
-    .products ul:nth-child(3) li:hover::after,.products ul:nth-child(4) li:hover::after,.products ul:nth-child(5) li:hover::after,.products ul:nth-child(6) li:hover::after{
-    
-        transform: scaleY(1);
-        
-        transition: all 1s;
-
-    
-    }
-    
-    
-    
-    
-    .active-product-slide{
-    
-        z-index: 2;
-        animation-name: productsSlideChange;
-        animation-duration: 1s;
-        
-        transform: translate(100);
-        animation-iteration-count:1;
-        
-    }
-    .under-product-slide{
-        
-        z-index: 1;
-       
-    }
-    .products ul li{
-    
-
-        
-        width:90%;
-        height:100%;
-        margin-left:5%;
-        margin-right:5%;
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center;
-        
-        
-     }
-
-/*    1st type (men) starts */     
-    
-/*    first row starts*/    
-    
-/*    first slides starts*/
-
-/* here .products:nth-child(1) defines this is row 1. ul:nth-child(3) means the first slide and li is the individual elements meaning pictures itself from left to right*/    
-     
-
-    
-    
-    .products-type1-wrapper .products:nth-child(1) ul:nth-child(3) li:nth-child(1){
-        background-image: url("images/productsMen1.jpg");
-
-     }
-
-    
-    
-    .products-type1-wrapper .products:nth-child(1) ul:nth-child(3) li:nth-child(2){
-        background-image: url("images/productsMen2.jpg");
-    
-    }
-    .products-type1-wrapper .products:nth-child(1) ul:nth-child(3) li:nth-child(3){
-        
-        background-image: url("images/productsMen11.jpg");
-     }
-   
-    .products-type1-wrapper .products:nth-child(1) ul:nth-child(3) li:nth-child(4){
-        background-image: url("images/productsMen3.jpg.crdownload");
-    
-    }
-    
-    
-    /*    first slides ends*/
-    
-    
-    /*    second slides starts*/
-    
-    
-    .products-type1-wrapper .products:nth-child(1) ul:nth-child(4) li:nth-child(1){
-        background-image: url("images/productsMen15.jpg");
-    
-    }
-     .products-type1-wrapper .products:nth-child(1) ul:nth-child(4) li:nth-child(2){
-        background-image: url("images/productsMen16.jpg");
-    
-    }
-    .products-type1-wrapper .products:nth-child(1) ul:nth-child(4) li:nth-child(3){
-        
-        background-image: url("images/productsMen17.jpg");
-    
-    }
-   
-    .products-type1-wrapper .products:nth-child(1) ul:nth-child(4) li:nth-child(4){
-        background-image: url("images/productsMen18.jpg");
-    
-    }
-    
-    
-    /*    second slides ends*/
-    
-    /*    third slides starts*/
-    
-    
-    .products-type1-wrapper .products:nth-child(1) ul:nth-child(5) li:nth-child(1){
-        background-image: url("images/productsMen19.jpeg");
-    
-    }
-     .products-type1-wrapper .products:nth-child(1) ul:nth-child(5) li:nth-child(2){
-        background-image: url("images/productsMen20.jpg");
-    
-    }
-    .products-type1-wrapper .products:nth-child(1) ul:nth-child(5) li:nth-child(3){
-        
-        background-image: url("images/productsMen21.jpg");
-    
-    }
-   
-    .products-type1-wrapper .products:nth-child(1) ul:nth-child(5) li:nth-child(4){
-        background-image: url("images/productsMen22.jpg");
-    
-    }
-    
-    
-    /*    third slides ends*/
-    
-        /*    fourth slides starts*/
-    
-    
-    .products-type1-wrapper .products:nth-child(1) ul:nth-child(6) li:nth-child(1){
-        background-image: url("images/productsMen23.jpg");
-    
-    }
-     .products-type1-wrapper .products:nth-child(1) ul:nth-child(6) li:nth-child(2){
-        background-image: url("images/productsMen24.jpg");
-    
-    }
-    .products-type1-wrapper .products:nth-child(1) ul:nth-child(6) li:nth-child(3){
-        
-        background-image: url("images/productsMen25.jpg");
-    
-    }
-   
-    .products-type1-wrapper .products:nth-child(1) ul:nth-child(6) li:nth-child(4){
-        background-image: url("images/productsMen26.jpg");
-    
-    }
-    
-    
-    /*    fourth slides ends*/
-    
-    /*    first row ends */ 
-    
-    /*    second row starts */ 
-    
-    /*  first slide starts*/
-    
-    
-    .products-type1-wrapper .products:nth-child(2) ul:nth-child(3) li:nth-child(1){
-        background-image: url("images/productsMen10.jpg");
-    
-    }
-    .products-type1-wrapper .products:nth-child(2) ul:nth-child(3) li:nth-child(2){
-        background-image: url("images/productsMen4.jpg");
-    
-    }
-    .products-type1-wrapper .products:nth-child(2) ul:nth-child(3) li:nth-child(3){
-        background-image: url("images/productsMen7.jpg");
-    
-    }
-    .products-type1-wrapper .products:nth-child(2) ul:nth-child(3) li:nth-child(4){
-        background-image: url("images/productsMen6.jpg");
-    
-    }
-    
-    /*  first slide ends*/
-    
-    /*  second slide starts*/
-    
-    
-    .products-type1-wrapper .products:nth-child(2) ul:nth-child(4) li:nth-child(1){
-        background-image: url("images/productsMen27.jpg");
-    
-    }
-    .products-type1-wrapper .products:nth-child(2) ul:nth-child(4) li:nth-child(2){
-        background-image: url("images/productsMen28.jpg");
-    
-    }
-    .products-type1-wrapper .products:nth-child(2) ul:nth-child(4) li:nth-child(3){
-        background-image: url("images/productsMen29.jpg");
-    
-    }
-    .products-type1-wrapper .products:nth-child(2) ul:nth-child(4) li:nth-child(4){
-        background-image: url("images/productsMen30.jpg");
-    
-    }
-    
-    /*  second slide ends*/
-    
-    
-     /*  third slide starts*/
-    
-    
-    .products-type1-wrapper .products:nth-child(2) ul:nth-child(5) li:nth-child(1){
-        background-image: url("images/productsMen31.jpg");
-    
-    }
-    .products-type1-wrapper .products:nth-child(2) ul:nth-child(5) li:nth-child(2){
-        background-image: url("images/productsMen32.jpg");
-    
-    }
-    .products-type1-wrapper .products:nth-child(2) ul:nth-child(5) li:nth-child(3){
-        background-image: url("images/productsMen33.jpg");
-    
-    }
-    .products-type1-wrapper .products:nth-child(2) ul:nth-child(5) li:nth-child(4){
-        background-image: url("images/productsMen34.jpg");
-    
-    }
-    
-    /*  third slide ends*/
-    
-     /*  fourth slide starts*/
-    
-    
-    .products-type1-wrapper .products:nth-child(2) ul:nth-child(6) li:nth-child(1){
-        background-image: url("images/productsMen35.jpg");
-    
-    }
-    .products-type1-wrapper .products:nth-child(2) ul:nth-child(6) li:nth-child(2){
-        background-image: url("images/productsMen36.jpg");
-    
-    }
-    .products-type1-wrapper .products:nth-child(2) ul:nth-child(6) li:nth-child(3){
-        background-image: url("images/productsMen37.jpg");
-    
-    }
-    .products-type1-wrapper .products:nth-child(2) ul:nth-child(6) li:nth-child(4){
-        background-image: url("images/productsMen38.jpg");
-    
-    }
-    
-    /*  fourth slide ends*/
-    
-    
-    /*    second row ends */ 
-    
-    /*    third row starts */ 
-    
-    /*   first slide starts */ 
-    
-    
-    .products-type1-wrapper .products:nth-child(3) ul:nth-child(3) li:nth-child(1){
-        background-image: url("images/productsMen11.jpg");
-    
-    }
-    .products-type1-wrapper .products:nth-child(3) ul:nth-child(3) li:nth-child(2){
-        background-image: url("images/productsMen12.jpg");
-    
-    }
-    .products-type1-wrapper .products:nth-child(3) ul:nth-child(3) li:nth-child(3){
-        background-image: url("images/productsMen13.jpg");
-    
-    }
-    .products-type1-wrapper .products:nth-child(3) ul:nth-child(3) li:nth-child(4){
-        background-image: url("images/productsMen14.jpg");
-    
-    }
-    /*   first slide ends */ 
-    
-    /*   second slide starts */ 
-    
-        .products-type1-wrapper .products:nth-child(3) ul:nth-child(4) li:nth-child(1){
-            background-image: url("images/productsMen39.jpg");
-
-        }
-        .products-type1-wrapper .products:nth-child(3) ul:nth-child(4) li:nth-child(2){
-            background-image: url("images/productsMen40.jpg");
-
-        }
-        .products-type1-wrapper .products:nth-child(3) ul:nth-child(4) li:nth-child(3){
-            background-image: url("images/productsMen41.jpg");
-
-        }
-        .products-type1-wrapper .products:nth-child(3) ul:nth-child(4) li:nth-child(4){
-            background-image: url("images/productsMen42.jpg");
-
-        }
-    
-    /*   second slide ends */ 
-    
-    /*   third slide starts */ 
-    
-        .products-type1-wrapper .products:nth-child(3) ul:nth-child(5) li:nth-child(1){
-            background-image: url("images/productsMen43.jpg");
-
-        }
-        .products-type1-wrapper .products:nth-child(3) ul:nth-child(5) li:nth-child(2){
-            background-image: url("images/productsMen44.jpg");
-
-        }
-        .products-type1-wrapper .products:nth-child(3) ul:nth-child(5) li:nth-child(3){
-            background-image: url("images/productsMen45.jpg");
-
-        }
-        .products-type1-wrapper .products:nth-child(3) ul:nth-child(5) li:nth-child(4){
-            background-image: url("images/productsMen46.jpg");
-
-        }
-    
-    /*   third slide ends */ 
-    
-        /*   fourth slide starts */ 
-    
-        .products-type1-wrapper .products:nth-child(3) ul:nth-child(6) li:nth-child(1){
-            background-image: url("images/productsMen47.jpg");
-
-        }
-        .products-type1-wrapper .products:nth-child(3) ul:nth-child(6) li:nth-child(2){
-            background-image: url("images/productsMen48.jpg");
-
-        }
-        .products-type1-wrapper .products:nth-child(3) ul:nth-child(6) li:nth-child(3){
-            background-image: url("images/productsMen49.jpg");
-
-        }
-        .products-type1-wrapper .products:nth-child(3) ul:nth-child(6) li:nth-child(4){
-            background-image: url("images/productsMen50.jpg");
-
-        }
-    
-    /*   fourth slide ends */ 
-    
-    /*   third slide ends */
-    
-    
-    /*    third row ends */ 
-    
-    /*    1st type (men) ends */ 
-    
-    
-    
-    
-    /*    2nd type (women) starts */     
-    
-/*    first row starts*/    
-    
-/*    first slides starts*/
-
-/* here .products:nth-child(1) defines this is row 1. ul:nth-child(3) means the first slide and li is the individual elements meaning pictures itself from left to right*/    
-     
-    .products-type2-wrapper .products:nth-child(1) ul:nth-child(3) li:nth-child(1){
-        background-image:url("images/productsWomen1.jpg");
-     }
-    .products-type2-wrapper .products:nth-child(1) ul:nth-child(3) li:nth-child(2){
-        background-image: url("images/productsWomen2.jpg");
-    
-    }
-    .products-type2-wrapper .products:nth-child(1) ul:nth-child(3) li:nth-child(3){
-        
-        background-image: url("images/productsWomen3.jpg");
-     }
-   
-    .products-type2-wrapper .products:nth-child(1) ul:nth-child(3) li:nth-child(4){
-        background-image: url("images/productsWomen4.jpg");
-    
-    }
-    
-    
-    /*    first slides ends*/
-    
-    
-    /*    second slides starts*/
-    
-    
-    .products-type2-wrapper .products:nth-child(1) ul:nth-child(4) li:nth-child(1){
-        background-image:url("images/productsWomen14.jpg");
-    
-    }
-     .products-type2-wrapper .products:nth-child(1) ul:nth-child(4) li:nth-child(2){
-        background-image:url("images/productsWomen15.jpg");
-    
-    }
-    .products-type2-wrapper .products:nth-child(1) ul:nth-child(4) li:nth-child(3){
-        
-        background-image:url("images/productsWomen16.jpg");
-    
-    }
-   
-    .products-type2-wrapper .products:nth-child(1) ul:nth-child(4) li:nth-child(4){
-        background-image:url("images/productsWomen17.jpg");
-    
-    }
-    
-    
-    /*    second slides ends*/
-    
-    /*    third slides starts*/
-    
-    
-    .products-type2-wrapper .products:nth-child(1) ul:nth-child(5) li:nth-child(1){
-        background-image:url("images/productsWomen18.jpg");
-    
-    }
-     .products-type2-wrapper .products:nth-child(1) ul:nth-child(5) li:nth-child(2){
-        background-image:url("images/productsWomen19.jpg");
-    
-    }
-    .products-type2-wrapper .products:nth-child(1) ul:nth-child(5) li:nth-child(3){
-        
-        background-image:url("images/productsWomen20.jpg");
-    
-    }
-   
-    .products-type2-wrapper .products:nth-child(1) ul:nth-child(5) li:nth-child(4){
-        background-image:url("images/productsWomen21.jpg");
-    
-    }
-    
-    
-    /*    third slides ends*/
-    
-        /*    fourth slides starts*/
-    
-    
-    .products-type2-wrapper .products:nth-child(1) ul:nth-child(6) li:nth-child(1){
-        background-image:url("images/productsWomen22.png");
-    
-    }
-     .products-type2-wrapper .products:nth-child(1) ul:nth-child(6) li:nth-child(2){
-        background-image:url("images/productsWomen23.jpg");
-    
-    }
-    .products-type2-wrapper .products:nth-child(1) ul:nth-child(6) li:nth-child(3){
-        
-        background-image:url("images/productsWomen24.jpg");
-    
-    }
-   
-    .products-type2-wrapper .products:nth-child(1) ul:nth-child(6) li:nth-child(4){
-        background-image:url("images/productsWomen25.jpg");
-    
-    }
-    
-    
-    /*    fourth slides ends*/
-    
-    /*    first row ends */ 
-    
-    /*    second row starts */ 
-    
-    /*  first slide starts*/
-    
-    
-    .products-type2-wrapper .products:nth-child(2) ul:nth-child(3) li:nth-child(1){
-        background-image: url("images/productsWomen6.jpg");
-    
-    }
-    .products-type2-wrapper .products:nth-child(2) ul:nth-child(3) li:nth-child(2){
-        background-image: url("images/productsWomen7.jpeg");
-    
-    }
-    .products-type2-wrapper .products:nth-child(2) ul:nth-child(3) li:nth-child(3){
-        background-image: url("images/productsWomen8.jpeg");
-    
-    }
-    .products-type2-wrapper .products:nth-child(2) ul:nth-child(3) li:nth-child(4){
-        background-image: url("images/productsWomen9.jpg");
-    
-    }
-    
-    /*  first slide ends*/
-    
-    /*  second slide starts*/
-    
-    
-    .products-type2-wrapper .products:nth-child(2) ul:nth-child(4) li:nth-child(1){
-        background-image: url("images/productsWomen28.jpg");
-    
-    }
-    .products-type2-wrapper .products:nth-child(2) ul:nth-child(4) li:nth-child(2){
-        background-image: url("images/productsWomen29.jpg");
-    
-    }
-    .products-type2-wrapper .products:nth-child(2) ul:nth-child(4) li:nth-child(3){
-        background-image: url("images/productsWomen30.jpg");
-    
-    }
-    .products-type2-wrapper .products:nth-child(2) ul:nth-child(4) li:nth-child(4){
-        background-image: url("images/productsWomen31.jpg");
-    
-    }
-    
-    /*  second slide ends*/
-    
-    
-     /*  third slide starts*/
-    
-    
-    .products-type2-wrapper .products:nth-child(2) ul:nth-child(5) li:nth-child(1){
-        background-image: url("images/productsWomen32.jpg");
-    
-    }
-    .products-type2-wrapper .products:nth-child(2) ul:nth-child(5) li:nth-child(2){
-        background-image: url("images/productsWomen33.jpg");
-    
-    }
-    .products-type2-wrapper .products:nth-child(2) ul:nth-child(5) li:nth-child(3){
-        background-image: url("images/productsWomen34.jpg");
-    
-    }
-    .products-type2-wrapper .products:nth-child(2) ul:nth-child(5) li:nth-child(4){
-        background-image: url("images/productsWomen35.png");
-    
-    }
-    
-    /*  third slide ends*/
-    
-     /*  fourth slide starts*/
-    
-    
-    .products-type2-wrapper .products:nth-child(2) ul:nth-child(6) li:nth-child(1){
-        background-image: url("images/productsWomen36.jpg");
-    
-    }
-    .products-type2-wrapper .products:nth-child(2) ul:nth-child(6) li:nth-child(2){
-        background-image: url("images/productsWomen37.jpg");
-    
-    }
-    .products-type2-wrapper .products:nth-child(2) ul:nth-child(6) li:nth-child(3){
-        background-image: url("images/productsWomen38.jpg");
-    
-    }
-    .products-type2-wrapper .products:nth-child(2) ul:nth-child(6) li:nth-child(4){
-        background-image: url("images/productsWomen39.jpg");
-    
-    }
-    
-    /*  fourth slide ends*/
-    
-    
-    /*    second row ends */ 
-    
-    /*    third row starts */ 
-    
-    /*   first slide starts */ 
-    
-    
-    .products-type2-wrapper .products:nth-child(3) ul:nth-child(3) li:nth-child(1){
-        background-image: url("images/productsWomen10.jpg");
-    
-    }
-    .products-type2-wrapper .products:nth-child(3) ul:nth-child(3) li:nth-child(2){
-        background-image: url("images/productsWomen11.jpg");
-    
-    }
-    .products-type2-wrapper .products:nth-child(3) ul:nth-child(3) li:nth-child(3){
-        background-image: url("images/productsWomen12.jpg");
-    
-    }
-    .products-type2-wrapper .products:nth-child(3) ul:nth-child(3) li:nth-child(4){
-        background-image: url("images/productsWomen13.jpg");
-    
-    }
-    /*   first slide ends */ 
-    
-    /*   second slide starts */ 
-    
-        .products-type2-wrapper .products:nth-child(3) ul:nth-child(4) li:nth-child(1){
-             background-image: url("images/productsWomen41.png");
-
-        }
-        .products-type2-wrapper .products:nth-child(3) ul:nth-child(4) li:nth-child(2){
-            background-image: url("images/productsWomen42.jpg");
-
-        }
-        .products-type2-wrapper .products:nth-child(3) ul:nth-child(4) li:nth-child(3){
-            background-image: url("images/productsWomen43.jpg");
-
-        }
-        .products-type2-wrapper .products:nth-child(3) ul:nth-child(4) li:nth-child(4){
-            background-image: url("images/productsWomen44.jpg");
-
-        }
-    
-    /*   second slide ends */ 
-    
-    /*   third slide starts */ 
-    
-        .products-type2-wrapper .products:nth-child(3) ul:nth-child(5) li:nth-child(1){
-            background-image: url("images/productsWomen45.jpg");
-
-        }
-        .products-type2-wrapper .products:nth-child(3) ul:nth-child(5) li:nth-child(2){
-            background-image: url("images/productsWomen46.jpg");
-
-        }
-        .products-type2-wrapper .products:nth-child(3) ul:nth-child(5) li:nth-child(3){
-            background-image: url("images/productsWomen47.jpg");
-
-        }
-        .products-type2-wrapper .products:nth-child(3) ul:nth-child(5) li:nth-child(4){
-            background-image: url("images/productsWomen48.jpg");
-
-        }
-    
-    /*   third slide ends */ 
-    
-        /*   fourth slide starts */ 
-    
-        .products-type2-wrapper .products:nth-child(3) ul:nth-child(6) li:nth-child(1){
-            background-image: url("images/productsWomen49.jpg");
-
-        }
-        .products-type2-wrapper .products:nth-child(3) ul:nth-child(6) li:nth-child(2){
-            background-image: url("images/productsWomen50.jpg");
-
-        }
-        .products-type2-wrapper .products:nth-child(3) ul:nth-child(6) li:nth-child(3){
-            background-image: url("images/productsWomen51.jpg");
-
-        }
-        .products-type2-wrapper .products:nth-child(3) ul:nth-child(6) li:nth-child(4){
-            background-image: url("images/productsWomen52.jpg");
-
-        }
-    
-    /*   fourth slide ends */ 
-    
-    /*   third slide ends */
-    
-    
-    /*    third row ends */ 
-    
-    /*    2nd type (women) ends */ 
-    
-    
-    
-    
-    
-    
-    .products ul:nth-child(6) li{
-    
-/*         background:white;*/
-        background-size: contain;
-    }
-
-    .products ul:nth-child(2) li{
-        position: absolute;
-        left:0px;
-        top:600px;
-/*                bottom: 260px;*/
-        background-image:url(images/next.png);
-        background-size: contain;
-        width:34px;
-        height: 34px;
-        z-index: 3;
-        transform: scaleX(-1);
-        }
-    .products ul:nth-child(8) li{
-        position: absolute;
-        right:0px;
-        top:600px;
-/*                bottom: 260px;*/
-        background-image: url(images/next.png);
-
-        background-size: contain;
-        width:34px;
-        height: 34px;
-        z-index: 3;
-    } 
-    
-     @media (min-width: 769) and (max-width: 1600px){
-    
-        .gallery ul{
-        
-            width:100%;
-            min-height:950px;
-            margin-top:70px;
-            display: flex;
-            flex-direction: row;
-            margin:0;
-            
-        }
-        .gallery h1:nth-child(1){
-        
-            margin-top:50px;
-        }
-        .gallery ul li{
-            
-            background-position:center;
-        }
-   
-            
-            
-        .products-wrapper h1:nth-child(1){
-            
-                width: 100%; text-align: center; margin-top:-100px;margin-bottom:70px;z-index:30;position:  absolute; 
-            
-        }
-        .products-rows{
-        
-
-        height:1300px;
-        grid-template-columns: auto;
-        grid-gap: 70px;
-    
-        } 
-            
-        .products:nth-child(1) ul h1,.products:nth-child(2) ul h1,.products:nth-child(3) ul h1{
-    
-
-            top:100%;
-            width:20%;
-        }  
-            
-        .products {
-    
-/*
-        position: relative;
-        width:100%;
-*/
-        height:600px;
-/*
-        grid-template-columns: auto;
-        grid-gap: 10px;
-        box-sizing: border-box;
-        margin-left:auto;
-        margin-right:auto;
-        display: grid;
-        align-content: center;
-        padding: 5px;
-*/
-           
-    
-        }    
-            
-   
-        
-    }
-    
-    @media screen and (max-width: 768px){
-        
-/*        responsible for bubble effect*/
-        .drawer{
-            margin-right:auto; 
-            margin-left:auto; 
-            margin-bottom: auto;
-            margin-top: auto;
-            width:100%;
-            height: inherit;
-            
-        }
-        .nav-links{
-            position:fixed;
-            flex-direction:column;
-            width:50%;
-            height:100vh;
-            color:white;
-            top:0;
-            left:50%;
-/*            align-content: center;*/
-            clip-path:circle(0 at 90% -10%); 
-            -webkit-clip-path:circle(0 at 90% 0%);
-            
-            transition: all 1s ease-out;
-            text-align: center;
-            opacity: 0.9;
-            padding:0;
-            justify-content: center;
-            background-color:dimgrey;
-            
-        }
-        .btn-item{
-           
-           width: 100%;
-           margin-left:auto; margin-right:auto;    
-           padding:0;
-           height:70px;
-        }
-        .btn-item:hover{
-        
-        width:97%;
-        border-color: dimgrey;
-        transform: rotateY(15deg);
-        color: aliceblue;
-        text-decoration: overline underline;
-        
-/*        box-shadow: -15px 0 15px lightblue;*/
-
-        transition: all 1s ease-out;
-        }
-        .nav-links.open{
-            clip-path:circle(1000px at 90% 10%); 
-            -webkit-clip-path:circle(1000px at 90% 10%);
-            transition: all 1s ease-out;
-            
-        }
-        /*        responsible for bubble effect*/
-        .line{
-            width:30px;
-            height:3px;
-            background:white;
-            margin: 5px;
-            
-            
-        }
-        .hamburger{
-            position: fixed;
-            cursor: pointer;
-            right: 5%;
-            top:0%;
-            transform:translate(-5%,50%);
-            z-index: 100;
-            display: block;
-            
-        }
-        .hamburger div{
-            transition: all 0.3s ease;
-        }
-        
-        .nav-links li{
-            height:70px;
-            opacity:0;
-
-        }
-       .nav-links li a{
-            font-size: 25px;
-            
-            line-height: 70px;
-            vertical-align: middle;
-        }
-        .nav-links li:nth-child(1){
-            transition: all 0.5 2s;
-        }
-        .nav-links li:nth-child(2){
-            transition: all 0.5 4s;
-        }
-        .nav-links li:nth-child(3){
-            transition: all 0.5 6s;
-        }
-        .nav-links li:nth-child(4){
-            transition: all 0.5 8s;
-        }
-        .nav-links li:nth-child(5){
-            transition: all 0.5 10s;
-        }
-        li.fade{
-            opacity:1;
-        }
-        .toggle .line1{
-            transform: rotate(-45deg) translate(-5px,6px);
-        }
-        .toggle .line2{
-            opacity: 0;
-        }
-        .toggle .line3{
-            transform: rotate(45deg) translate(-5px,-6px);
-        }
-        
-        
- .gallery{
-   
-    
-    width:100%;
-    min-height:1980px;
-    position: relative;
-    
-    align-content: center;
-
-    overflow: hidden;
-    
-}         
-
-
-.gallery ul{
-    
-    
-    top:150px;
-    display: flex;
-    flex-direction: column;
-    min-height:1800px;
-    margin:0;
-    justify-content: center;
-    
-        
-}   
-.gallery ul li:nth-child(3){
-    
-     flex:1;    
-        
-}
-.gallery ul li:nth-child(1){
-    
-     flex:1;
-
-}
-.gallery ul li:nth-child(2){
-    
-    
-     flex:1.5;
-     margin:0;
-     
-}
-.products-type1-wrapper .products ul:nth-child(1){
-        
-        padding:0;
-            
-}   
-/*
-.products ul:nth-child(3){
-        
-        display: grid;
-        grid-template-columns: auto;
-        grid-gap: 10px;
-        box-sizing: border-box;
-        width:80%;
-        margin-left:10%;
-        margin-right:10%;
-        display: grid;
-            
-}  
-*/
-        
-.products ul:nth-child(3),.products ul:nth-child(4),.products ul:nth-child(5),.products ul:nth-child(6){
-        
-        display: grid;
-        grid-template-columns: auto;
-        grid-gap: 10px;
-        box-sizing: border-box;
-        width:80%;
-        margin-left:10%;
-        margin-right:10%;
-        display: grid;
-        overflow-y: hidden;
-            
-}        
-
-.products:nth-child(2) ul:nth-child(1) {
-        
-     margin-top:-500px;
-            
-} 
-        
-.products:nth-child(2) ul:nth-child(1) {
-        
-     margin-top:-650px;
-            
-}
-.products:nth-child(2) ul:nth-child(1) {
-        
-     margin-top:-650px;
-            
-}          
-        
-        
-.products ul:nth-child(3) li{
-        
-    
-    width:90%;
-   
-    
-}   
-.products{
-        
-    
-    width:100%;
-    height:1300px;
-    
-        
-}          
-.products-rows{
-        
-    
-    width:100%;
-    height:auto;
-    
-        
-}   
-.products ul{
-  
-   right:0;
-   left:0;
-
-}        
-.products ul:nth-child(3){
-        
-    
-    width:90%;
-    margin-left:5%;
-    margin-right:5%;
-    height:1300px;
-    margin-top:-100px;
-        
-}
-.products ul:nth-child(4){
-        
-    margin-top:-100px;
-    width:90%;
-    margin-left:5%;
-    margin-right:5%;
-    height:1300px;
-    
-        
-}
-.products ul:nth-child(5){
-        
-    
-    margin-top:-100px;
-    width:90%;
-    margin-left:5%;
-    margin-right:5%;
-    height:1300px;
-    
-        
-} 
-        
-.products ul:nth-child(6){
-        
-    
-    margin-top:-100px;
-    width:90%;
-    margin-left:5%;
-    margin-right:5%;
-    height:1300px;
-    
-        
-} 
-        
-.cover ul {
-  display: flex;
-  flex-wrap: wrap;
-  list-style: none;
-  padding-top:4%;
-  transform: rotate(0deg) translateY(100px);
-          
-        
-}
-        
-        
-        
-        
-} 
-    
-/*
-    .gallery ul li{
-    
-     background-size: white;
-     border-color: grey;
-     border-width: 2px;
-     border-style: solid;    
-        
-    
-    }
-*/
-/*
-    .gallery-item-1,.gallery-item-3{
-       
-        flex:1;
-        width:100%;
-        height:auto;
-        background-size: contain;
-
-    } 
-    .gallery-item-2{
-       
-        flex:1;
-        width:100%;
-        height:auto;
-        background-size: contain;
-
-    } 
-*/
-        
-/*    image Gallery ends    */
-</style>
       
 </head>
     
 <body onload="loadDone()">
     <div id="loading"></div>
     <div class="main">
-        <div class="header-wrapper">
+
+        <div class="header-wrapper" id="home">
            
                 
             <div class="cover" id="cover" data-aos="fade-up">
@@ -1935,12 +42,14 @@
 
                             </div>
                           </div>
--->
-            
-                <div>
-                <ul class="cover-ul" style="padding:0;" >
+-->       
+                <div class="cover-left">
+                    <img src="Images/eternal_logo-removebg-preview.png">
+                </div>
+                <div class="cover-right">
+                <ul class="cover-ul">
                   <li data-aos="fade-up" data-aos-mirror="true">
-                    <img src="images/coverOverlayImage6.jpg" id="Hotelchainbd.com">
+                    <img src="images/coverOverlayImage5.jpg" id="Hotelchainbd.com">
                   </li>
                     <li data-aos="fade-up" data-aos-mirror="true">
                     <img src="images/coverOverlayImage3.jpg" id="TravelersChoicebd.com">
@@ -1979,30 +88,62 @@
                    </div>
                    <div class="drawer">
                        <ul class="nav-links" id="nav-links">
+                           <a href="#home" class="btn-item">
+                                <span></span>
+                                <span></span>
+                                Home
+                            </a>
+                           <a href="#gallery" class="btn-item">
+                                <span></span>
+                                <span></span>
+                                Gallery
+                            </a>
+                           <a href="#products" class="btn-item">
+                                <span></span>
+                                <span></span>
+                                Products
+                            </a>
+                           <a href="#brands" class="btn-item">
+                                <span></span>
+                                <span></span>
+                                Brands
+                            </a>
+                           <a href="#services" class="btn-item">
+                                <span></span>
+                                <span></span>
+                                Services
+                            </a>
+                           <a href="#about" class="btn-item">
+                                <span></span>
+                                <span></span>
+                                About
+                            </a>
+<!--
                            <li><a class="btn-item" href="#">Click 1</a></li>
                            <li><a class="btn-item" href="#">Click 2</a></li>
                            <li><a class="btn-item" href="#">Click 3</a></li>
                            <li><a class="btn-item" href="#">Click 4</a></li>
                            <li><a class="btn-item" href="#">Click 5</a></li>
                            <li><a class="btn-item" href="#">Click 6</a></li>
+-->
                         </ul>
                    </div>
                 </nav> 
                 </div>   
         </div>
         
-            <div class="gallery" data-aos="fade-up;" aos-duration="5000" data-aos-mirror="true">
+        <div class="gallery" id="gallery">
                       <h1 style="width: 100%; text-align: center;position:absolute;">Gallery</h1>
                   <ul>
                       
-                    <li title="1st Item">
+                    <li data-aos="fade-right" data-aos-mirror="true" >
 
                     </li>
                       
-                    <li>
+                    <li data-aos="fade-up" data-aos-delay="150" data-aos-mirror="true" >
 
                     </li>
-                    <li>
+                    <li data-aos="fade-left" data-aos-delay="300" data-aos-mirror="true" >
 
                     </li>
             
@@ -2012,989 +153,236 @@
                  </ul>
             </div>
                     
-        
-        <div class="products-wrapper">
+ 
+
+        <div class="products-wrapper" id="products" >
             
             
             <h1>Products</h1>
-            <div class="product-type-selector">
-                <button onclick="menTypeSelectorCLicked()" >Men</button>
-                <button  onclick="womenTypeSelectorCLicked()">Women</button>
-                <button  onclick="kidsTypeSelectorCLicked()">Kids</button>
+            <ul class="main-list-categories">
+                <li class="main-list active" data-filter="all">All</li>
+                <li class="main-list" data-filter="men">Men</li>
+                <li class="main-list" data-filter="women">Women</li>
+                <li class="main-list" data-filter="kids">Kids</li>
+            </ul>
+            <ul class="secondary-list-categories">
+                <li class="secondary-list active" data-filter="all">All</li>
+                <li class="secondary-list" data-filter="shirts">Shirts</li>
+                <li class="secondary-list" data-filter="pants">Pants</li>
+                <li class="secondary-list" data-filter="shoes">Shoes</li>
+                <li class="secondary-list" data-filter="others">Others</li>
+            </ul>
+            <div class="main-category-items">
+                <div class="main-category-item" data-item="men" data-item-2="shirts" data-aos="fade-up">
+                    <img src="Images/productsMen1-removebg-preview.png">
+                    <span class="ribbon1">
+                      <span>Sale 10%</span>
+                    </span>
+
+                </div>
+                <div class="main-category-item" data-item="men" data-item-2="shirts">
+                    <img src="Images/productsMen2-removebg-preview.png">
+                </div>
+                <div class="main-category-item" data-item="men" data-item-2="shirts">
+                    <img src="Images/productsMen3-removebg-preview.png" >
+                    <span class="ribbon1">
+                      <span>Sale 10%</span>
+                    </span>
+                </div>
+                <div class="main-category-item" data-item="men" data-item-2="pants">
+                    <img src="Images/productsMen4-removebg-preview.png">
+                </div>
+                <div class="main-category-item" data-item="men" data-item-2="pants">
+                    <img src="Images/productsMen10-removebg-preview.png">
+                </div>
+                <div class="main-category-item" data-item="men" data-item-2="pants">
+                    <img src="Images/productsMen11-removebg-preview.png">
+                </div>
+                <div class="main-category-item" data-item="men" data-item-2="shoes">
+                    <img src="Images/productsMen12-removebg-preview.png">
+                    <span class="ribbon1">
+                      <span>Sale 10%</span>
+                    </span>
+                </div>
+                <div class="main-category-item" data-item="men" data-item-2="shoes">
+                    <img src="Images/productsMen13-removebg-preview.png">
+                </div>
+                <div class="main-category-item" data-item="men" data-item-2="shoes">
+                    <img src="Images/productsMen14-removebg-preview.png">
+                </div>
+                <div class="main-category-item" data-item="women" data-item-2="shirts">
+                    <img src="Images/productsWomen1-removebg-preview.png">
+                </div>
+                 <div class="main-category-item" data-item="women" data-item-2="shirts">
+                    <img src="Images/productsWomen2-removebg-preview.png">
+                     <span class="ribbon1">
+                      <span>Sale 10%</span>
+                    </span>
+                </div>
+                 <div class="main-category-item" data-item="women" data-item-2="shirts">
+                    <img src="Images/productsWomen3-removebg-preview.png">
+                </div>
+                
+                
+                <div class="main-category-item" data-item="women" data-item-2="shirts">
+                    <img src="Images/productsWomen19-removebg-preview.png">
+                    <span class="ribbon1">
+                      <span>Sale 10%</span>
+                    </span>
+                </div>
+                <div class="main-category-item" data-item="women" data-item-2="shirts">
+                    <img src="Images/productsWomen30-removebg-preview.png">
+                    <span class="ribbon1">
+                      <span>Sale 10%</span>
+                    </span>
+                </div>
+                 <div class="main-category-item" data-item="women" data-item-2="shirts">
+                    <img src="Images/productsWomen36-removebg-preview.png">
+                </div>
+                 <div class="main-category-item" data-item="women" data-item-2="pants">
+                    <img src="Images/productsWomen7-removebg-preview.png">
+                </div>
+                 <div class="main-category-item" data-item="women" data-item-2="pants">
+                    <img src="Images/productsWomen8-removebg-preview.png">
+                </div>
+                 <div class="main-category-item" data-item="women" data-item-2="pants">
+                    <img src="Images/productsWomen27-removebg-preview.png">
+                </div>
+                 <div class="main-category-item" data-item="women" data-item-2="pants">
+                    <img src="Images/productsWomen29-removebg-preview.png">
+                </div>
+                <div class="main-category-item" data-item="women" data-item-2="pants">
+                    <img src="Images/productsWomen31-removebg-preview.png">
+                </div>
+                <div class="main-category-item" data-item="women" data-item-2="shoes">
+                    <img src="Images/productsWomen12-removebg-preview.png">
+                </div>
+                 <div class="main-category-item" data-item="women" data-item-2="shoes">
+                    <img src="Images/productsWomen44-removebg-preview.png">
+                </div>
+                <div class="main-category-item" data-item="women" data-item-2="shoes">
+                    <img src="Images/productsWomen47-removebg-preview.png">
+                </div>
+                <div class="main-category-item" data-item="women" data-item-2="shoes">
+                    <img src="Images/productsWomen51-removebg-preview.png">
+                </div>
+                <div class="main-category-item" data-item="kids" data-item-2="shirts">
+                    <img src="Images/productKids1-removebg-preview.png">
+                </div>
+                <div class="main-category-item" data-item="kids" data-item-2="shirts">
+                    <img src="Images/productKids2-removebg-preview.png">
+                </div>
+                <div class="main-category-item" data-item="kids" data-item-2="shirts">
+                    <img src="Images/productKids3-removebg-preview.png">
+                </div>
+                <div class="main-category-item" data-item="kids" data-item-2="shirts">
+                    <img src="Images/productKids4-removebg-preview.png">
+                </div>
+                <div class="main-category-item" data-item="kids" data-item-2="shoes">
+                    <img src="Images/productKids5-removebg-preview.png">
+                </div>
+                <div class="main-category-item" data-item="kids" data-item-2="pants">
+                    <img src="Images/productKids8-removebg-preview.png">
+                </div>
+                <div class="main-category-item" data-item="kids" data-item-2="pants">
+                    <img src="Images/productKids9-removebg-preview.png">
+                </div>
+                <div class="main-category-item" data-item="kids" data-item-2="pants">
+                    <img src="Images/productKids11-removebg-preview.png">
+                </div>
+                <div class="main-category-item" data-item="kids" data-item-2="pants">
+                    <img src="Images/productKids12-removebg-preview.png">
+                </div>
+                 <div class="main-category-item" data-item="kids" data-item-2="shoes">
+                    <img src="Images/productKids6-removebg-preview.png">
+                </div>
+                 <div class="main-category-item" data-item="kids" data-item-2="shoes">
+                    <img src="Images/productKids7-removebg-preview.png">
+                </div>
             </div>
             
-            <div class="products-types" style="width:100%;">
-                <div class="products-type1-wrapper" style="position:absolute;width:100%;transform: scale(1);">
-                     <div class="products-rows" style="position:relative;" >
-
-                  <div class="products products-row-1" data-aos="fade-up;" aos-duration="5000" data-aos-mirror="true">
-
-    <!--                        <div class="products-prev"></div>-->
-                        <ul style="list-style: none;">
-                                <li><h2 style="text-align: center;margin-bottom:50px;color:burlywood;">Shirts</h2></li>
-                        </ul>
-                          <ul style="list-style: none;">
-                                <li class="products-slider-prev"></li>
-                            </ul>
-
-                          <ul class="active-product-slide">
-
-                                <li class="card">
-                                </li>
-                                <li class="card">
-                                </li>
-                                <li class="card">
-                                </li>             
-                                <li class="card">
-                                </li>
-
-                            </ul>
-
-
-                          <ul class="under-product-slide">
-
-                                <li class="card">
-                                </li>
-                              <li class="card">
-                                </li>
-                                <li class="card">
-                                </li>
-                                <li class="card">
-                                </li>
-
-                            </ul>
-
-
-                          <ul class="under-product-slide">
-
-                                <li>
-                                </li>
-
-                                <li>
-                                </li>
-                                <li>
-                                </li>
-                                <li>
-                                </li>
-
-                            </ul>
-
-                          <ul class="under-product-slide">
-
-                                <li>
-                                </li>
-
-                                <li>
-                                </li>
-                                <li>
-                                </li>
-                                <li>
-                                </li>
-
-                            </ul>
-                          <ul class="under-product-slide"></ul>
-
-                          <ul style="list-style: none;">
-                                <li class="products-slider-next">
-                                </li>
-                         </ul>
-
-                </div>
-   
-                  <div class="products products-row-2" data-aos="fade-up;" aos-duration="5000" data-aos-mirror="true">
-
-    <!--                        <div class="products-prev"></div>-->
-
-                        <ul style="list-style: none;">
-                                <li><h2 style="text-align: center;margin-bottom:150px;margin-top:150px;color:burlywood;">Pants</h2></li>
-                        </ul>
-
-                            <ul style="list-style: none;">
-                                <li class="products-slider-prev"></li>
-                            </ul>
-                            <ul class="active-product-slide">
-
-                                <li>
-                                </li>
-
-                                <li>
-                                </li>
-                                <li>
-                                </li>             
-                                <li>
-                                </li>
-
-                            </ul>
-
-
-
-
-                             <ul class="under-product-slide">
-
-                                <li class="card">
-                                </li>
-
-                                <li class="card">
-                                </li>
-                                <li class="card">
-                                </li>
-                                <li class="card">
-                                </li>
-
-                            </ul>
-
-
-
-
-                             <ul class="under-product-slide">
-
-                                <li>
-
-                                </li>
-
-                                <li>
-
-                                </li>
-                                <li>
-
-                                </li>
-                                <li>
-                                </li>
-
-                            </ul>
-                        <ul class="under-product-slide">
-
-                                <li>
-                                </li>
-
-                                <li>
-                                </li>
-                                <li>
-                                </li>
-                                <li>
-                                </li>
-
-                            </ul>
-                            <ul class="under-product-slide">
-                            </ul>
-
-                            <ul style="list-style: none;">
-                                <li class="products-slider-next">
-                                </li>
-                            </ul>
-
-                </div>    
-
-                <div class="products products-row-3" data-aos="fade-up;" aos-duration="5000" data-aos-mirror="true">
-
-    <!--                        <div class="products-prev"></div>-->
-
-                        <ul style="list-style: none;">
-                                <li><h2 style="text-align: center;margin-bottom:150px;margin-top:150px;color:burlywood;">Shoes</h2></li>
-                        </ul>        
-
-                            <ul style="list-style: none;">
-                                <li class="products-slider-prev"></li>
-                            </ul>
-                            <ul class="active-product-slide">
-
-                                <li>
-                                </li>
-
-                                <li>
-                                </li>
-                                <li>
-                                </li>             
-                                <li>
-                                </li>
-
-                            </ul>
-
-
-
-
-                             <ul class="under-product-slide">
-
-                                <li class="card">
-                                </li>
-
-                                <li class="card">
-                                </li>
-                                <li class="card">
-                                </li>
-                                <li class="card">
-                                </li>
-
-                            </ul>
-
-
-
-
-                             <ul class="under-product-slide">
-
-                                <li>
-                                </li>
-
-                                <li>
-                                </li>
-                                <li>
-                                </li>
-                                <li>
-                                </li>
-
-                            </ul>
-                        <ul class="under-product-slide">
-
-                                <li>
-
-                                </li>
-
-                                <li>
-
-                                </li>
-                                <li>
-
-                                </li>
-                                <li>
-
-                                </li>
-
-                            </ul>
-                            <ul class="under-product-slide">
-                            </ul>
-
-                            <ul style="list-style: none;">
-                                <li class="products-slider-next">
-                                </li>
-                            </ul>
-
-                </div>        
-
-                </div>
-                </div>
-                <div class="products-type2-wrapper" style="position:absolute;width:100%;transform: scale(0);">
-                    <div class="products-rows" style="position:relative;" >
-
-                  <div class="products products-row-1" data-aos="fade-up;" aos-duration="5000" data-aos-mirror="true">
-
-                        <ul style="list-style: none;">
-                                <li><h2 style="text-align: center;margin-bottom:50px;color:burlywood;">Shirts</h2></li>
-                        </ul>
-                          <ul style="list-style: none;">
-                                <li class="products-slider-prev"></li>
-                            </ul>
-
-                          <ul class="active-product-slide">
-
-                                <li class="card">
-                                </li>
-                                <li class="card">
-                                </li>
-                                <li class="card">
-                                </li>             
-                                <li class="card">
-                                </li>
-
-                            </ul>
-
-
-                          <ul class="under-product-slide">
-
-                                <li class="card">
-                                </li>
-                              <li class="card">
-                                </li>
-                                <li class="card">
-                                </li>
-                                <li class="card">
-                                </li>
-
-                            </ul>
-
-
-                          <ul class="under-product-slide">
-
-                                <li>
-                                </li>
-
-                                <li>
-                                </li>
-                                <li>
-                                </li>
-                                <li>
-                                </li>
-
-                            </ul>
-
-                          <ul class="under-product-slide">
-
-                                <li>
-                                </li>
-
-                                <li>
-                                </li>
-                                <li>
-                                </li>
-                                <li>
-                                </li>
-
-                            </ul>
-                          <ul class="under-product-slide"></ul>
-
-                          <ul style="list-style: none;">
-                                <li class="products-slider-next">
-                                </li>
-                         </ul>
-
-                </div>
-
-                  <div class="products products-row-2" data-aos="fade-up;" aos-duration="5000" data-aos-mirror="true">
-
-   
-
-                        <ul style="list-style: none;">
-                                <li><h2 style="text-align: center;margin-bottom:150px;margin-top:150px;color:burlywood;">Pants</h2></li>
-                        </ul>
-
-                            <ul style="list-style: none;">
-                                <li class="products-slider-prev"></li>
-                            </ul>
-                            <ul class="active-product-slide">
-
-                                <li>
-                                </li>
-
-                                <li>
-                                </li>
-                                <li>
-                                </li>             
-                                <li>
-                                </li>
-
-                            </ul>
-
-
-
-
-                             <ul class="under-product-slide">
-
-                                <li class="card">
-                                </li>
-
-                                <li class="card">
-                                </li>
-                                <li class="card">
-                                </li>
-                                <li class="card">
-                                </li>
-
-                            </ul>
-
-
-
-
-                             <ul class="under-product-slide">
-
-                                <li>
-
-                                </li>
-
-                                <li>
-
-                                </li>
-                                <li>
-
-                                </li>
-                                <li>
-                                </li>
-
-                            </ul>
-                        <ul class="under-product-slide">
-
-                                <li>
-                                </li>
-
-                                <li>
-                                </li>
-                                <li>
-                                </li>
-                                <li>
-                                </li>
-
-                            </ul>
-                            <ul class="under-product-slide">
-                            </ul>
-
-                            <ul style="list-style: none;">
-                                <li class="products-slider-next">
-                                </li>
-                            </ul>
-
-                </div>    
-
-                <div class="products products-row-3" data-aos="fade-up;" aos-duration="5000" data-aos-mirror="true">
-
-
-
-                        <ul style="list-style: none;">
-                                <li><h2 style="text-align: center;margin-bottom:150px;margin-top:150px;color:burlywood;">Shoes</h2></li>
-                        </ul>        
-
-                            <ul style="list-style: none;">
-                                <li class="products-slider-prev"></li>
-                            </ul>
-                            <ul class="active-product-slide">
-
-                                <li>
-                                </li>
-
-                                <li>
-                                </li>
-                                <li>
-                                </li>             
-                                <li>
-                                </li>
-
-                            </ul>
-
-
-
-
-                             <ul class="under-product-slide">
-
-                                <li class="card">
-                                </li>
-
-                                <li class="card">
-                                </li>
-                                <li class="card">
-                                </li>
-                                <li class="card">
-                                </li>
-
-                            </ul>
-
-
-
-
-                             <ul class="under-product-slide">
-
-                                <li>
-                                </li>
-
-                                <li>
-                                </li>
-                                <li>
-                                </li>
-                                <li>
-                                </li>
-
-                            </ul>
-                        <ul class="under-product-slide">
-
-                                <li>
-
-                                </li>
-
-                                <li>
-
-                                </li>
-                                <li>
-
-                                </li>
-                                <li>
-
-                                </li>
-
-                            </ul>
-                            <ul class="under-product-slide">
-                            </ul>
-
-                            <ul style="list-style: none;">
-                                <li class="products-slider-next">
-                                </li>
-                            </ul>
-
-                </div>        
-
-                </div>
-                </div>   
-            </div>    
+         </div>
+        <div class="services-wrapper" id="services" data-aos="fade-up" >
             
-         </div>   
-         
-             
+            <div>
+                <i class="fa-solid fa-box"></i>
+                <h2>Free Shipping Method</h2>
+                <p>aorem ixpsacdolor sit ameasecur adipisicing elitsf edasd.</p>
+            </div>
+            <div>
+                 <i class="fa-solid fa-lock"></i>
+                <h2>Secure Payment System</h2>
+                <p>aorem ixpsacdolor sit ameasecur adipisicing elitsf edasd.</p>
+            </div>
+            <div>
+                <i class="fa-solid fa-arrows-rotate"></i>
+                <h2>Return Policy</h2>
+                <p>aorem ixpsacdolor sit ameasecur adipisicing elitsf edasd.</p>
+            </div>
+        </div>
+        <div class="brands-wrapper" id="brands" >
+            <h1>Brands</h1>
+            <div class="brand-items">
+
+                 <div class="brand-item" >
+                    <img src="Images/brand1.png">
+                </div>
+                <div class="brand-item">
+                    <img src="Images/brand2.png">
+                </div>
+                <div class="brand-item">
+                    <img src="Images/brand3.jpg" >
+                </div>
+                <div class="brand-item">
+                    <img src="Images/brand.4.png" >
+                </div>
+                 <div class="brand-item">
+                    <img src="Images/brand5.svg" >
+                </div>
+                 <div class="brand-item">
+                    <img src="Images/brand6.png" >
+                </div>
+            </div>
+        </div>   
+        <div class="about-wrapper" id="about" data-aos="fade-up">
+            
+            <div>
+                <h3>About</h3>
+                <p style="line-height:1.8;">Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore.</p>
+            </div>
+            <div>
+                <h3>Quick Links</h3>
+                <ul style="list-style: none;padding: 0;line-height:1.8;">
+                    <li>About</li>
+                    <li>Offers and Discounts</li>
+                    <li>Get Coupon</li>
+                    <li>Contact Us</li>
+                </ul>
+            </div>
+            <div >
+                <h3>New Products</h3>
+                 <ul style="list-style: none;padding: 0;line-height:1.8;">
+                    <li>Woman Cloth</li>
+                    <li>Fashion Accessories</li>
+                    <li>Man Accessories</li>
+                    <li>Rubber Made Toys</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Support</h3>
+                 <ul style="list-style: none;padding: 0;line-height:1.8;">
+                    <li>FAQ</li>
+                    <li>Terms and Conditions</li>
+                    <li>Privacy Policy</li>
+                    <li>Refund Policy</li>
+                </ul>
+            </div>
+        </div>
         
         
-        
-        
- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>       
-<script>
-const hamburger= document.querySelector(".hamburger");
-const navLinks= document.querySelector(".nav-links");
-const links= document.querySelectorAll(".nav-links li");
-const load=document.getElementById("loading");   
-    
-    
-//const products= document.querySelectorAll(".products"); 
-const productsType1WrapperProducts= document.querySelectorAll(".products-type1-wrapper .products");  
-const productsType2WrapperProducts= document.querySelectorAll(".products-type2-wrapper .products");   
-    
-    
-const productTypes= document.querySelectorAll(".products-types");       
-
-    
-const productsType1WrapperProductsUL1= productsType1WrapperProducts[0].querySelectorAll(".products-type1-wrapper .products ul");  
-const productsType2WrapperProductsUL1= productsType2WrapperProducts[0].querySelectorAll(".products-type2-wrapper .products ul");     
-    
-const productsType1WrapperProductsSliderPrev1= productsType1WrapperProducts[0].querySelectorAll(".products-type1-wrapper .products-slider-prev");
-const productsType2WrapperProductsSliderPrev1= productsType2WrapperProducts[0].querySelectorAll(".products-type2-wrapper .products-slider-prev");     
-    
-    
-const productsType1WrapperProductsSliderNext1= productsType1WrapperProducts[0].querySelectorAll(".products-type1-wrapper .products-slider-next");   
-const productsType2WrapperProductsSliderNext1= productsType2WrapperProducts[0].querySelectorAll(".products-type2-wrapper .products-slider-next");     
-    
-    
-    
-const productsType1WrapperProductsUL2= productsType1WrapperProducts[1].querySelectorAll(".products-type1-wrapper .products ul");  
-const productsType2WrapperProductsUL2= productsType2WrapperProducts[1].querySelectorAll(".products-type2-wrapper .products ul");     
-    
-    
-const productsType1WrapperProductsSliderPrev2= productsType1WrapperProducts[1].querySelectorAll(".products-type1-wrapper .products-slider-prev");
-const productsType2WrapperProductsSliderPrev2= productsType2WrapperProducts[1].querySelectorAll(".products-type2-wrapper .products-slider-prev");    
-    
-    
-    
-const productsType1WrapperProductsSliderNext2= productsType1WrapperProducts[1].querySelectorAll(".products-type1-wrapper .products-slider-next"); 
-const productsType2WrapperProductsSliderNext2= productsType2WrapperProducts[1].querySelectorAll(".products-type2-wrapper .products-slider-next");     
-    
-    
-    
-const productsType1WrapperProductsUL3= productsType1WrapperProducts[2].querySelectorAll(".products-type1-wrapper .products ul");    
-const productsType2WrapperProductsUL3= productsType2WrapperProducts[2].querySelectorAll(".products-type2-wrapper .products ul");       
-    
-    
-const productsType1WrapperProductsSliderPrev3= productsType1WrapperProducts[2].querySelectorAll(".products-type1-wrapper .products-slider-prev");
-const productsType2WrapperProductsSliderPrev3= productsType2WrapperProducts[2].querySelectorAll(".products-type2-wrapper .products-slider-prev");     
-    
-    
-const productsType1WrapperProductsSliderNext3= productsType1WrapperProducts[2].querySelectorAll(".products-type1-wrapper .products-slider-next");  
-const productsType2WrapperProductsSliderNext3= productsType2WrapperProducts[2].querySelectorAll(".products-type2-wrapper .products-slider-next");     
-    
-    
-const productsTypesDIV= productTypes[0].querySelectorAll(".products-types div");   
-   
-    
-    
-    
-    
-    
-    
-    
-
-hamburger.addEventListener("click",()=>{
-    navLinks.classList.toggle("open");
-
-    links.forEach(function(element){
-
-        element.classList.toggle("fade");
-    });
-
-    hamburger.classList.toggle("toggle");
-});
-
-    
-
-   
-function menTypeSelectorCLicked(){
- 
-       
-      console.log("men clicked");
-//      console.log(productsDIV[0]);
-     
-     for (i = 0; i < productsTypesDIV.length; i++) {
-            if(productsTypesDIV[i].className==="products-type1-wrapper")
-            {
-                console.log(productsTypesDIV[i]);
-                console.log(productsTypesDIV[i].querySelector(".products-rows"));
-                console.log("men type found");
-                console.log(productsTypesDIV[i].querySelector(".products-rows"));
-                
-                productsTypesDIV[i].style.style = "opacity:1;";  
-                productsTypesDIV[i].style.transform = "translateX(0%) scale(1)";
-                productsTypesDIV[i].style.transition = "all 2s";
-
-            }
-             else if(productsTypesDIV[i].className==="products-type2-wrapper"){
-
-                productsTypesDIV[i].style.style = "opacity:0;";  
-                productsTypesDIV[i].style.transform = "translateX(100%) scale(0)" ;
-                 
-                productsTypesDIV[i].style.transition = "all 2s";
-             }
-     } 
-
- 
-}
-function womenTypeSelectorCLicked(){
- 
- 
-      console.log("women clicked");
-      for (i = 0; i < productsTypesDIV.length; i++) {
-            if(productsTypesDIV[i].className==="products-type2-wrapper")
-            {
-
-                console.log(productsTypesDIV[i]);
-                console.log(productsTypesDIV[i].querySelector(".products-rows"));
-                console.log("women type found");
-                console.log(productsTypesDIV[i].querySelector(".products-rows"));
-                productsTypesDIV[i].style.style = "opacity:1;";  
-                productsTypesDIV[i].style.transform = "translateX(0%) scale(1)";
-                productsTypesDIV[i].style.transition = "all 2s";
-
-            }
-            else if(productsTypesDIV[i].className==="products-type1-wrapper"){
-                
-                productsTypesDIV[i].style.style = "opacity:0;";  
-                productsTypesDIV[i].style.transform = "translateX(100%) scale(0)" ;
-                productsTypesDIV[i].style.transition = "all 2s";
-
-            }
-     } 
-    
-//    products-type2-wrapper
- 
- }
-function kidsTypeSelectorCLicked(){
- 
- 
-      console.log("kids clicked");
- 
- }    
-    
-    
-//products row 1 starts//    
-productsType1WrapperProductsSliderNext1[0].addEventListener('click',productsType1WrapperProductsNext1OnClick);  
-productsType2WrapperProductsSliderNext1[0].addEventListener('click',productsType2WrapperProductsNext1OnClick);      
-    
-productsType1WrapperProductsSliderPrev1[0].addEventListener('click',productsType1WrapperProductsPrev1OnClick);   
-productsType2WrapperProductsSliderPrev1[0].addEventListener('click',productsType2WrapperProductsPrev1OnClick);       
-    
-function productsType1WrapperProductsNext1OnClick(){
-    
-     
-    console.log("productsNextOnClick");
-     for (i = productsType1WrapperProductsUL1.length-4; i > 0; i--) {
-        if(productsType1WrapperProductsUL1[i].className==="active-product-slide" && (productsType1WrapperProductsUL1.length-4))
-        {
-            
-            productsType1WrapperProductsUL1[i].classList.remove("active-product-slide");
-            productsType1WrapperProductsUL1[i].classList.add("under-product-slide");
-            productsType1WrapperProductsUL1[i+1].classList.remove("under-product-slide");
-            productsType1WrapperProductsUL1[i+1].classList.add("active-product-slide");
-            
-            console.log("from item no.: "+i+" to item no.: "+(i+1));
-            
-        }
-    } 
-}
-    
-function productsType2WrapperProductsNext1OnClick(){
-    
-     
-    console.log("productsNextOnClick");
-     for (i = productsType2WrapperProductsUL1.length-4; i > 0; i--) {
-        if(productsType2WrapperProductsUL1[i].className==="active-product-slide" && (productsType1WrapperProductsUL1.length-4))
-        {
-            
-            productsType2WrapperProductsUL1[i].classList.remove("active-product-slide");
-            productsType2WrapperProductsUL1[i].classList.add("under-product-slide");
-            productsType2WrapperProductsUL1[i+1].classList.remove("under-product-slide");
-            productsType2WrapperProductsUL1[i+1].classList.add("active-product-slide");
-            
-            console.log("from item no.: "+i+" to item no.: "+(i+1));
-            
-        }
-    } 
-}    
-    
-    
-    
-function productsType1WrapperProductsPrev1OnClick(){
-    
-     console.log("productsPrevOnClick");
-     for (i = 3; i < productsType1WrapperProductsUL1.length; i++) {
-        if(productsType1WrapperProductsUL1[i].className==="active-product-slide")
-        {
-            
-            productsType1WrapperProductsUL1[i].classList.remove("active-product-slide");
-            productsType1WrapperProductsUL1[i].classList.add("under-product-slide");
-            productsType1WrapperProductsUL1[i-1].classList.remove("under-product-slide");
-            productsType1WrapperProductsUL1[i-1].classList.add("active-product-slide");
-            
-            console.log("from item no.: "+i+" to item no.: "+(i-1));
-            
-        }
-    } 
-}    
-function productsType2WrapperProductsPrev1OnClick(){
-    
-     console.log("productsPrevOnClick");
-     for (i = 3; i < productsType2WrapperProductsUL1.length; i++) {
-        if(productsType2WrapperProductsUL1[i].className==="active-product-slide")
-        {
-            
-            productsType2WrapperProductsUL1[i].classList.remove("active-product-slide");
-            productsType2WrapperProductsUL1[i].classList.add("under-product-slide");
-            productsType2WrapperProductsUL1[i-1].classList.remove("under-product-slide");
-            productsType2WrapperProductsUL1[i-1].classList.add("active-product-slide");
-            
-            console.log("from item no.: "+i+" to item no.: "+(i-1));
-            
-        }
-    } 
-} 
-//products row 1 ends//     
-//products row 2 starts//    
-productsType1WrapperProductsSliderNext2[0].addEventListener('click',productsType1WrapperProductsNext2OnClick);   
-productsType2WrapperProductsSliderNext2[0].addEventListener('click',productsType2WrapperProductsNext2OnClick);    
-    
-productsType1WrapperProductsSliderPrev2[0].addEventListener('click',productsType1WrapperProductsPrev2OnClick);   
-productsType2WrapperProductsSliderPrev2[0].addEventListener('click',productsType2WrapperProductsPrev2OnClick);      
-    
-function productsType1WrapperProductsNext2OnClick(){
-    
-     
-    console.log("productsNextOnClick");
-     for (i = productsType1WrapperProductsUL2.length-4; i > 0; i--) {
-        if(productsType1WrapperProductsUL2[i].className==="active-product-slide" && (productsType1WrapperProductsUL2.length-4))
-        {
-            
-            productsType1WrapperProductsUL2[i].classList.remove("active-product-slide");
-            productsType1WrapperProductsUL2[i].classList.add("under-product-slide");
-            productsType1WrapperProductsUL2[i+1].classList.remove("under-product-slide");
-            productsType1WrapperProductsUL2[i+1].classList.add("active-product-slide");
-            
-            console.log("from item no.: "+i+" to item no.: "+(i+1));
-            
-        }
-    } 
-}
-function productsType2WrapperProductsNext2OnClick(){
-    
-     
-    console.log("productsNextOnClick");
-     for (i = productsType2WrapperProductsUL2.length-4; i > 0; i--) {
-        if(productsType2WrapperProductsUL2[i].className==="active-product-slide" && (productsType2WrapperProductsUL2.length-4))
-        {
-            
-            productsType2WrapperProductsUL2[i].classList.remove("active-product-slide");
-            productsType2WrapperProductsUL2[i].classList.add("under-product-slide");
-            productsType2WrapperProductsUL2[i+1].classList.remove("under-product-slide");
-            productsType2WrapperProductsUL2[i+1].classList.add("active-product-slide");
-            
-            console.log("from item no.: "+i+" to item no.: "+(i+1));
-            
-        }
-    } 
-}    
-    
-    
-function productsType1WrapperProductsPrev2OnClick(){
-    
-     console.log("productsPrevOnClick");
-     for (i = 3; i < productsType1WrapperProductsUL2.length; i++) {
-        if(productsType1WrapperProductsUL2[i].className==="active-product-slide" )
-        {
-            
-            productsType1WrapperProductsUL2[i].classList.remove("active-product-slide");
-            productsType1WrapperProductsUL2[i].classList.add("under-product-slide");
-            productsType1WrapperProductsUL2[i-1].classList.remove("under-product-slide");
-            productsType1WrapperProductsUL2[i-1].classList.add("active-product-slide");
-            
-            console.log("from item no.: "+i+" to item no.: "+(i-1));
-            
-        }
-    } 
-}   
-function productsType2WrapperProductsPrev2OnClick(){
-    
-     console.log("productsPrevOnClick");
-     for (i = 3; i < productsType2WrapperProductsUL2.length; i++) {
-        if(productsType2WrapperProductsUL2[i].className==="active-product-slide" )
-        {
-            
-            productsType2WrapperProductsUL2[i].classList.remove("active-product-slide");
-            productsType2WrapperProductsUL2[i].classList.add("under-product-slide");
-            productsType2WrapperProductsUL2[i-1].classList.remove("under-product-slide");
-            productsType2WrapperProductsUL2[i-1].classList.add("active-product-slide");
-            
-            console.log("from item no.: "+i+" to item no.: "+(i-1));
-            
-        }
-    } 
-}    
-    
-    
-
-//products row 2 ends//    
-    
-//products row 3 starts//        
-productsType1WrapperProductsSliderNext3[0].addEventListener('click',productsType1WrapperProductsNext3OnClick);   
-productsType1WrapperProductsSliderPrev3[0].addEventListener('click',productsType1WrapperProductsPrev3OnClick);  
-    
-productsType2WrapperProductsSliderNext3[0].addEventListener('click',productsType2WrapperProductsNext3OnClick);   
-productsType2WrapperProductsSliderPrev3[0].addEventListener('click',productsType2WrapperProductsPrev3OnClick);        
-    
-    
-function productsType1WrapperProductsNext3OnClick(){
-    
-     
-    console.log("productsNextOnClick");
-     for (i = productsType1WrapperProductsUL3.length-4; i > 0; i--) {
-        if(productsType1WrapperProductsUL3[i].className==="active-product-slide" && (productsType1WrapperProductsUL3.length-4))
-        {
-            
-            productsType1WrapperProductsUL3[i].classList.remove("active-product-slide");
-            productsType1WrapperProductsUL3[i].classList.add("under-product-slide");
-            productsType1WrapperProductsUL3[i+1].classList.remove("under-product-slide");
-            productsType1WrapperProductsUL3[i+1].classList.add("active-product-slide");
-            
-            console.log("from item no.: "+i+" to item no.: "+(i+1));
-            
-        }
-    } 
-}
-    
-function productsType2WrapperProductsNext3OnClick(){
-    
-     
-    console.log("productsNextOnClick");
-     for (i = productsType2WrapperProductsUL3.length-4; i > 0; i--) {
-        if(productsType2WrapperProductsUL3[i].className==="active-product-slide" && (productsType2WrapperProductsUL3.length-4))
-        {
-            
-            productsType2WrapperProductsUL3[i].classList.remove("active-product-slide");
-            productsType2WrapperProductsUL3[i].classList.add("under-product-slide");
-            productsType2WrapperProductsUL3[i+1].classList.remove("under-product-slide");
-            productsType2WrapperProductsUL3[i+1].classList.add("active-product-slide");
-            
-            console.log("from item no.: "+i+" to item no.: "+(i+1));
-            
-        }
-    } 
-}      
-    
-    
-
-function productsType1WrapperProductsPrev3OnClick(){
-    
-     console.log("productsPrevOnClick");
-     for (i = 3; i < productsType1WrapperProductsUL3.length; i++) {
-        if(productsType1WrapperProductsUL3[i].className==="active-product-slide" )
-        {
-            
-            productsType1WrapperProductsUL3[i].classList.remove("active-product-slide");
-            productsType1WrapperProductsUL3[i].classList.add("under-product-slide");
-            productsType1WrapperProductsUL3[i-1].classList.remove("under-product-slide");
-            productsType1WrapperProductsUL3[i-1].classList.add("active-product-slide");
-            
-            console.log("from item no.: "+i+" to item no.: "+(i-1));
-            
-        }
-    } 
-}  
-    
-    
-function productsType2WrapperProductsPrev3OnClick(){
-    
-     console.log("productsPrevOnClick");
-     for (i = 3; i < productsType2WrapperProductsUL3.length; i++) {
-        if(productsType2WrapperProductsUL3[i].className==="active-product-slide" )
-        {
-            
-            productsType2WrapperProductsUL3[i].classList.remove("active-product-slide");
-            productsType2WrapperProductsUL3[i].classList.add("under-product-slide");
-            productsType2WrapperProductsUL3[i-1].classList.remove("under-product-slide");
-            productsType2WrapperProductsUL3[i-1].classList.add("active-product-slide");
-            
-            console.log("from item no.: "+i+" to item no.: "+(i-1));
-            
-        }
-    } 
-}     
-//products row 3 ends//    
-       
-function loadDone(){
-    
-      load.style.display="none";
-}    
-window.onscroll = function() {scrollFunction()};    
-function scrollFunction() {
-    
-    if(window.screen.width<=768)
-    {
-        if ((document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) && document.getElementById("nav-links").className.includes('open')) {
-        document.getElementById("nav-wrapper").style.background = "dimgrey";
-        document.getElementById("nav-links").style.background = "black";
-
-
-        document.getElementById("nav-wrapper").style.zIndex = "100";
-            document.getElementById("nav-links").style.zIndex = "5";
-        document.getElementById("nav-links").style.width = "50%";
-        document.getElementById("nav-links").style.height = "100%";    
-        document.getElementById("nav-wrapper").style.width = "100%";
-         document.getElementById("nav-wrapper").style.height = "6h";    
-      
-         
-   
-        } 
-        else if ((document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) && !document.getElementById("nav-links").className.includes('open')) {
-        document.getElementById("nav-wrapper").style.background = "dimgrey";
-        document.getElementById("nav-links").style.background = "black";
-
-
-        document.getElementById("nav-wrapper").style.zIndex = "100";
-            document.getElementById("nav-links").style.zIndex = "5";
-        document.getElementById("nav-links").style.width = "50%";
-        
-        document.getElementById("nav-wrapper").style.height = "7h";      
-        document.getElementById("nav-wrapper").style.width = "100%";   
-         
-           
-   
-        }
-         else{
-         
-         document.getElementById("nav-wrapper").style.height = "7h";      
-        document.getElementById("nav-wrapper").style.width = "100%";   
-         
-         }
-    
-    }else{
-         if (document.body.scrollTop > 750 || document.documentElement.scrollTop > 750) {
-            document.getElementById("nav").style.background = "black";
-            document.getElementById("nav").style.height = "6h"; 
-
-
-            
-   
-        }
-        else{
-                document.getElementById("nav").style.background = "dimgray";
-            document.getElementById("nav").style.height = "6h"; 
-        
-        }
-            
-    
-    }
-    
-}    
-  
-     
-AOS.init();    
-</script>
+<script src="main.js"></script>    
     </div>
 </body>    
 </html>
