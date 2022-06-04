@@ -107,7 +107,7 @@ function scrollFunction() {
             document.querySelector(".nav-links.open").style.background = "black";
             alert("1st");
             
-        }else if((document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) && !document.getElementById("nav-links").className.includes('open')){
+        }else if((document.body.scrollTop > 70 || document.documentElement.scrollTop > 70) && !document.getElementById("nav-links").className.includes('open')){
 //                document.getElementById("nav-wrapper").style.background = "transparent";
                 document.getElementById("nav-links").style.background = "black";
             
@@ -116,11 +116,17 @@ function scrollFunction() {
                 alert("2nd");
                 
                  }
-        else if((document.body.scrollTop < 50 || document.documentElement.scrollTop < 50) && document.getElementById("nav-links").className.includes('open')){
+        else if((document.body.scrollTop < 70 || document.documentElement.scrollTop < 70) && !document.getElementById("nav-links").className.includes('open')){
                 document.getElementById("nav-wrapper").style.background = "transparent";
                 document.getElementById("nav-links").style.background = "transparent";
                 document.getElementById("nav-wrapper").style.zIndex = "100";
+                alert("new");
+                
+                 }
+        else if((document.body.scrollTop < 70 || document.documentElement.scrollTop < 70) && document.getElementById("nav-links").className.includes('open')){
                 document.getElementById("nav-wrapper").style.background = "transparent";
+                document.getElementById("nav-links").style.background = "transparent";
+                document.getElementById("nav-wrapper").style.zIndex = "100";
                 alert("3rd");
                  }
         else{
