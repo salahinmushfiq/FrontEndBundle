@@ -130,7 +130,8 @@ function scrollFunction() {
             document.getElementById("nav-links").style.background = "black";
             document.getElementById("nav").style.background = "black";
             document.getElementById("nav").style.height = "6vh+5px";
-            document.getElementById("nav-links").style.height =  "6vh+5px";
+            document.getElementById("nav-links").style.height =  "6vh";
+            document.getElementById("nav-wrapper").style.height =  "6vh+5px";
             document.getElementById("nav").style.transition= "300ms linear";
             const nodes = document.querySelectorAll('.nav-links a');
 
@@ -141,10 +142,11 @@ function scrollFunction() {
             }
         }else{
                 document.getElementById("nav-wrapper").style.background = "transparent";
-                document.getElementById("nav-links").style.background = "transparent";
-                document.getElementById("nav").style.background = "black";
+                document.getElementById("nav-links").style.background = "dimgray";
+                document.getElementById("nav").style.background = "dimgray";
                 const nodes = document.querySelectorAll('.nav-links a');
                 document.getElementById("nav").style.height = "8vh"; 
+                document.getElementById("nav-links").style.height = "7vh";
                 document.getElementById("nav").style.transition= "300ms linear";
                 for (const node of nodes) {
 
