@@ -126,7 +126,7 @@ function scrollFunction() {
         }
     }else{
         if(document.body.scrollTop > 70 || document.documentElement.scrollTop > 70){
-            document.getElementById("nav-wrapper").style.background = "black";
+            document.getElementById("nav-wrapper").style.background = "transparent";
             document.getElementById("nav-links").style.background = "black";
             document.getElementById("nav").style.background = "black";
             document.getElementById("nav").style.height = "6vh+5px";
