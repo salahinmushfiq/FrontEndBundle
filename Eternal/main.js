@@ -95,7 +95,7 @@ function scrollFunction() {
 //        }
 //    }
 //  
-    console.log("screen scroll: "+document.body.scrollTop);
+//    console.log("screen scroll: "+document.body.scrollTop);
     if(window.screen.width<=768){
         
         if ((document.body.scrollTop > 70 || document.documentElement.scrollTop > 70) && document.getElementById("nav-links").className.includes('open')) {
@@ -128,10 +128,10 @@ function scrollFunction() {
         if(document.body.scrollTop > 70 || document.documentElement.scrollTop > 70){
             document.getElementById("nav-wrapper").style.background = "transparent";
             document.getElementById("nav-links").style.background = "black";
-            document.getElementById("nav").style.background = "dimgray";
-            document.getElementById("nav").style.height = "6vh+5px";
+            document.getElementById("nav").style.background = "black";
+            document.getElementById("nav").style.height = "6.6vh";
             document.getElementById("nav-links").style.height =  "6vh";
-            document.getElementById("nav-wrapper").style.height =  "6vh+5px";
+            document.getElementById("nav-wrapper").style.height =  "6.6vh";
             document.getElementById("nav").style.transition= "300ms linear";
             const nodes = document.querySelectorAll('.nav-links a');
 

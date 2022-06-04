@@ -291,9 +291,9 @@ html {
             transition: all 0.5 10s;
         }
         .shrink{
-           margin-top:0;
-           padding: 0;
-           top:0;
+           margin-top:0px;
+           padding: 0px;
+           top:0px;
            transition: all .5s;  
            height:6vh;
            background: black;
@@ -344,7 +344,7 @@ html {
     }
     
     .cover-right{
-        margin-top:250px;
+        margin-top:70px;
         flex:2;
         width: 100%;
     } 
@@ -352,7 +352,7 @@ html {
       display: flex;
       flex-wrap: wrap;
       list-style: none;
-      transform: rotate(25deg);
+      transform: rotate(10deg);
       width: 60%;
       margin-left: auto;
       height:auto;  
