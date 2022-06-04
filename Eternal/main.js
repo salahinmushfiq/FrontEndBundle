@@ -98,40 +98,41 @@ function scrollFunction() {
 //    console.log("screen scroll: "+document.body.scrollTop);
     if(window.screen.width<=768){
         
-        if ((document.body.scrollTop > 70 || document.documentElement.scrollTop > 70) && document.getElementById("nav-links").className.includes('open')) {
+        if ((document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) && document.getElementById("nav-links").className.includes('open')) {
             document.getElementById("nav-wrapper").style.background = "black";
             document.getElementById("nav-links").style.background = "black";
             document.getElementById("nav-wrapper").style.zIndex = "100";
             document.querySelector(".nav-links.open").style.background = "black";
             document.querySelector(".nav-links.open").style.zIndex = "90";
             document.querySelector(".nav-links.open").style.background = "black";
-            alert("1st");
+            alert("1st "+document.body.scrollTop);
             
-        }else if((document.body.scrollTop > 70 || document.documentElement.scrollTop > 70) && !document.getElementById("nav-links").className.includes('open')){
+        }else if((document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) && !document.getElementById("nav-links").className.includes('open')){
 //                document.getElementById("nav-wrapper").style.background = "transparent";
                 document.getElementById("nav-links").style.background = "black";
             
                 document.getElementById("nav-wrapper").style.background = "black";
                 document.getElementById("nav-wrapper").style.zIndex = "100";
-                alert("2nd");
+                alert("2nd "+document.body.scrollTop);
                 
                  }
-        else if((document.body.scrollTop < 70 || document.documentElement.scrollTop < 70) && !document.getElementById("nav-links").className.includes('open')){
+        else if((document.body.scrollTop < 50 || document.documentElement.scrollTop < 50) && !document.getElementById("nav-links").className.includes('open')){
                 document.getElementById("nav-wrapper").style.background = "transparent";
                 document.getElementById("nav-links").style.background = "transparent";
                 document.getElementById("nav-wrapper").style.zIndex = "100";
-                alert("new");
+                alert("new "+document.body.scrollTop);
                 
                  }
-        else if((document.body.scrollTop < 70 || document.documentElement.scrollTop < 70) && document.getElementById("nav-links").className.includes('open')){
+        else if((document.body.scrollTop < 50 || document.documentElement.scrollTop < 50) && document.getElementById("nav-links").className.includes('open')){
                 document.getElementById("nav-wrapper").style.background = "transparent";
                 document.getElementById("nav-links").style.background = "transparent";
                 document.getElementById("nav-wrapper").style.zIndex = "100";
-                alert("3rd");
+                alert("3rd "+document.body.scrollTop);
                  }
         else{
             console.log("Screen width lower than 768. Yet it doesn't fulfill any conditions.");
-            alert("4th");
+            
+            alert("4th "+document.body.scrollTop);
         }
     }else{
         if(document.body.scrollTop > 70 || document.documentElement.scrollTop > 70){
