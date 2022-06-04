@@ -111,8 +111,8 @@ function scrollFunction() {
 //                document.getElementById("nav-wrapper").style.background = "transparent";
                 document.getElementById("nav-links").style.background = "black";
                 document.getElementById("nav-wrapper").style.background = "transparent";
-                document.getElementById("nav").style.background = "dimgray";
-                document.getElementById("nav-wrapper").style.height =  "6.6vh";
+                document.getElementById("nav").style.background = "black";
+                document.getElementById("nav").style.height =  "6.6vh";
                 document.getElementById("nav-wrapper").style.zIndex = "100";
                 alert("2nd "+document.body.scrollTop);
                 
