@@ -105,7 +105,7 @@ function scrollFunction() {
             document.querySelector(".nav-links.open").style.background = "black";
             document.querySelector(".nav-links.open").style.zIndex = "90";
             document.querySelector(".nav-links.open").style.background = "black";
-            alert("1st "+document.body.scrollTop);
+//            alert("1st "+document.body.scrollTop);
             
         }else if((document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) && !document.getElementById("nav-links").className.includes('open')){
 //                document.getElementById("nav-wrapper").style.background = "transparent";
@@ -114,7 +114,7 @@ function scrollFunction() {
                 document.getElementById("nav").style.background = "black";
                 document.getElementById("nav").style.height =  "6.6vh";
                 document.getElementById("nav-wrapper").style.zIndex = "100";
-                alert("2nd "+document.body.scrollTop);
+//                alert("2nd "+document.body.scrollTop);
                 
                  }
         else if((document.body.scrollTop < 50 || document.documentElement.scrollTop < 50) && !document.getElementById("nav-links").className.includes('open')){
@@ -122,19 +122,19 @@ function scrollFunction() {
                 document.getElementById("nav-links").style.background = "transparent";
                 document.getElementById("nav").style.background = "dimgray";
                 document.getElementById("nav-wrapper").style.zIndex = "100";
-                alert("new "+document.body.scrollTop);
+//                alert("new "+document.body.scrollTop);
                 
                  }
         else if((document.body.scrollTop < 50 || document.documentElement.scrollTop < 50) && document.getElementById("nav-links").className.includes('open')){
                 document.getElementById("nav-wrapper").style.background = "black";
                 document.getElementById("nav-links").style.background = "black";
                 document.getElementById("nav-wrapper").style.zIndex = "100";
-                alert("3rd "+document.body.scrollTop);
+//                alert("3rd "+document.body.scrollTop);
                  }
         else{
             console.log("Screen width lower than 768. Yet it doesn't fulfill any conditions.");
             
-            alert("4th "+document.body.scrollTop);
+//            alert("4th "+document.body.scrollTop);
         }
     }else{
         console.log("test 4 in else");
@@ -153,7 +153,7 @@ function scrollFunction() {
                 node.classList.add('shrink');
                 
             }
-            alert("5th");
+//            alert("5th");
         }else{
                 document.getElementById("nav-wrapper").style.background = "transparent";
                 document.getElementById("nav-links").style.background = "dimgray";
@@ -167,7 +167,7 @@ function scrollFunction() {
                     node.classList.remove('shrink');
 
                 }
-            alert("6th");
+//            alert("6th");
         }
         
     }
