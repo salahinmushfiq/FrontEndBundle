@@ -115,8 +115,8 @@ function scrollFunction() {
                 
                  }
         else if((document.body.scrollTop < 50 || document.documentElement.scrollTop < 50) && document.getElementById("nav-links").className.includes('open')){
-//                document.getElementById("nav-wrapper").style.background = "transparent";
-//                document.getElementById("nav-links").style.background = "transparent";
+                document.getElementById("nav-wrapper").style.background = "transparent";
+                document.getElementById("nav-links").style.background = "transparent";
                 document.getElementById("nav-wrapper").style.zIndex = "100";
                 document.getElementById("nav-wrapper").style.background = "transparent";
                 
