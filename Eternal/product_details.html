@@ -1,0 +1,2011 @@
+<html>
+<head>
+      <link rel="shortcut icon" href="images/eternal_logo.JPG" />
+      <meta content="width=device-width, initial-scale=1" name="viewport" />
+      
+      <!-- Our project just needs Font Awesome Solid + Brands -->
+      <script defer src="js/brands.js"></script>
+      <script defer src="js/solid.js"></script>
+      <script defer src="js/fontawesome.js"></script>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+      <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="fontawesome-free-5.15.3-web/css/all.css"/>
+    
+    <title>Eternal</title>  
+<!--    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />-->
+
+    
+    <style>
+   
+    html {
+  scroll-behavior: smooth;
+}
+:root {
+  --mouse-x: 400px;
+  --mouse-y: 0px;
+}
+a{
+    text-decoration: none;
+    color:burlywood;
+}
+        a:hover{
+    text-decoration: none;
+    color:burlywood;
+}  
+body{
+    
+    
+    
+    margin-right:0;
+    margin-left:0;
+    margin-top:0;
+    margin-bottom:0;
+    padding-right:0;
+    padding-left:0;
+    width: 100%;
+    cursor:url("images/finger_3.png"),auto;
+    overflow-x: hidden;
+    -webkit-user-select: none; /* Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+    overflow-x: hidden;
+
+    }
+
+h1{
+    color:burlywood;
+
+}
+.loading{
+
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:#f7f8fa url('https://i.gifer.com/Vwcv.gif') no-repeat center;
+    background-size: contain;
+    z-index: 99999;
+    overflow-x: hidden;
+
+}
+
+
+
+
+@keyframes brandTweak {
+    0% {
+        transform: scale(1) rotate(0deg);
+        opacity:1;
+
+    }
+    50%{
+        transform: scale(.5) rotate(20deg);
+        opacity:.5;
+    }
+    50%{
+        transform: scale(.5) rotate(-25deg);
+        opacity:.5;   
+    }
+    75%{
+        transform: scale(.5) rotate(20deg);
+        opacity:.5;
+    }
+     100% {
+        transform: scale(1) rotate(0deg);
+         opacity:1;
+    }
+
+}
+.main{
+
+    height:auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto;
+    grid-gap: 10px;
+    box-sizing: border-box;
+    display: grid;
+    grid-row-gap: 100px;
+
+    } 
+.cover{
+    position:relative;
+    width: 70%;
+    background-color:dimgray;
+    height:700px;
+}
+.cover-ul{
+   margin-top: 100px;
+    margin-right: 50px;
+}
+.nav-wrapper{
+    position: absolute;
+    position: fixed;
+    top:0;
+    width: 100%;
+    background:  transparent;
+    z-index:5;
+    right:0;
+}
+ nav{
+    height: 8vh;
+    background-color:dimgrey;
+    opacity: .5;
+    position:relative;
+    z-index:5;
+}
+.nav-links{
+
+
+    width:80%;
+/*        background-color: grey;*/
+    background: transparent;
+    height:inherit;
+    margin:0px;
+    position:fixed;
+    align-items: center;
+    margin-left: auto;
+    padding: 0;
+    flex-direction: row;
+    display: flex;
+    justify-content: space-around;
+    z-index:5;
+}
+.nav-links li a{
+    color: white;
+    text-decoration: none;
+
+    line-height: 7vh;
+    color: burlywood;
+    z-index:5;
+ }
+.nav-links li{
+
+    list-style: none;
+    width: inherit;
+    height:inherit;
+    margin-left: 15px;
+    margin-top:10px;
+    margin-bottom:10px;
+      }
+
+/* navbar button hover effect   */
+.btn-item {
+    position: relative;
+    display: block;
+    color: burlywood;
+    text-decoration: none;
+    overflow: hidden;
+    transition: 0.2s;
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 6vh;
+    top:5px;
+
+}       
+.btn-item span {
+    position: absolute;
+    display: block;
+}
+.btn-item span:nth-child(1) {
+    top: 0;
+    transform: translateX(-115%);
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, white);
+}
+.btn-item:hover span:nth-child(1) {
+    transform: translateX(100%);
+    transition: 1s;
+}
+.btn-item span:nth-child(2) {
+    bottom: 0;
+    transform: translateX(-115%);
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, white);
+}
+.btn-item:hover span:nth-child(2) {
+    transform: translateX(100%);
+    transition: 1s 0s;
+}
+.btn-item:hover a {
+    color:white;
+}   
+html[data-useragent*='Android'] body {
+    background-color: silver;
+    border-top: 1em solid blue;
+}
+/* navbar button hover effect   */
+@media screen and (max-width: 768px){
+
+/*        responsible for bubble effect*/
+    .drawer{
+        margin-right:auto; 
+        margin-left:auto; 
+        margin-bottom: auto;
+        margin-top: auto;
+        width:100%;
+        height: inherit;
+        background-color: rgba(0,0,0,.9);
+
+    }
+
+    .nav-links{
+        position:fixed;
+        flex-direction:column;
+        width:50%;
+        height:100vh;
+        color:white;
+        top:0;
+        left:50%;
+/*            align-content: center;*/
+        clip-path:circle(0 at 90% -10%); 
+        -webkit-clip-path:circle(0 at 90% 0%);
+
+        transition: all 1s ease-out;
+        text-align: center;
+        opacity: 0.9;
+        padding:0;
+        justify-content: center;
+        background-color:dimgray;
+
+    }
+    .btn-item{
+
+       width: 80%;
+       margin-left:auto; margin-right:auto;    
+       padding:0;
+       height:6vh;
+    }
+    .btn-item:hover{
+        width: 80%;
+    border-color: dimgrey;
+    transform: rotateY(15deg);
+    transition: all 1s ease-out;
+    }
+    .nav-links.open{
+
+        clip-path:circle(1000px at 90% 10%); 
+        -webkit-clip-path:circle(1000px at 90% 10%);
+        transition: all 1s ease-out;
+
+    }
+    /*        responsible for bubble effect*/
+    .line{
+        width:30px;
+        height:3px;
+        background:white;
+        margin: 5px;
+
+
+    }
+    .hamburger{
+        position: fixed;
+        cursor: pointer;
+        right: 5%;
+        top:0%;
+        transform:translate(-5%,50%);
+        z-index: 100;
+        display: block;
+
+    }
+    .hamburger div{
+        transition: all 0.3s ease;
+    }
+
+    .nav-links li{
+        height:70px;
+        opacity:0;
+
+    }
+   .nav-links li a{
+        font-size: 25px;
+
+        line-height: 70px;
+        vertical-align: middle;
+    }
+    .nav-links li:nth-child(1){
+        transition: all 0.5 2s;
+    }
+    .nav-links li:nth-child(2){
+        transition: all 0.5 4s;
+    }
+    .nav-links li:nth-child(3){
+        transition: all 0.5 6s;
+    }
+    .nav-links li:nth-child(4){
+        transition: all 0.5 8s;
+    }
+    .nav-links li:nth-child(5){
+        transition: all 0.5 10s;
+    }
+    .shrink{
+       margin-top:0px;
+       padding: 0px;
+       top:0px;
+       transition: all .5s;  
+       height:6vh;
+       background: black;
+    }
+    li.fade{
+        opacity:1;
+    }
+    .toggle .line1{
+        transform: rotate(-45deg) translate(-5px,6px);
+    }
+    .toggle .line2{
+        opacity: 0;
+    }
+    .toggle .line3{
+        transform: rotate(45deg) translate(-5px,-6px);
+    }
+
+
+} 
+
+
+
+
+
+/*image gallery starts         */
+
+.cover{
+
+    width: 100%;
+    background-image:url(images/hotelchain.PNG);
+    background-image:url(images/mainCover2.jpg);
+/*  background-image:url(images/mainCover1.jpg);*/
+    background-repeat: no-repeat;
+    background-blend-mode: lighten;
+    height:auto;
+
+    overflow: hidden; 
+    margin-bottom:30px;
+    background-size: cover;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+
+
+
+@media (min-width: 769) and (max-width: 1600px){
+
+    .gallery ul{
+
+        width:100%;
+        min-height:950px;
+        margin-top:70px;
+        display: flex;
+        flex-direction: row;
+        margin:0;
+        padding-top:200px;
+
+    }
+    .gallery h1:nth-child(1){
+
+        margin-top:50px;
+    }
+    .gallery ul li{
+
+        background-position:center;
+    }
+
+}
+
+@media screen and (max-width: 768px){
+
+/*        responsible for bubble effect*/
+.drawer{
+    margin-right:auto; 
+    margin-left:auto; 
+    margin-bottom: auto;
+    margin-top: auto;
+    width:100%;
+    height: inherit;
+    background-color: transparent;
+}
+.nav-links{
+    position:fixed;
+    flex-direction:column;
+    width:50%;
+    height:100%;
+    color:white;
+    top:0;
+    left:50%;
+    clip-path:circle(0 at 90% -10%); 
+    -webkit-clip-path:circle(0 at 90% 0%);
+    transition: all 1s ease-out;
+    text-align: center;
+    opacity: 0.9;
+    padding:0;
+    justify-content: center;
+    background-color:black;
+
+}
+.nav-links .btn-item{
+
+   width: 100%;
+   margin-left:auto; margin-right:auto;    
+   padding:0;
+   height:70px;
+}
+.nav-links .btn-item:hover{
+
+border-color: dimgrey;
+transform: rotateY(15deg);
+color: aliceblue;
+
+
+/*        box-shadow: -15px 0 15px lightblue;*/
+
+transition: all 1s ease-out;
+}
+.nav-links.open{
+
+    clip-path:circle(1000px at 90% 10%); 
+    -webkit-clip-path:circle(1000px at 90% 10%);
+    transition: all 1s ease-out;
+
+}
+/*        responsible for bubble effect*/
+.line{
+    width:30px;
+    height:3px;
+    background:white;
+    margin: 5px;
+
+
+}
+.hamburger{
+    position: fixed;
+    cursor: pointer;
+    right: 5%;
+    top:0%;
+    transform:translate(-5%,50%);
+    z-index: 100;
+    display: block;
+
+}
+.hamburger div{
+    transition: all 0.3s ease;
+}        
+.nav-links li{
+    height:70px;
+    opacity:0;
+}
+.nav-links li a{
+    font-size: 25px;
+    line-height: 70px;
+    vertical-align: middle;
+}
+.nav-links li:nth-child(1){
+    transition: all 0.5 2s;
+}
+.nav-links li:nth-child(2){
+    transition: all 0.5 4s;
+}
+.nav-links li:nth-child(3){
+    transition: all 0.5 6s;
+}
+.nav-links li:nth-child(4){
+    transition: all 0.5 8s;
+}
+.nav-links li:nth-child(5){
+    transition: all 0.5 10s;
+}
+li.fade{
+    opacity:1;
+}
+.toggle .line1{
+    transform: rotate(-45deg) translate(-5px,6px);
+}
+.toggle .line2{
+    opacity: 0;
+}
+.toggle .line3{
+    transform: rotate(45deg) translate(-5px,-6px);
+}
+.cover ul{
+    display: contents;
+}       
+     
+  
+       
+}
+        
+.ribbon1 {
+  position: absolute;
+  top: -6.1px;
+  right: 10px;
+}
+      
+.current-product-wrapper{
+  height:auto;
+  width: 90%;
+  margin-left:5%;
+  margin-right:5%;
+/*  position: relative;*/
+  display: flex;
+  flex-wrap: wrap     
+      
+}
+.current-product-wrapper .left-lightbox{
+  flex:1;
+  height:auto;  
+  width:100%;
+/*  background: orange;*/
+  display: flex;
+}
+.current-product-wrapper .left-lightbox .image-viewer{
+  
+/*  background: red;*/
+  flex-grow: 1; 
+  position:relative;    
+  
+} 
+.current-product-wrapper .left-lightbox .image-viewer img{
+    min-width: 100%;
+    min-height:350px;
+    max-height:600px;
+    object-fit: contain;
+    object-position: left;
+    
+    
+}
+.image-viewer{perspective: 70em; }
+       
+.image-viewer img{
+    
+/*
+    transform: scale(.8, .8);
+    transform:skewX(1);
+*/
+}  
+.image-viewer img:hover{
+   transform:skewX(2);
+   transform-style: preserve-3d;
+    transform-origin: var(--mouse-x) var(--mouse-x) ;
+    transition:all 300ms;
+    
+}  
+.current-product-wrapper .left-lightbox .image-viewer img:hover{
+    min-width: 100%;
+    min-height:350px;
+    max-height:600px;
+    object-fit: contain;
+    object-position: left;
+    
+    
+}        
+.image-viewer{
+    position: relative;
+}        
+/*
+.image-viewer::before{
+    content:"";
+    position: absolute;
+    top:0;
+    left:0;
+    background: radial-gradient(800px circle at var(--mouse-x) var(--mouse-y), rgba(255,255,255,0.9));
+    z-index: 2;  
+    width:35px;
+    height:35px;;
+    z-index: 2;
+    border-radius: inherit;
+    background: rgba(0,0,0,.9);
+       
+}
+.image-viewer::before::hover .image-viewer::before{
+
+    border-radius: 50%;
+    top:var(--mouse-x);
+    left:var(--mouse-y);
+    top:100px;
+    left:100px;
+    transition:all .1s;
+       
+} 
+        
+        
+*/
+        
+/*
+.image-viewer:before{
+    content: "";
+    width: 40%;
+    height:550px;
+    position:absolute;
+    background: rgba(255,255,255,0.5); 
+    object-fit: contain;  
+     
+}         
+*/
+.current-product-wrapper .image-reel img{
+    transform: scale(1);
+    transition: ease-out 300ms;
+}
+.current-product-wrapper .image-reel img:hover{
+    transform: scale(.95);
+
+}        
+.current-product-wrapper .right-lightbox{
+    flex:1;
+    width:100%;
+    min-width: 200px;
+/*    background: lightgreen;*/
+}   
+        
+.check {
+    width: 500px;
+    margin: 50px auto;
+    clear: both;
+    display: block;
+    background-color: lightgreen;
+    border-radius: 4px;
+}
+.check::after {
+    clear: both;
+    display: block;
+    content: "";
+}
+.check .checkbox-container {
+	float: left;
+    width: 50%;
+    box-sizing: border-box;
+    text-align:center;
+    padding: 40px 0px;
+}     
+        
+        
+        
+/* Styling Checkbox Starts */
+.checkbox-label {
+color: white;
+    display: block;
+    position: relative;
+    margin: auto;
+    cursor: pointer;
+    font-size: 22px;
+    line-height: 24px;
+    height: 50px;
+    width: 24px;
+    clear: both;
+}
+.checkbox-label input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.checkbox-label .mark {
+	top:2px;
+    position: absolute;
+    height: 24px;
+    width: 24px;
+    background-color: transparent;
+    
+    transition: all 0.3s ease-in;
+    border: 2px solid ghostwhite;
+    border-radius: 50%;
+    
+}
+.checkbox-label input:checked ~ .mark {
+    background-color: white;
+    
+    transform: rotate(0deg) scale(1);
+    opacity:1;
+    border: 2px solid white;
+}
+.checkbox-label .mark::after {
+    position: absolute;
+    content: "";
+    border-radius: 5px;
+}
+.checkbox-label input:checked ~ .mark::after {
+  transform: rotate(45deg) scale(1);
+  left: 8px;
+  top: 3px;
+  width: 6px;
+  height: 12px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  border-radius: 20%;
+}
+/* For Ripple Effect */ 
+.checkbox-label .mark::before {
+    position: absolute;
+    content: "";
+    border-radius: 50%;
+    border: 5px solid grey;
+    transform: scale(0);    
+}
+
+.checkbox-label input:checked ~ .mark::before {
+    left: 2px;
+    top: 0px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    transform: scale(3);
+    opacity:0;   
+    transition: all 0.3s ease-out;
+}
+.testimonials-v-2 {
+  padding: 100px 0;
+  overflow: hidden;
+}
+
+.testi-slide {
+  text-align: center;
+}
+
+.testi-slide img {
+  width: 92px;
+  height: 92px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  border-radius: 50%;
+}
+
+.testi-slide p {
+  margin: 20px 0;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 30px;
+  font-style: italic;
+}
+
+.testi-slide i {
+  color: #32c5d2;
+  margin-right: 10px;
+}
+
+.testi-slide h4 {
+  font-weight: 400;
+  font-size: 16px;
+  font-family: "Lato", sans-serif !important;
+  font-style: italic;
+}
+
+.testi-slide .flex-control-paging li a {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  -ms-box-shadow: none;
+  box-shadow: none;
+  background: transparent !important;
+  border: 2px solid #ccc;
+  width: 8px;
+  height: 8px;
+}
+
+.testi-slide .flex-control-paging li a.flex-active {
+  background: transparent !important;
+  border: 2px solid #32c5d2;
+}
+
+.quote {
+  position: relative;
+}
+
+.quote blockquote {
+  padding: 0px;
+  border: 0;
+  margin: 0;
+  font-size: 14px;
+  font-style: italic;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  border-radius: 8px;
+}
+
+.quote blockquote p {
+  color: #fff;
+  padding-top: 25px;
+  padding-bottom: 45px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.quote blockquote:before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 90px;
+  width: 0;
+  height: 0;
+  border-top: 0.83333em solid #ccc;
+  border-right: 0.86667em solid transparent;
+}
+
+.quote.green blockquote {
+  background-color: #32c5d2;
+}
+
+.quote.green blockquote:before {
+  border-top-color: #32c5d2;
+}
+
+.quote.dark blockquote {
+  background-color: #555;
+}
+
+.quote.dark blockquote:before {
+  border-top-color: #555;
+}
+
+.quote-footer {
+  margin: 10px 0;
+}
+
+.quote-footer .quote-author-img img {
+  float: left;
+  max-width: 90px;
+  width: 90px;
+  height: 90px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  border-radius: 50%;
+  margin-left: -5px;
+  margin-top: -40px;
+  position: relative;
+  z-index: 1;
+  padding: 5px;
+  background-color: #fff;
+}
+
+.quote-footer h4 {
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.quote-footer p {
+  font-weight: 400;
+  font-style: italic;
+  font-size: 14px;
+}        
+        
+
+  
+        
+[data-tab-content] {
+  display: none;
+}
+
+.active[data-tab-content] {
+  display: block;
+}
+
+
+.tabs {
+  display: flex;
+  justify-content: space-around;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid black;
+}
+
+.tab {
+  cursor: pointer;
+  padding: 10px;
+    color:#AAA;
+}
+
+.tab.active {
+  color: burlywood;
+  text-decoration: underline;
+}
+
+.tab:hover {
+ color: grey;
+}
+
+.tab-content {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+        
+        
+.description ul{
+  list-style: none;
+  font-size: 16px;
+  color:grey;
+}        
+.description ul li:before{
+ list-style: none;
+ content: "\1F892";
+ font-size: 20px;
+ left: -22px;
+ top:0px;
+ color:burlywood;
+}        
+          
+.similar-products-item .ribbon1:after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 0;
+  right:0px; 
+  border-left: 47px solid transparent;
+  border-right: 47px solid transparent;
+  border-top: 12px solid #F8463F;
+  
+}
+.similar-products-item .ribbon1 span {
+  position: relative;
+  display: block;
+  text-align: center;
+  background: #F8463F;
+  padding: 8px 2px 4px;
+  border-top-right-radius: 8px;
+  width: 90px;
+  color:white;  
+  font-size: 14px;
+  line-height: 1;    
+  font-weight: 600;
+}
+.similar-products-item .ribbon1 span:before,.similar-products-item .ribbon1 span:after {
+  position: absolute;
+  content: "";
+}
+.similar-products-item .ribbon1 span:before {
+ height: 6px;
+ width: 6px;
+ left: -6px;
+ top: 0;
+ background: #F8463F;
+}
+.similar-products-item .ribbon1 span:after {
+ height: 6px;
+ width: 8px;
+ left: -8px;
+ top: 0;
+ border-radius: 8px 8px 0 0;
+ background: #C02031;
+}        
+        
+.similar-products-items{
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        flex-wrap: wrap;
+        
+    }
+.similar-products-items .similar-products-item{
+        position: relative;
+        height:300px;
+        width:300px;
+        margin:150px 15px 0 15px;
+        background: rgba(0,0,0,.1);
+    }
+.similar-products-items .similar-products-item img{
+        position: absolute;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        object-fit: contain;
+        transform: scale(.7);
+        
+    }
+
+.similar-products-items .similar-products-item:hover>img{
+        transform: scale(.95);
+        transition: ease-in-out 300ms;
+        
+    }
+.similar-products-items .similar-products-item.hide-similar-products-items-item{
+       
+        display:none;
+        
+    }
+.similar-products-items .similar-products-item.active{
+        
+        display:block;
+    }
+    
+.similar-products-item-extension{
+        display: flex;
+        width: 100%;
+        z-index: 5;
+        justify-content: space-between;
+        text-align: start;
+        margin-top: 2%;
+        position:relative;
+        height:120px;
+        color:gray;
+        letter-spacing: 1px;
+    }
+.similar-products-item-extension .plus-minus-holder{
+        display:flex; 
+        flex-direction:row;
+        justify-content: flex-end;
+        color:gray;
+        height:20px;
+        text-align: center;
+        width: 40%;
+        padding-top:5px;
+        margin-left:60%;
+    }
+.similar-products-item-extension p2{
+        margin:0;
+        font-weight:400;
+        font-family:Montserrat,monospace;
+        font-size: 12px;
+    }
+.similar-products-item-extension span{ 
+        width: 80%; 
+        height:2px;
+        background-color: gray;
+        margin-top:60px;
+        margin-left:5px;
+        position: absolute;
+    }
+.similar-products-item-extension .shopping-cart-icon-holder{
+    position: absolute;
+    margin-left:5px;
+    margin-right:5px;
+    display: flex;
+    flex-direction: row;
+    width:100%; 
+    justify-content: space-between;
+    padding-top: 45px;
+    font-size: 18px;
+
+}
+.similar-products-item-extension .fa-plus{
+
+    border-radius: 12px;
+    border-color:gray;
+    padding:3px;
+    border-style: solid;
+    margin-right:8px;
+    border-width: 2px;
+    color:gray;
+    background: rgba(0,0,0,.05);
+    z-index: 2;
+    transition: ease-in 300ms;
+
+}
+
+.similar-products-item-extension .fa-plus:hover{
+
+    border-color:burlywood;
+    border-style: solid;
+    margin-right:8px;
+    border-width: 2px;
+    color:burlywood;
+
+    background: white;
+}
+.similar-products-item-extension .fa-minus{
+
+    border-radius: 12px;
+    border-color:gray;
+    padding:3px;
+    border-style: solid;
+    border-width: 2px;
+    background: rgba(0,0,0,.05);
+    z-index: 2;
+    transition: ease-in 300ms;
+}
+
+.similar-products-item-extension .fa-minus:hover{
+    border: 2px solid burlywood;
+    color:burlywood;
+
+    background: white;
+} 
+.similar-products-item-extension .fa-cart-plus{
+
+    padding: none;
+/*        margin-left:215%;*/
+    clear: both;
+    float: right;
+
+    right:0;
+    position: absolute;
+    color:gray;
+    font-size: 18px;
+    border-radius: 18px;
+    border-color:gray;
+    padding:5px;
+    border-style: solid;
+    margin-right:8px;
+    border-width: 2px;
+    background: rgba(0,0,0,.05);
+    transition: ease-in 300ms;
+}
+.similar-products-item-extension .fa-cart-plus:hover{
+
+
+    color:burlywood;
+    border-color:burlywood;
+    background: white;
+}        
+
+          
+.similar-products-items .similar-products-item{
+   height:auto; 
+}
+.similar-products-items .similar-products-item img{
+   height:auto; 
+
+}
+.similar-products-item:hover img{
+    transform: scale(0.95);
+    transition: ease-out 300ms;
+
+}         
+
+
+
+.similar-products .carousel-control-prev-icon{
+  height: 140px;
+  width: 140px;
+  background-size: 100%, 100%;
+/*  background-image: url(images/circle-chevron-left-solid.svg);*/
+}
+.similar-products .carousel-control-next-icon {
+  height: 140px;
+  width: 140px;
+  background-size: 100%, 100%;
+/*  background-image: url(images/circle-chevron-right-solid.svg);*/
+  
+}
+
+.similar-products .carousel-control-next-icon:after
+{
+    content:"\f054";
+    color: grey;
+    font-size: 30px;
+    padding: 4px;
+/*
+    border: 2px solid grey;
+    border-radius: 45px;
+*/
+    font-family: "Font Awesome 5 Free";                     
+    font-weight: 900;  
+    right:15px;
+    position:absolute;
+    top:45%;
+    
+}
+
+.similar-products .carousel-control-prev-icon:after {
+  content: "\f053";
+  color: grey;
+  font-size: 30px;
+  padding: 4px;
+/*
+  border: 2px solid grey;
+  border-radius: 45px;
+*/
+  font-family: "Font Awesome 5 Free";                     
+  font-weight: 900;  
+  left:15px;
+  position:absolute;
+  top:45%;
+}
+
+        
+        
+        
+        
+.about-wrapper{
+    display:flex;
+    width:100%; 
+    color:burlywood;
+    background:#222;
+    opacity: .7;
+    flex-direction:row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.about-wrapper div{
+    flex:1;width:90%;padding:0;margin-left:5%;margin-right:5%;
+}
+.about-wrapper div:nth-child(1){
+    flex:1;width:88%;padding:0;margin-left:7%;margin-right:5%;
+}   
+.about-wrapper div:last-child{
+    flex:1;width:88%;padding:0;margin-left:5%;margin-right:7%;
+}            
+        
+    </style>
+      
+</head>
+    
+<body onload="loadDone()">
+    <div class="loading"></div>
+    <div class="main">
+
+        <div class="header-wrapper" id="home">
+
+        <div class="nav-wrapper" id="nav-wrapper">
+                    <nav id="nav">
+                    <div class="hamburger">
+                       <div class="line line1"></div>
+                       <div class="line line2"></div>
+                       <div class="line line3"></div>
+                   </div>
+                   <div class="drawer">
+                       <ul class="nav-links" id="nav-links">
+                           <a href="#home" class="btn-item">
+                                <span></span>
+                                <span></span>
+                                Home
+                            </a>
+                           <a href="#gallery" class="btn-item">
+                                <span></span>
+                                <span></span>
+                                Gallery
+                            </a>
+                           <a href="#products" class="btn-item">
+                                <span></span>
+                                <span></span>
+                                Products
+                            </a>
+                           <a href="#brands" class="btn-item">
+                                <span></span>
+                                <span></span>
+                                Brands
+                            </a>
+                           <a href="#services" class="btn-item">
+                                <span></span>
+                                <span></span>
+                                Services
+                            </a>
+                           <a href="#about" class="btn-item">
+                                <span></span>
+                                <span></span>
+                                About
+                            </a>
+                        </ul>
+                   </div>
+                </nav> 
+                </div>   
+        </div>
+   
+        <div class="current-product-wrapper row" >
+            
+            <div class="image-reel col-1 " style="width:100%;max-height: 500px;min-width:120px;">
+                <img class="img-thumbnail rounded mx-auto d-block" style="margin:5px;" src="images/productsMen1-removebg-preview-thumb-1.png">
+                <img class="img-thumbnail rounded mx-auto d-block" style="margin:5px;" src="images/productsMen1-removebg-preview-thumb-2.png">
+                <img class="img-thumbnail rounded mx-auto d-block" style="margin:5px;" src="images/productsMen1-removebg-preview-thumb-3.png">
+            </div>
+            <div class="image-viewer col-7" style="clear: both; float:left;">
+                <img class="img-fluid " src="images/productsMen1.jpg" style="width:100%;object-fit: contain;max-height: 550px;clear: both; float:left;">
+            </div>
+                
+            
+            <div class="right-lightbox col-3">
+                <div>
+                    <h3>Label</h3>
+                    <p3>Sub Label</p3>  
+
+                    <ul style="list-style: none;padding:0;margin:left:0;display: flex;width:100px;">
+                       <li style="flex:1;width:100%;color:goldenrod;line-height: 1.8;"><i class="fa-solid fa-star"></i></li> 
+                       <li style="flex:1;width:100%;color:goldenrod;line-height: 1.8;"><i class="fa-solid fa-star"></i></li>
+                       <li style="flex:1;width:100%;color:goldenrod;line-height: 1.8;"><i class="fa-solid fa-star"></i></li>
+                       <li style="flex:1;width:100%;color:goldenrod;line-height: 1.8;"><i class="fa-solid fa-star-half-stroke"></i></li>
+                       <li style="flex:1;width:100%;line-height: 1.8;"><p style="margin:0;">(CountOfReviews)</p></li>
+                    </ul> 
+                     <h3 style="margin-bottom:20px;">Price</h3>   
+                    <p style="line-height:1.8;" >Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore.</p>
+                    <div style="padding:0;margin:left:0;display: flex;width:100%;flex-wrap: wrap;">
+                        <div style="font-family: Raleway-SemiBold;font-size: 14px;color: grey;letter-spacing: 1px;line-height: 14px;border: 2px solid grey;border-radius: 40px;background: transparent;transition: all 0.3s ease 0s;padding: 8px;display: flex;align-content: center;justify-content: center;margin-right:10px;margin-bottom:15px;">
+                            <i class="fa-solid fa-plus"></i>
+                            <p style="margin:0;margin-left:8px;margin-right:8px;">Count</p>
+                            <i class="fa-solid fa-minus"></i>
+                        </div>
+                        
+                        <div style="font-family: Raleway-SemiBold;font-size: 14px;color: grey;letter-spacing: 1px;line-height: 14px;border: 2px solid grey;border-radius: 40px;background: transparent;transition: all 0.3s ease 0s;padding: 8px;display: flex;align-content: center;justify-content: center;margin-bottom:15px;">
+                            <i class="fa-solid fa-cart-plus"></i>
+                            <p style="margin:0;margin-left:8px;margin-right:8px;">Add To Cart</p>
+                        </div>
+                         
+                    </div>
+                </div>
+                <div style="height:2px;width:90%;background-color:grey;margin:5px;margin-top:14px;margin-bottom:14px;"></div>
+            <div>
+                
+                <ul style="list-style: none;padding:0;margin:left:0;display: flex;width:90%;flex-direction: column;">
+                    <li style="flex:1;width:100%;color:grey;margin-bottom:25px;">
+                        <ul style="display:flex;list-style: none;padding: 0;margin:0;width:100%;">
+                            <li style="width:100%;flex:1;height:25px;">
+                                <p style="margin:0;font-size: 16px;line-height: 25px;margin-right:5px;">Avalability</p>
+                            </li>
+                            <li style="width:100%;flex:1;height:25px;">
+                                <div style="width:100%;flex:1;display: flex;width: 100%;justify-content: flex-start;">
+<!--                                    <input style="height:35px; background-color:lightblue;margin-right:8px;font-size: 16px;" type="checkbox"/>-->
+                                    <p style="width:100%;flex:1;height:35px;margin-bottom:0;margin-top:0;line-height: 25px;color:green;font-size: 16px;">In Stock</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li style="flex:1;width:100%;color:grey;margin-bottom:25px;">
+                        <ul style="display:flex;list-style: none;padding: 0;margin:0;width:100%;">
+                            <li style="width:100%;flex:1;height:25px;">
+                                <p style="margin:0;font-size: 16px;line-height: 25px;margin-right:5px;">Available Colors</p>
+                            </li>
+                            <li style="width:100%;flex:1;height:25px;">
+                                <div style="width:100%;flex:1;display: flex;width: 100%;justify-content: flex-start;">
+                                    
+                                    <div class="checkbox-container" style="align-content:flex-start;">
+                                    <label class="checkbox-label" >
+                                     <input style="height:0px;font-size: 18px;" type="checkbox"/>
+                                      <span class="mark" style="background-color:lightblue;"></span>
+                                    </label>
+                                    </div>
+                                    
+                                    <div class="checkbox-container">
+                                    <label class="checkbox-label">
+                                     <input style="height:0px;font-size: 18px;" type="checkbox"/>
+                                      <span class="mark" style="background-color:lightgreen;"></span>
+                                    </label>
+                                    </div>
+                                    
+                                    <div class="checkbox-container">
+                                    <label class="checkbox-label">
+                                     <input style="height:0px;font-size: 18px;" type="checkbox"/>
+                                      <span class="mark" style="background-color:black;"></span>
+                                    </label>
+                                    </div>
+                                    
+                                    <div class="checkbox-container">
+                                    <label class="checkbox-label">
+                                     <input style="height:0px;font-size: 18px;" type="checkbox"/>
+                                      <span class="mark" style="background-color:rosybrown;"></span>
+                                    </label>
+                                    </div>
+                                    
+                                    <div class="checkbox-container">
+                                    <label class="checkbox-label">
+                                     <input style="height:0px;font-size: 18px;" type="checkbox"/>
+                                      <span class="mark" style="background-color:lightgray;"></span>
+                                    </label>
+                                    </div>
+                                    
+<!--
+                                    <input style="height:25px; background-color:lightblue;margin-right:8px;font-size: 16px;" type="checkbox"/>
+                                    <input style="height:25px; background-color:lightblue;margin-right:8px;font-size: 16px;" type="checkbox"/>
+                                    <input style="height:25px; background-color:lightblue;margin-right:8px;font-size: 16px;" type="checkbox"/>
+-->
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li style="flex:1;width:100%;color:grey;margin-bottom:25px;">
+                        <ul style="display:flex;list-style: none;padding: 0;margin:0;width:100%;">
+                            <li style="width:100%;flex:1;height:25px;">
+                                <p style="margin:0;font-size: 16px;line-height: 25px;margin-right:5px;">Available Size</p>
+                            </li>
+                            <li style="width:100%;flex:1;height:25px;">
+                                <div style="width:100%;flex:1;display: flex;width: 100%;justify-content: flex-start;">
+                                    <input style="height:25px; background-color:lightblue;margin-right:8px;font-size: 16px;" type="checkbox"/>
+                                    <input style="height:25px; background-color:lightblue;margin-right:8px;font-size: 16px;" type="checkbox"/>
+                                    <input style="height:25px; background-color:lightblue;margin-right:8px;font-size: 16px;" type="checkbox"/>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li style="flex:1;width:100%;color:grey;margin-bottom:25px;">
+                        <ul style="display:flex;list-style: none;padding: 0;margin:0;width:100%;">
+                            <li style="width:100%;flex:1;height:25px;">
+                                <p style="margin:0;font-size: 16px;line-height: 25px;margin-right:5px;">Shipping </p>
+                            </li>
+                            <li style="width:100%;flex:1;height:25px;">
+                                <div style="width:100%;flex:1;display: flex;width: 100%;justify-content: flex-start;">
+                                    <input style="height:25px; background-color:lightblue;margin-right:8px;font-size: 16px;" type="checkbox"/>
+                                    <input style="height:25px; background-color:lightblue;margin-right:8px;font-size: 16px;" type="checkbox"/>
+                                    <input style="height:25px; background-color:lightblue;margin-right:8px;font-size: 16px;border-radius: 50%;" type="checkbox"/>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+           
+            </div>
+        </div>
+        
+        <div class="spec-and-reviews" style="width:100%;height: 100%;display: block;position: relative;">
+            <div style="position: relative;width:90%;margin-left:5%;margin-right:5%;height:auto;display:block;">
+                <ul style="list-style: none; display:flex;margin-left:5%;margin-right:5%;justify-content: center;padding: 0;">
+                    <li data-tab-target="#description" class="active tab" style="margin:10px;"><h5>Description</h5></li>
+                    
+                    <li data-tab-target="#reviews" class="tab" style="margin:10px;"><h5>Reviews</h5></li>
+                </ul>
+                <div class="tab-content">
+                  <div id="description" data-tab-content class="description active">
+<!--                    <h6>Description</h6>-->
+<!--
+                    <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut loret fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt loret. Neque porro lorem quisquam est, qui dolorem ipsum quia dolor si. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut loret fugit, sed quia ipsu consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Nulla consequat massa quis enim.
+
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</p>
+-->
+                      <ul>
+                          <li>Single Button cuffs</li>
+                          <li>Solid Color</li>
+                          <li>Long Sleeves</li>
+                          <li>Small Collar</li>
+                          <li>Slim Fit</li>
+                      </ul>
+                  </div>
+                 
+                  <div id="reviews" data-tab-content>                  
+                        <div class="container-fluid">
+                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                  <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                  </ol>
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row">
+                            <div class="col-md-4 margin-btm-20">
+                                <div class="quote dark">
+                                    <blockquote>
+                                        <p>
+                                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.                          
+                                        </p>
+                                    </blockquote>                        
+                                </div>
+                                <div class="quote-footer text-right">
+                                    <div class="quote-author-img">
+                                        <img src="images/women1.svg" alt="">
+                                    </div>
+                                    <h4>Black Widow</h4>
+                                </div>
+                            </div><!--colored quote box col-->
+                            <div class="col-md-4 margin-btm-20">
+                                <div class="quote green">
+                                    <blockquote>
+                                        <p>
+                                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.                          
+                                        </p>
+                                    </blockquote>                        
+                                </div>
+                                <div class="quote-footer text-right">
+                                    <div class="quote-author-img">
+                                        <img src="images/man2.svg" alt="">
+                                    </div>
+                                    <h4>Hawk Eye</h4>
+                                </div>
+                            </div><!--colored quote box col-->
+                            <div class="col-md-4 margin-btm-20">
+                    <div class="quote dark">
+                        <blockquote>
+                            <p>
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.                          
+                            </p>
+                        </blockquote>                        
+                    </div>
+                    <div class="quote-footer text-right">
+                        <div class="quote-author-img">
+                            <img src="images/women2.svg" alt="">
+                        </div>
+                        <h4>Captain Marvel</h4>
+                    </div>
+                </div><!--colored quote box col-->
+                        </div><!--testimonials row-->
+                    </div>
+                    <div class="carousel-item">
+                      <div class="row">
+                <div class="col-md-4 margin-btm-20">
+                    <div class="quote dark">
+                        <blockquote>
+                            <p>
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.                          
+                            </p>
+                        </blockquote>                        
+                    </div>
+                    <div class="quote-footer text-right">
+                        <div class="quote-author-img">
+                            <img src="images/man1.svg" alt="">
+                        </div>
+                        <h4>Dr. Strange</h4>
+                    </div>
+                </div><!--colored quote box col-->
+                <div class="col-md-4 margin-btm-20">
+                    <div class="quote green">
+                        <blockquote>
+                            <p>
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.                          
+                            </p>
+                        </blockquote>                        
+                    </div>
+                    <div class="quote-footer text-right">
+                        <div class="quote-author-img">
+                            <img src="images/man2.svg" alt="">
+                        </div>
+                        <h4>Pietro Maximoff</h4>
+                    </div>
+                </div><!--colored quote box col-->
+                <div class="col-md-4 margin-btm-20">
+                    <div class="quote dark">
+                        <blockquote>
+                            <p>
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.                          
+                            </p>
+                        </blockquote>                        
+                    </div>
+                    <div class="quote-footer text-right">
+                        <div class="quote-author-img">
+                            <img src="images/women1.svg" alt="">
+                        </div>
+                        <h4>Wanda</h4>
+                    </div>
+                </div><!--colored quote box col-->
+            </div><!--testimonials row-->
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row">
+                            <div class="col-md-4 margin-btm-20">
+                                <div class="quote dark">
+                                    <blockquote>
+                                        <p>
+                                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.                          
+                                        </p>
+                                    </blockquote>                        
+                                </div>
+                                <div class="quote-footer text-right">
+                                    <div class="quote-author-img">
+                                        <img src="images/women2.svg" alt="">
+                                    </div>
+                                    <h4>Steve Rogers</h4>
+                                </div>
+                            </div><!--colored quote box col-->
+                            <div class="col-md-4 margin-btm-20">
+                                <div class="quote green">
+                                    <blockquote>
+                                        <p>
+                                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.                          
+                                        </p>
+                                    </blockquote>                        
+                                </div>
+                                <div class="quote-footer text-right">
+                                    <div class="quote-author-img">
+                                        <img src="images/women1.svg" alt="">
+                                    </div>
+                                    <h4>Jane Foster</h4>
+                                </div>
+                            </div><!--colored quote box col-->
+                            <div class="col-md-4 margin-btm-20">
+                    <div class="quote dark">
+                        <blockquote>
+                            <p>
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.                          
+                            </p>
+                        </blockquote>                        
+                    </div>
+                    <div class="quote-footer text-right">
+                        <div class="quote-author-img">
+                            <img src="images/man1.svg" alt="">
+                        </div>
+                        <h4>Bruce Banner</h4>
+                    </div>
+                </div><!--colored quote box col-->
+                        </div><!--testimonials row-->
+                    </div>
+                  </div>
+                  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                  </a>
+                  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                  </a>
+                </div>
+                
+            </div>        
+                  </div>
+                </div>
+
+    
+           </div>
+        </div>
+        
+       <div class="similar-products">
+           <h3 style="text-align: center;margin:30px;color:burlywood;">Similar Products</h3>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-1">
+                        <a class="carousel-control-prev" href="#similar-products-item-slider" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                    </div>
+                    <div class="col-10">
+                        <div id="similar-products-item-slider" class="carousel slide" data-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <div class="row">
+                                        
+                                       <div class="col-lg-3 mb-3">
+                                            <div class="card similar-products-item">
+                                                <img class="img-fluid" alt="100%x280" src="images/productsMen1-removebg-preview-thumb-3.png">
+                                                <span class="ribbon1">
+                                                  <span>Sale 10%</span>
+                                                </span>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 mb-3">
+                                            <div class="card similar-products-item">
+                                                <img class="img-fluid" alt="100%x280" src="images/productsMen4.jpg">
+                                                
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 mb-3">
+                                            <div class="card similar-products-item">
+                                                <img class="img-fluid" alt="100%x280" src="images/productsMen7.jpg">
+                                                
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 mb-3">
+                                            <div class="card similar-products-item">
+                                                <img class="img-fluid" alt="100%x280" src="images/productsMen12.jpg">
+                                               
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="row">
+
+                                        <div class="col-lg-3 mb-3">
+                                            <div class="card similar-products-item">
+                                                <img class="img-fluid" alt="100%x280" src="images/productsMen26.jpg">
+                                               
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 mb-3">
+                                            <div class="card similar-products-item">
+                                                <img class="img-fluid" alt="100%x280" src="images/productsMen34.jpg">
+                                                <span class="ribbon1">
+                                                  <span>Sale 10%</span>
+                                                </span>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 mb-3">
+                                            <div class="card similar-products-item">
+                                                <img class="img-fluid" alt="100%x280" src="images/productsMen35.jpg">
+                                                <span class="ribbon1">
+                                                  <span>Sale 10%</span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 mb-3">
+                                            <div class="card similar-products-item">
+                                                <img class="img-fluid" alt="100%x280" src="images/productsMen41.jpg">
+                                               
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="row">
+
+                                        <div class="col-lg-3 mb-3">
+                                            <div class="card similar-products-item">
+                                                <img class="img-fluid" alt="100%x280" src="images/productsMen34.jpg">
+                                               
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 mb-3">
+                                            <div class="card similar-products-item">
+                                                <img class="img-fluid" alt="100%x280" src="images/productsMen35.jpg">
+                                                
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 mb-3">
+                                            <div class="card similar-products-item">
+                                                <img class="img-fluid" alt="100%x280" src="images/productsMen37.jpg">
+                                                
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 mb-3">
+                                            <div class="card similar-products-item">
+                                                <img class="img-fluid" alt="100%x280" src="images/productsMen41.jpg">
+                                               
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-1">
+                        <a class="carousel-control-next" href="#similar-products-item-slider" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                      </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        
+        <div class="about-wrapper" id="about" >
+            
+            <div>
+                <h3>About</h3>
+                <p style="line-height:1.8;" data-aos="fade-up">Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore.</p>
+            </div>
+            <div>
+                <h3>Quick Links</h3>
+                <ul style="list-style: none;padding: 0;line-height:1.8;" data-aos="fade-up">
+                    <li>About</li>
+                    <li>Offers and Discounts</li>
+                    <li>Get Coupon</li>
+                    <li>Contact Us</li>
+                </ul>
+            </div>
+            <div >
+                <h3>New Products</h3>
+                 <ul style="list-style: none;padding: 0;line-height:1.8;" data-aos="fade-up">
+                    <li>Woman Cloth</li>
+                    <li>Fashion Accessories</li>
+                    <li>Man Accessories</li>
+                    <li>Rubber Made Toys</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Support</h3>
+                 <ul style="list-style: none;padding: 0;line-height:1.8;" data-aos="fade-up">
+                    <li>FAQ</li>
+                    <li>Terms and Conditions</li>
+                    <li>Privacy Policy</li>
+                    <li>Refund Policy</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+        
+    
+        
+<script>
+const tabs = document.querySelectorAll('[data-tab-target]')
+const tabContents = document.querySelectorAll('[data-tab-content]')
+
+tabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    const target = document.querySelector(tab.dataset.tabTarget)
+    tabContents.forEach(tabContent => {
+      tabContent.classList.remove('active')
+    })
+    tabs.forEach(tab => {
+      tab.classList.remove('active')
+    })
+    tab.classList.add('active')
+    target.classList.add('active')
+  })
+})        
+</script>     
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>       
+<!--<script src="main.js"></script>  -->
+<script>
+let hamburger= document.querySelector(".hamburger");
+let navLinks= document.querySelector(".nav-links");
+let links= document.querySelectorAll(".nav-links li");
+let load=document.querySelector(".loading");   
+ 
+hamburger.addEventListener("click",()=>{
+    navLinks.classList.toggle("open");
+
+    links.forEach(function(element){
+
+        element.classList.toggle("fade");
+    });
+
+    hamburger.classList.toggle("toggle");
+});
+    
+function loadDone(){
+    
+      load.style.display="none";
+}    
+    
+window.onscroll = function() {scrollFunction()};    
+function scrollFunction() {
+
+    if(window.screen.width<=768){
+
+        if ((document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) && document.getElementById("nav-links").className.includes('open')) {
+            document.getElementById("nav-wrapper").style.background = "black";
+            document.getElementById("nav-links").style.background = "black";
+            document.getElementById("nav-wrapper").style.zIndex = "100";
+            document.querySelector(".nav-links.open").style.background = "black";
+            document.querySelector(".nav-links.open").style.zIndex = "90";
+            document.querySelector(".nav-links.open").style.background = "black";
+
+            
+        }else if((document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) && !document.getElementById("nav-links").className.includes('open')){
+
+                document.getElementById("nav-links").style.background = "black";
+                document.getElementById("nav-wrapper").style.background = "transparent";
+                document.getElementById("nav").style.background = "black";
+                document.getElementById("nav").style.height =  "6.6vh";
+                document.getElementById("nav-wrapper").style.zIndex = "100";
+
+                
+                 }
+        else if((document.body.scrollTop < 50 || document.documentElement.scrollTop < 50) && !document.getElementById("nav-links").className.includes('open')){
+                document.getElementById("nav-wrapper").style.background = "transparent";
+                document.getElementById("nav-links").style.background = "transparent";
+                document.getElementById("nav").style.background = "dimgray";
+                document.getElementById("nav-wrapper").style.zIndex = "100";
+
+                
+                 }
+        else if((document.body.scrollTop < 50 || document.documentElement.scrollTop < 50) && document.getElementById("nav-links").className.includes('open')){
+                document.getElementById("nav-wrapper").style.background = "black";
+                document.getElementById("nav-links").style.background = "black";
+                document.getElementById("nav-wrapper").style.zIndex = "100";
+
+                 }
+        else{
+            console.log("Screen width lower than 768. Yet it doesn't fulfill any conditions.");
+        }
+    }else{
+
+        if(document.body.scrollTop > 70 || document.documentElement.scrollTop > 70){
+            document.getElementById("nav-wrapper").style.background = "transparent";
+            document.getElementById("nav-links").style.background = "black";
+            document.getElementById("nav").style.background = "black";
+            document.getElementById("nav").style.height = "6.6vh";
+            document.getElementById("nav-links").style.height =  "6vh";
+            document.getElementById("nav-wrapper").style.height =  "6.6vh";
+            document.getElementById("nav").style.transition= "300ms linear";
+            const nodes = document.querySelectorAll('.nav-links a');
+
+            for (const node of nodes) {
+                  
+                node.classList.add('shrink');
+                
+            }
+        }else{
+                document.getElementById("nav-wrapper").style.background = "transparent";
+                document.getElementById("nav-links").style.background = "dimgray";
+                document.getElementById("nav").style.background = "dimgray";
+                const nodes = document.querySelectorAll('.nav-links a');
+                document.getElementById("nav").style.height = "8vh"; 
+                document.getElementById("nav-links").style.height = "7vh";
+                document.getElementById("nav").style.transition= "300ms linear";
+                for (const node of nodes) {
+
+                    node.classList.remove('shrink');
+
+                }
+        }
+        
+    }
+}    
+  
+    
+var main_categories=document.querySelectorAll('.main-list');
+var secondary_categories=document.querySelectorAll('.secondary-list');    
+var main_category_items=document.querySelectorAll('.similar-products-item');
+var main_category_item_images=document.querySelectorAll('.similar-products-item img');
+    
+for (let category of main_categories) {
+         
+        category.addEventListener('click',function(){
+            for (let category_inner of main_categories){
+                category_inner.classList.remove('active');
+            }
+            this.classList.add('active');
+            let main_data_filter=this.getAttribute('data-filter');
+            
+            console.log("main filter: "+main_data_filter);
+            for (let secondary_category of secondary_categories) {
+                secondary_category.addEventListener('click',function(){
+                    for (let secondary_category_inner of secondary_categories){
+                        secondary_category_inner.classList.remove('active');
+                    }
+                    this.classList.add('active');
+                    let secondary_data_filter=this.getAttribute('data-filter');
+                    console.log("secondary filter: "+secondary_data_filter);
+                    
+                    for (var main_category_item of main_category_items)
+                    {
+                        main_category_item.classList.add('hide-similar-products-items-item');
+                        main_category_item.classList.remove('active');
+                        if(((main_category_item.getAttribute('data-item')==main_data_filter) && main_category_item.getAttribute('data-item-2')==secondary_data_filter)||  ((main_category_item.getAttribute('data-item')==main_data_filter) && secondary_data_filter=="all") || ((main_data_filter=="all") && 
+                        
+                        secondary_data_filter==main_category_item.getAttribute('data-item-2')) || (main_data_filter=="all" && secondary_data_filter=="all") ){
+
+                            console.log("data item: "+main_category_item.getAttribute('data-item'));
+                            console.log("data item-2: "+main_category_item.getAttribute('data-item-2'));
+                            
+                                main_category_item.classList.remove('hide-similar-products-items-item');
+                                main_category_item.classList.add('active');
+   
+                        }
+                    }
+                });
+            }
+            
+        });            
+    }
+     
+AOS.init();    
+
+
+function getPrevPrice(min, max) {
+  return Math.random() * (max - min) + min;
+}
+
+function getHTML(prev_price, disc_price){
+    let html="<div class='similar-products-item-extension'><div class='product-label-sublabel' style='position: absolute;top:0;left:0;padding: 5px;'><p style='margin:0;font-size: 18px;'>Label</p><p2>Sub-Label</p2></div><span></span><div class='plus-minus-holder'><i class='fa-solid fa-plus'></i><i class='fa-solid fa-minus'></i><p style='line-height: 1px;font-size: 18px;margin-top:12px;height:2px;margin-left:5px;text-align: end;padding-right:5px;'>100</p></div><div class='shopping-cart-icon-holder'><i class='fa-solid fa-cart-plus'></i><p style='text-decoration-line: line-through;text-decoration-color: dimgray;margin-top:35px;'>$"+prev_price+"</p> <p style='margin-top:35px;margin-right:10px;' >$"+disc_price+"</p></div></div>";  
+    return html;
+}
+for(let product_image of main_category_item_images){
+    
+      let prev_price=Math.floor(getPrevPrice(900,2400));
+      let disc_price=Math.floor(prev_price-((prev_price*10)/100));
+      let html= getHTML(prev_price, disc_price);
+      product_image.insertAdjacentHTML("afterend", html);
+      
+}
+
+       
+</script>    
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>     
+<script>
+    
+const handleOnMouseMove = e=>{
+    
+    const{currentTarget: target} =e;
+    
+    const rect= target.getBoundingClientRect(),
+          x=e.clientX-rect.left,
+          y=e.clientY-rect.top;
+          
+    console.log(x+","+y);
+    
+    target.style.setProperty("--mouse-x",'${x}px');
+    target.style.setProperty("--mouse-y",'${y}px');
+//    
+    target.style.transformOrigin =" ${x} ${y}";
+//    target.style.transformStyle="preserve-3d";
+//    target.style.transform="rotateX(30deg)";
+    
+           
+}
+
+const selectFromReelImage = e=>{
+    const{currentTarget: target} =e;
+   
+    document.querySelector(".image-viewer img").setAttribute('src',target.getAttribute('src'));
+    
+}
+
+document.querySelector(".image-viewer img").onmousemove=e=>handleOnMouseMove(e);   
+reel_images=document.querySelectorAll(".image-reel img");   
+    for(reel_image of reel_images){
+        reel_image.onclick=e=>selectFromReelImage(e);  
+    }
+</script>    
+    </body>       
+</html>
+    

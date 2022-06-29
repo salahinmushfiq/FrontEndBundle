@@ -1,0 +1,1524 @@
+<html>
+<head>
+      <link rel="shortcut icon" href="images/eternal_logo.JPG" />
+      <meta content="width=device-width, initial-scale=1" name="viewport" />
+      
+      <!-- Our project just needs Font Awesome Solid + Brands -->
+      <script defer src="js/brands.js"></script>
+      <script defer src="js/solid.js"></script>
+      <script defer src="js/fontawesome.js"></script>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+      
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="fontawesome-free-5.15.3-web/css/all.css"/>
+    <link rel="stylesheet" href="main.css"> 
+    <link href='https://fonts.googleapis.com/css?family=Aclonica|Advent|Actor' rel='stylesheet'>
+    <title>Eternal</title>  
+<!--    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />-->
+
+    
+    <style>
+
+
+
+@keyframes similar_product_zoom_in_out {
+        0% {
+            transform: scale(.95);
+            opacity:1;
+            
+        }
+        50%{
+            transform: scale(.85);
+            opacity:.5;
+        }
+        50%{
+            transform: scale(.8);
+            opacity:.5;   
+        }
+        75%{
+            transform: scale(.85);
+            opacity:.5;
+        }
+         100% {
+            transform: scale(.95);
+             opacity:1;
+        }
+        
+    }  
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 0.5rem;
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.2;
+    color: inherit;
+}        
+.main{
+
+    height:auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto;
+    grid-gap: 10px;
+    box-sizing: border-box;
+    display: grid;
+    grid-row-gap: 100px;
+
+    } 
+
+
+
+
+
+
+       
+.ribbon1 {
+  position: absolute;
+  top: -6.1px;
+  right: 10px;
+}
+      
+.current-product-wrapper{
+  height:auto;
+  width: 90%;
+  margin-left:5%;
+  margin-right:5%;
+/*  position: relative;*/
+  display: flex;
+  flex-wrap: wrap   
+      
+      
+}
+.current-product-wrapper .left-lightbox{
+  flex:1;
+  height:auto;  
+  width:100%;
+/*  background: orange;*/
+  display: flex;
+}
+.current-product-wrapper .left-lightbox .image-viewer{
+  
+/*  background: red;*/
+  flex-grow: 1; 
+  position:relative;    
+  
+} 
+.current-product-wrapper .left-lightbox .image-viewer img{
+    min-width: 100%;
+    min-height:350px;
+    max-height:600px;
+    object-fit: contain;
+    object-position: left;
+    
+    
+}
+
+       
+/*
+.image-viewer img{
+    
+    transform: scale(.8, .8);
+    transform:skewX(1);
+}  
+*/
+.image-viewer img:hover{
+   transform:skewX(2);
+   transform-style: preserve-3d;
+    transform-origin: var(--mouse-x) var(--mouse-x) ;
+    transition:all 300ms;
+    
+}  
+.current-product-wrapper .left-lightbox .image-viewer img:hover{
+    min-width: 100%;
+    min-height:350px;
+    max-height:600px;
+    object-fit: contain;
+    object-position: left;
+    
+    
+}   
+        
+.image-viewer{
+    position: relative;
+}        
+/*
+.image-viewer::before{
+    content:"";
+    position: absolute;
+    top:0;
+    left:0;
+    background: radial-gradient(800px circle at var(--mouse-x) var(--mouse-y), rgba(255,255,255,0.9));
+    z-index: 2;  
+    width:35px;
+    height:35px;;
+    z-index: 2;
+    border-radius: inherit;
+    background: rgba(0,0,0,.9);
+       
+}
+.image-viewer::before::hover .image-viewer::before{
+
+    border-radius: 50%;
+    top:var(--mouse-x);
+    left:var(--mouse-y);
+    top:100px;
+    left:100px;
+    transition:all .1s;
+       
+} 
+        
+        
+*/
+        
+/*
+.image-viewer:before{
+    content: "";
+    width: 40%;
+    height:550px;
+    position:absolute;
+    background: rgba(255,255,255,0.5); 
+    object-fit: contain;  
+     
+}         
+*/
+.current-product-wrapper .image-reel img{
+    transform: scale(1);
+    transition: ease-out 300ms;
+}
+.current-product-wrapper .image-reel img:hover{
+    transform: scale(.95);
+
+}        
+.current-product-wrapper .right-lightbox{
+    flex:1;
+    width:100%;
+    min-width: 200px;
+/*    background: lightgreen;*/
+}   
+        
+.check {
+    width: 500px;
+    margin: 50px auto;
+    clear: both;
+    display: block;
+    background-color: lightgreen;
+    border-radius: 4px;
+}
+.check::after {
+    clear: both;
+    display: block;
+    content: "";
+}
+.check .checkbox-container {
+	float: left;
+    width: 50%;
+    box-sizing: border-box;
+    text-align:center;
+    padding: 40px 0px;
+}     
+        
+        
+        
+/* Styling Checkbox Starts */
+.checkbox-label {
+color: white;
+    display: block;
+    position: relative;
+    margin: auto;
+    cursor: pointer;
+    font-size: 22px;
+    line-height: 24px;
+    height: 50px;
+    width: 24px;
+    clear: both;
+}
+.checkbox-label input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.checkbox-label .mark {
+	top:2px;
+    position: absolute;
+    height: 24px;
+    width: 24px;
+    background-color: transparent;
+    
+    transition: all 0.3s ease-in;
+    border: 2px solid ghostwhite;
+    border-radius: 50%;
+    
+}
+.checkbox-label input:checked ~ .mark {
+    background-color: white;
+    
+    transform: rotate(0deg) scale(1);
+    opacity:1;
+    border: 2px solid white;
+}
+.checkbox-label .mark::after {
+    position: absolute;
+    content: "";
+    border-radius: 5px;
+}
+.checkbox-label input:checked ~ .mark::after {
+  transform: rotate(45deg) scale(1);
+  left: 8px;
+  top: 3px;
+  width: 6px;
+  height: 12px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  border-radius: 20%;
+}
+/* For Ripple Effect */ 
+.checkbox-label .mark::before {
+    position: absolute;
+    content: "";
+    border-radius: 50%;
+    border: 5px solid grey;
+    transform: scale(0);    
+}
+
+.checkbox-label input:checked ~ .mark::before {
+    left: 2px;
+    top: 0px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    transform: scale(3);
+    opacity:0;   
+    transition: all 0.3s ease-out;
+}
+.testimonials-v-2 {
+  padding: 100px 0;
+  overflow: hidden;
+}
+
+.testi-slide {
+  text-align: center;
+}
+
+.testi-slide img {
+  width: 92px;
+  height: 92px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  border-radius: 50%;
+}
+
+.testi-slide p {
+  margin: 20px 0;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 30px;
+  font-style: italic;
+}
+
+.testi-slide i {
+  color: #32c5d2;
+  margin-right: 10px;
+}
+
+.testi-slide h4 {
+  font-weight: 400;
+  font-size: 16px;
+  font-family: "Lato", sans-serif !important;
+  font-style: italic;
+}
+
+.testi-slide .flex-control-paging li a {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  -ms-box-shadow: none;
+  box-shadow: none;
+  background: transparent !important;
+  border: 2px solid #ccc;
+  width: 8px;
+  height: 8px;
+}
+
+.testi-slide .flex-control-paging li a.flex-active {
+  background: transparent !important;
+  border: 2px solid #32c5d2;
+}
+
+.quote {
+  position: relative;
+}
+
+.quote blockquote {
+  padding: 0px;
+  border: 0;
+  margin: 0;
+  font-size: 14px;
+  font-style: italic;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  border-radius: 8px;
+}
+
+.quote blockquote p {
+  color: #fff;
+  padding-top: 25px;
+  padding-bottom: 45px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.quote blockquote:before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 90px;
+  width: 0;
+  height: 0;
+  border-top: 0.83333em solid #ccc;
+  border-right: 0.86667em solid transparent;
+}
+
+.quote.green blockquote {
+  background-color: #32c5d2;
+}
+
+.quote.green blockquote:before {
+  border-top-color: #32c5d2;
+}
+
+.quote.dark blockquote {
+  background-color: #555;
+}
+
+.quote.dark blockquote:before {
+  border-top-color: #555;
+}
+
+.quote-footer {
+  margin: 10px 0;
+}
+
+.quote-footer .quote-author-img img {
+  float: left;
+  max-width: 90px;
+  width: 90px;
+  height: 90px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  border-radius: 50%;
+  margin-left: -5px;
+  margin-top: -40px;
+  position: relative;
+  z-index: 1;
+  padding: 5px;
+  background-color: #fff;
+}
+
+.quote-footer h4 {
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.quote-footer p {
+  font-weight: 400;
+  font-style: italic;
+  font-size: 14px;
+}        
+        
+
+  
+        
+[data-tab-content] {
+  display: none;
+}
+
+.active[data-tab-content] {
+  display: block;
+}
+
+
+.tabs {
+  display: flex;
+  justify-content: space-around;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid black;
+}
+
+.tab {
+  cursor: pointer;
+  padding: 10px;
+  color:#AAA;
+  
+}
+
+.tab.active {
+  color: #e3dbd3;
+  text-decoration: underline;
+}
+
+.tab:hover {
+ color: grey;
+}
+
+.tab-content {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+        
+        
+.description ul{
+  list-style: none;
+  font-size: 16px;
+  color:grey;
+}        
+.description ul li:before{
+ list-style: none;
+ content: "\1F892";
+ font-size: 20px;
+ left: -22px;
+ top:0px;
+ color:#e4dcd1;
+}        
+.similar-products{
+    position: relative;
+}          
+.similar-products-item .ribbon1:after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 0;
+  right:0px; 
+  border-left: 47px solid transparent;
+  border-right: 47px solid transparent;
+  border-top: 12px solid #F8463F;
+  
+}
+.similar-products-item .ribbon1 span {
+  position: relative;
+  display: block;
+  text-align: center;
+  background: #F8463F;
+  padding: 8px 2px 4px;
+  border-top-right-radius: 8px;
+  width: 90px;
+  color:white;  
+  font-size: 14px;
+  line-height: 1;    
+  font-weight: 600;
+}
+.similar-products-item .ribbon1 span:before,.similar-products-item .ribbon1 span:after {
+  position: absolute;
+  content: "";
+}
+.similar-products-item .ribbon1 span:before {
+ height: 6px;
+ width: 6px;
+ left: -6px;
+ top: 0;
+ background: #F8463F;
+}
+.similar-products-item .ribbon1 span:after {
+ height: 6px;
+ width: 8px;
+ left: -8px;
+ top: 0;
+ border-radius: 8px 8px 0 0;
+ background: #C02031;
+}        
+        
+.similar-products-items{
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        flex-wrap: wrap;
+        
+    }
+.card {
+    border: none;
+}       
+.similar-products-items .similar-products-item {
+        position: relative;
+        height:300px;
+        width:300px;
+        margin:150px 15px 0 15px;
+        background: rgba(0,0,0,.1);
+        background:#e3dbd3;
+        border:none;
+    }
+
+
+.similar-products-items .similar-products-item:hover>img{
+/*
+        transform: scale(.95);
+        transition: ease-in-out 300ms;
+*/
+       
+        
+    }
+.similar-products-items .similar-products-item.hide-similar-products-items-item{
+       
+        display:none;
+        
+    }
+.similar-products-items .similar-products-item.active{
+        
+        display:block;
+    }
+    
+.similar-products-item-extension{
+        display: flex;
+        width: 100%;
+        z-index: 5;
+        justify-content: space-between;
+        text-align: start;
+        margin-top: 2%;
+        position:relative;
+        height:120px;
+        color:gray;
+        letter-spacing: 1px;
+    }
+.similar-products-item-extension .plus-minus-holder{
+        display:flex; 
+        flex-direction:row;
+        justify-content: flex-end;
+        color:gray;
+        height:20px;
+        text-align: center;
+        width: 40%;
+        padding-top:5px;
+        margin-left:60%;
+    }
+.similar-products-item-extension p2{
+        margin:0;
+        font-weight:400;
+        font-family:Montserrat,monospace;
+        font-size: 12px;
+    }
+.similar-products-item-extension span{ 
+        width: 80%; 
+        height:2px;
+        background-color: gray;
+        margin-top:60px;
+        margin-left:5px;
+        position: absolute;
+    }
+.similar-products-item-extension .shopping-cart-icon-holder{
+    position: absolute;
+    margin-left:5px;
+    margin-right:5px;
+    display: flex;
+    flex-direction: row;
+    width:100%; 
+    justify-content: space-between;
+    padding-top: 45px;
+    font-size: 18px;
+
+}
+.similar-products-item-extension .fa-plus{
+
+    border-radius: 12px;
+    border-color:gray;
+    padding:3px;
+    border-style: solid;
+    margin-right:8px;
+    border-width: 2px;
+    color:gray;
+    background: rgba(0,0,0,.05);
+    z-index: 2;
+    transition: ease-in 300ms;
+
+}
+
+.similar-products-item-extension .fa-plus:hover{
+
+    border-color:#e4dcd1;
+    border-style: solid;
+    margin-right:8px;
+    border-width: 2px;
+    color:#e4dcd1;
+
+    background: white;
+}
+.similar-products-item-extension .fa-minus{
+
+    border-radius: 12px;
+    border-color:gray;
+    padding:3px;
+    border-style: solid;
+    border-width: 2px;
+    background: rgba(0,0,0,.05);
+    z-index: 2;
+    transition: ease-in 300ms;
+}
+
+.similar-products-item-extension .fa-minus:hover{
+    border: 2px solid #e4dcd1;
+    color:#e4dcd1;
+
+    background: white;
+} 
+.similar-products-item-extension .fa-cart-plus{
+
+    padding: none;
+/*        margin-left:215%;*/
+    clear: both;
+    float: right;
+
+    right:0;
+    position: absolute;
+    color:gray;
+    font-size: 18px;
+    border-radius: 18px;
+    border-color:gray;
+    padding:5px;
+    border-style: solid;
+    margin-right:8px;
+    border-width: 2px;
+    background: rgba(0,0,0,.05);
+    transition: ease-in 300ms;
+}
+.similar-products-item-extension .fa-cart-plus:hover{
+
+    color:#e4dcd1;
+    border-color:#e4dcd1;
+    background: white;
+}        
+
+          
+.similar-products-items .similar-products-item{
+   height:auto; 
+}
+.similar-products-items .similar-products-item img{
+        position: absolute;
+        top:0;
+        left:0;
+        width:100%;
+        height:auto;
+        object-fit: contain;
+        transform: scale(.7);
+        
+    }        
+.similar-products-item:hover img{
+/*
+    transform: scale(0.95);
+    transition: ease-out 300ms;
+*/
+    
+     animation: similar_product_zoom_in_out; 
+     animation-duration: 300ms;
+
+}         
+
+
+
+.similar-products .carousel-control-prev-icon{
+  height: 140px;
+  width: 140px;
+  background-size: 100%, 100%;
+/*  background-image: url(images/circle-chevron-left-solid.svg);*/
+}
+.similar-products .carousel-control-next-icon {
+  height: 140px;
+  width: 140px;
+  background-size: 100%, 100%;
+/*  background-image: url(images/circle-chevron-right-solid.svg);*/
+  
+}
+
+.similar-products .carousel-control-next-icon:after
+{
+    content:"\f054";
+    color: grey;
+    font-size: 30px;
+    padding: 4px;
+/*
+    border: 2px solid grey;
+    border-radius: 45px;
+*/
+    font-family: "Font Awesome 5 Free";                     
+    font-weight: 900;  
+    right:15px;
+    position:absolute;
+    top:45%;
+    
+}
+
+.similar-products .carousel-control-prev-icon:after {
+  content: "\f053";
+  color: grey;
+  font-size: 30px;
+  padding: 4px;
+/*
+  border: 2px solid grey;
+  border-radius: 45px;
+*/
+  font-family: "Font Awesome 5 Free";                     
+  font-weight: 900;  
+  left:15px;
+  position:absolute;
+  top:45%;
+}
+
+     
+.img-magnifier-container {
+  position: relative;
+  height:auto;    
+}
+
+.img-magnifier-glass {
+  position: absolute;
+  border: 2px solid lightgray;
+  border-radius: 50%;
+  cursor: zoom-in;
+  content: 'f00e';
+  font-family: 'Font Awesome 5 Free';    
+  /*Set the size of the magnifier glass:*/
+  width: 40px;
+  height: 40px;
+  z-index: 2;  
+}        
+    </style>
+      
+</head>
+    
+<body onload="loadDone()">
+    <div class="loading"></div>
+    <div class="main">
+
+        <div class="header-wrapper" id="home">
+
+                <div class="nav-wrapper" id="nav-wrapper">
+                    <nav id="nav">
+                    <div class="hamburger">
+                       <div class="line line1"></div>
+                       <div class="line line2"></div>
+                       <div class="line line3"></div>
+                   </div>
+                   <div class="drawer">
+                       <div class="nav-links" id="nav-links">
+                           <a href="index.html" class="btn-item">
+                                <span></span>
+                                <span></span>
+                                Home
+                            </a>
+                           <a href="#details" class="btn-item">
+                                <span></span>
+                                <span></span>
+                                Details
+                            </a>
+                           <a href="#gallery" class="btn-item">
+                                <span></span>
+                                <span></span>
+                                Reviews
+                            </a>
+                           <a href="#similar-products" class="btn-item">
+                                <span></span>
+                                <span></span>
+                                Similar
+                            </a>
+
+                           <a href="#about" class="btn-item">
+                                <span></span>
+                                <span></span>
+                                About
+                            </a>
+
+                        </div>
+                   </div>
+                </nav> 
+                </div>   
+        </div>
+   
+        <div class="current-product-wrapper row" id="details">
+            
+<!--
+            <div class="image-reel col-1 " style="width:100%;max-height: 500px;min-width:120px;">
+                <img class="img-thumbnail rounded mx-auto d-block" style="margin:5px;" src="images/productsMen1-removebg-preview-thumb-1.png">
+                <img class="img-thumbnail rounded mx-auto d-block" style="margin:5px;" src="images/productsMen1-removebg-preview-thumb-2.png">
+                <img class="img-thumbnail rounded mx-auto d-block" style="margin:5px;" src="images/productsMen1-removebg-preview-thumb-3.png">
+            </div>
+-->
+             <div class="image-reel col-1 " style="width:100%;max-height: 500px;min-width:120px;">
+                <img class="img-thumbnail rounded mx-auto d-block" style="margin:5px;" src="images/product2_thumb1-removebg-preview.png">
+                <img class="img-thumbnail rounded mx-auto d-block" style="margin:5px;" src="images/product2_thumb2-removebg-preview.png">
+                <img class="img-thumbnail rounded mx-auto d-block" style="margin:5px;" src="images/product2_thumb3-removebg-preview.png">
+            </div>
+            <div class="image-viewer col-7" style="clear: both; float:left;">
+                <div class="img-magnifier-container" style="object-fit: contain;max-height: 650px;clear: both; float:left;">
+                    <img id="current-image" class="current-image img-fluid" src="images/product2_thumb1-removebg-preview.png" style="object-fit: contain;max-height: 650px;object-position: top; clear: both; float:left;">
+                </div>
+            </div>
+                
+            
+            <div class="right-lightbox col-3">
+                <div>
+                    <h3 style="color:#e3dbd3;">Label</h3>
+                    <p3 style="color:#e3dbd3;">Sub Label</p3>  
+
+                    <ul style="list-style: none;padding:0;margin:left:0;display: flex;width:100px;align-content: center;height:18px;
+  line-height: 16px;
+  text-align: center;
+  ">
+                       <li style="flex:1;width:100%;color:goldenrod;"><i class="fa-solid fa-star"></i></li> 
+                       <li style="flex:1;width:100%;color:goldenrod;"><i class="fa-solid fa-star"></i></li>
+                       <li style="flex:1;width:100%;color:goldenrod;"><i class="fa-solid fa-star"></i></li>
+                       <li style="flex:1;width:100%;color:goldenrod;"><i class="fa-solid fa-star-half-stroke"></i></li>
+                       <li style="flex:1;width:100%;font-family:Montserrat,monospace;font-size: 12px;color:#e3dbd3;"><p style="margin:0;">(CountOfReviews)</p></li>
+                    </ul> 
+                     <h3 style="color:#e3dbd3;margin-bottom:20px;">Price</h3>   
+                    <p style="line-height:1.8;color:grey;" >Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore.</p>
+                    <div style="padding:0;margin:left:0;display: flex;width:100%;flex-wrap: wrap;">
+                        <div style="font-family: Raleway-SemiBold;font-size: 14px;color: grey;letter-spacing: 1px;line-height: 14px;border: 2px solid grey;border-radius: 40px;background: transparent;transition: all 0.3s ease 0s;padding: 8px;display: flex;align-content: center;justify-content: center;margin-right:10px;margin-bottom:15px;">
+                            <i class="fa-solid fa-plus"></i>
+                            <p style="margin:0;margin-left:8px;margin-right:8px;">Count</p>
+                            <i class="fa-solid fa-minus"></i>
+                        </div>
+                        
+                        <div style="font-family: Raleway-SemiBold;font-size: 14px;color: grey;letter-spacing: 1px;line-height: 14px;border: 2px solid grey;border-radius: 40px;background: transparent;transition: all 0.3s ease 0s;padding: 8px;display: flex;align-content: center;justify-content: center;margin-bottom:15px;">
+                            <i class="fa-solid fa-cart-plus"></i>
+                            <p style="margin:0;margin-left:8px;margin-right:8px;">Add To Cart</p>
+                        </div>
+                         
+                    </div>
+                </div>
+                <div style="height:2px;width:90%;background-color:grey;margin:5px;margin-top:14px;margin-bottom:14px;"></div>
+            <div>
+                
+                <ul style="list-style: none;padding:0;margin:left:0;display: flex;width:90%;flex-direction: column;">
+                    <li style="flex:1;width:100%;color:grey;margin-bottom:25px;">
+                        <ul style="display:flex;list-style: none;padding: 0;margin:0;width:100%;">
+                            <li style="width:100%;flex:1;height:25px;">
+                                <p style="margin:0;font-size: 16px;line-height: 25px;margin-right:5px;color:grey;">Avalability</p>
+                            </li>
+                            <li style="width:100%;flex:1;height:25px;">
+                                <div style="width:100%;flex:1;display: flex;width: 100%;justify-content: flex-start;">
+<!--                                    <input style="height:35px; background-color:lightblue;margin-right:8px;font-size: 16px;" type="checkbox"/>-->
+                                    <p style="width:100%;flex:1;height:35px;margin-bottom:0;margin-top:0;line-height: 25px;color:green;font-size: 16px;">In Stock</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li style="flex:1;width:100%;color:grey;margin-bottom:25px;">
+                        <ul style="display:flex;list-style: none;padding: 0;margin:0;width:100%;">
+                            <li style="width:100%;flex:1;height:25px;">
+                                <p style="margin:0;font-size: 16px;line-height: 25px;margin-right:5px;color:grey;">Available Colors</p>
+                            </li>
+                            <li style="width:100%;flex:1;height:25px;">
+                                <div style="width:100%;flex:1;display: flex;width: 100%;justify-content: flex-start;">
+                                    
+                                    <div class="checkbox-container" style="align-content:flex-start;">
+                                    <label class="checkbox-label" >
+                                     <input style="height:0px;font-size: 18px;" type="checkbox"/>
+                                      <span class="mark" style="background-color:lightblue;"></span>
+                                    </label>
+                                    </div>
+                                    
+                                    <div class="checkbox-container">
+                                    <label class="checkbox-label">
+                                     <input style="height:0px;font-size: 18px;" type="checkbox"/>
+                                      <span class="mark" style="background-color:lightgreen;"></span>
+                                    </label>
+                                    </div>
+                                    
+                                    <div class="checkbox-container">
+                                    <label class="checkbox-label">
+                                     <input style="height:0px;font-size: 18px;" type="checkbox"/>
+                                      <span class="mark" style="background-color:black;"></span>
+                                    </label>
+                                    </div>
+                                    
+                                    <div class="checkbox-container">
+                                    <label class="checkbox-label">
+                                     <input style="height:0px;font-size: 18px;" type="checkbox"/>
+                                      <span class="mark" style="background-color:rosybrown;"></span>
+                                    </label>
+                                    </div>
+                                    
+                                    <div class="checkbox-container">
+                                    <label class="checkbox-label">
+                                     <input style="height:0px;font-size: 18px;" type="checkbox"/>
+                                      <span class="mark" style="background-color:lightgray;"></span>
+                                    </label>
+                                    </div>
+                                    
+<!--
+                                    <input style="height:25px; background-color:lightblue;margin-right:8px;font-size: 16px;" type="checkbox"/>
+                                    <input style="height:25px; background-color:lightblue;margin-right:8px;font-size: 16px;" type="checkbox"/>
+                                    <input style="height:25px; background-color:lightblue;margin-right:8px;font-size: 16px;" type="checkbox"/>
+-->
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li style="flex:1;width:100%;color:grey;margin-bottom:25px;">
+                        <ul style="display:flex;list-style: none;padding: 0;margin:0;width:100%;">
+                            <li style="width:100%;flex:1;height:25px;">
+                                <p style="margin:0;font-size: 16px;line-height: 25px;margin-right:5px;color:grey;">Available Size</p>
+                            </li>
+                            <li style="width:100%;flex:1;height:25px;">
+                                <div style="width:100%;flex:1;display: flex;width: 100%;justify-content: flex-start;">
+                                    <input style="height:25px; background-color:lightblue;margin-right:8px;font-size: 16px;" type="checkbox"/>
+                                    <input style="height:25px; background-color:lightblue;margin-right:8px;font-size: 16px;" type="checkbox"/>
+                                    <input style="height:25px; background-color:lightblue;margin-right:8px;font-size: 16px;" type="checkbox"/>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li style="flex:1;width:100%;color:grey;margin-bottom:25px;">
+                        <ul style="display:flex;list-style: none;padding: 0;margin:0;width:100%;">
+                            <li style="width:100%;flex:1;height:25px;">
+                                <p style="margin:0;font-size: 16px;line-height: 25px;margin-right:5px;color:grey;">Shipping </p>
+                            </li>
+                            <li style="width:100%;flex:1;height:25px;">
+                                <div style="width:100%;flex:1;display: flex;width: 100%;justify-content: flex-start;">
+                                    <input style="height:25px; background-color:lightblue;margin-right:8px;font-size: 16px;" type="checkbox"/>
+                                    <input style="height:25px; background-color:lightblue;margin-right:8px;font-size: 16px;" type="checkbox"/>
+                                    <input style="height:25px; background-color:lightblue;margin-right:8px;font-size: 16px;border-radius: 50%;" type="checkbox"/>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+           
+            </div>
+        </div>
+        
+        <div class="spec-and-reviews" id="spec-and-reviews" style="width:100%;height: 100%;display: block;position: relative;">
+            <div style="position: relative;width:90%;margin-left:5%;margin-right:5%;height:auto;display:block;">
+                <ul style="list-style: none; display:flex;margin-left:5%;margin-right:5%;justify-content: center;padding: 0;">
+                    <li data-tab-target="#description" class="active tab" style="margin:10px;"><h5>Description</h5></li>
+                    
+                    <li data-tab-target="#reviews" class="tab" style="margin:10px;"><h5>Reviews</h5></li>
+                </ul>
+                <div class="tab-content">
+                  <div id="description" data-tab-content class="description active">
+<!--                    <h6>Description</h6>-->
+<!--
+                    <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut loret fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt loret. Neque porro lorem quisquam est, qui dolorem ipsum quia dolor si. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut loret fugit, sed quia ipsu consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Nulla consequat massa quis enim.
+
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</p>
+-->
+                      <ul>
+                          <li>Single Button cuffs</li>
+                          <li>Solid Color</li>
+                          <li>Long Sleeves</li>
+                          <li>Small Collar</li>
+                          <li>Slim Fit</li>
+                      </ul>
+                  </div>
+                 
+                  <div id="reviews" data-tab-content>                  
+                        <div class="container-fluid">
+                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                  <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                  </ol>
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row">
+                            <div class="col-md-4 margin-btm-20">
+                                <div class="quote dark">
+                                    <blockquote>
+                                        <p>
+                                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.                          
+                                        </p>
+                                    </blockquote>                        
+                                </div>
+                                <div class="quote-footer text-right">
+                                    <div class="quote-author-img">
+                                        <img src="images/women1.svg" alt="">
+                                    </div>
+                                    <h4>Black Widow</h4>
+                                </div>
+                            </div><!--colored quote box col-->
+                            <div class="col-md-4 margin-btm-20">
+                                <div class="quote green">
+                                    <blockquote>
+                                        <p>
+                                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.                          
+                                        </p>
+                                    </blockquote>                        
+                                </div>
+                                <div class="quote-footer text-right">
+                                    <div class="quote-author-img">
+                                        <img src="images/man2.svg" alt="">
+                                    </div>
+                                    <h4>Hawk Eye</h4>
+                                </div>
+                            </div><!--colored quote box col-->
+                            <div class="col-md-4 margin-btm-20">
+                    <div class="quote dark">
+                        <blockquote>
+                            <p>
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.                          
+                            </p>
+                        </blockquote>                        
+                    </div>
+                    <div class="quote-footer text-right">
+                        <div class="quote-author-img">
+                            <img src="images/women2.svg" alt="">
+                        </div>
+                        <h4>Captain Marvel</h4>
+                    </div>
+                </div><!--colored quote box col-->
+                        </div><!--testimonials row-->
+                    </div>
+                    <div class="carousel-item">
+                      <div class="row">
+                <div class="col-md-4 margin-btm-20">
+                    <div class="quote dark">
+                        <blockquote>
+                            <p>
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.                          
+                            </p>
+                        </blockquote>                        
+                    </div>
+                    <div class="quote-footer text-right">
+                        <div class="quote-author-img">
+                            <img src="images/man1.svg" alt="">
+                        </div>
+                        <h4>Dr. Strange</h4>
+                    </div>
+                </div><!--colored quote box col-->
+                <div class="col-md-4 margin-btm-20">
+                    <div class="quote green">
+                        <blockquote>
+                            <p>
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.                          
+                            </p>
+                        </blockquote>                        
+                    </div>
+                    <div class="quote-footer text-right">
+                        <div class="quote-author-img">
+                            <img src="images/man2.svg" alt="">
+                        </div>
+                        <h4>Pietro Maximoff</h4>
+                    </div>
+                </div><!--colored quote box col-->
+                <div class="col-md-4 margin-btm-20">
+                    <div class="quote dark">
+                        <blockquote>
+                            <p>
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.                          
+                            </p>
+                        </blockquote>                        
+                    </div>
+                    <div class="quote-footer text-right">
+                        <div class="quote-author-img">
+                            <img src="images/women1.svg" alt="">
+                        </div>
+                        <h4>Wanda</h4>
+                    </div>
+                </div><!--colored quote box col-->
+            </div><!--testimonials row-->
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row">
+                            <div class="col-md-4 margin-btm-20">
+                                <div class="quote dark">
+                                    <blockquote>
+                                        <p>
+                                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.                          
+                                        </p>
+                                    </blockquote>                        
+                                </div>
+                                <div class="quote-footer text-right">
+                                    <div class="quote-author-img">
+                                        <img src="images/women2.svg" alt="">
+                                    </div>
+                                    <h4>Steve Rogers</h4>
+                                </div>
+                            </div><!--colored quote box col-->
+                            <div class="col-md-4 margin-btm-20">
+                                <div class="quote green">
+                                    <blockquote>
+                                        <p>
+                                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.                          
+                                        </p>
+                                    </blockquote>                        
+                                </div>
+                                <div class="quote-footer text-right">
+                                    <div class="quote-author-img">
+                                        <img src="images/women1.svg" alt="">
+                                    </div>
+                                    <h4>Jane Foster</h4>
+                                </div>
+                            </div><!--colored quote box col-->
+                            <div class="col-md-4 margin-btm-20">
+                    <div class="quote dark">
+                        <blockquote>
+                            <p>
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.                          
+                            </p>
+                        </blockquote>                        
+                    </div>
+                    <div class="quote-footer text-right">
+                        <div class="quote-author-img">
+                            <img src="images/man1.svg" alt="">
+                        </div>
+                        <h4>Bruce Banner</h4>
+                    </div>
+                </div><!--colored quote box col-->
+                        </div><!--testimonials row-->
+                    </div>
+                  </div>
+                  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                  </a>
+                  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                  </a>
+                </div>
+                
+            </div>        
+                  </div>
+                </div>
+
+    
+           </div>
+        </div>
+        
+       <div class="similar-products" id="similar-products">
+           <h3 style="text-align: center;margin:30px;color:#e4dcd1;">Similar Products</h3>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-1">
+                        <a class="carousel-control-prev" href="#similar-products-item-slider" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                    </div>
+                    <div class="col-10">
+                        <div id="similar-products-item-slider" class="carousel slide" data-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <div class="row">
+                                        
+                                       <div class="col-lg-3 mb-3">
+                                            <div class="card similar-products-item">
+                                                <img class="img-fluid" alt="100%x280" src="images/productsMen1-removebg-preview-thumb-3.png">
+                                                <span class="ribbon1">
+                                                  <span>Sale 10%</span>
+                                                </span>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 mb-3">
+                                            <div class="card similar-products-item">
+                                                <img class="img-fluid" alt="100%x280" src="images/productsMen4.jpg">
+                                                
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 mb-3">
+                                            <div class="card similar-products-item">
+                                                <img class="img-fluid" alt="100%x280" src="images/productsMen7.jpg">
+                                                
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 mb-3">
+                                            <div class="card similar-products-item">
+                                                <img class="img-fluid" alt="100%x280" src="images/productsMen12.jpg">
+                                               
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="row">
+
+                                        <div class="col-lg-3 mb-3">
+                                            <div class="card similar-products-item">
+                                                <img class="img-fluid" alt="100%x280" src="images/productsMen26.jpg">
+                                               
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 mb-3">
+                                            <div class="card similar-products-item">
+                                                <img class="img-fluid" alt="100%x280" src="images/productsMen34.jpg">
+                                                <span class="ribbon1">
+                                                  <span>Sale 10%</span>
+                                                </span>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 mb-3">
+                                            <div class="card similar-products-item">
+                                                <img class="img-fluid" alt="100%x280" src="images/productsMen35.jpg">
+                                                <span class="ribbon1">
+                                                  <span>Sale 10%</span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 mb-3">
+                                            <div class="card similar-products-item">
+                                                <img class="img-fluid" alt="100%x280" src="images/productsMen41.jpg">
+                                               
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="row">
+
+                                        <div class="col-lg-3 mb-3">
+                                            <div class="card similar-products-item">
+                                                <img class="img-fluid" alt="100%x280" src="images/productsMen34.jpg">
+                                               
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 mb-3">
+                                            <div class="card similar-products-item">
+                                                <img class="img-fluid" alt="100%x280" src="images/productsMen35.jpg">
+                                                
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 mb-3">
+                                            <div class="card similar-products-item">
+                                                <img class="img-fluid" alt="100%x280" src="images/productsMen37.jpg">
+                                                
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 mb-3">
+                                            <div class="card similar-products-item">
+                                                <img class="img-fluid" alt="100%x280" src="images/productsMen41.jpg">
+                                               
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-1">
+                        <a class="carousel-control-next" href="#similar-products-item-slider" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                      </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        
+        <div class="about-wrapper" id="about" >
+<!--
+            <div>
+            <img src="images/eternal_logo-removebg-preview.png" style="width:100%;object-fit: contain;min-width:100px;"/>
+            </div>
+-->
+            <div>
+                
+                <h5>About</h5>
+                <p style="line-height:1.6;" >Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore.</p>
+            </div>
+            <div>
+                <h5>Quick Links</h5>
+                <ul style="list-style: none;padding: 0;line-height:1.6;" >
+                    <li>About</li>
+                    <li>Offers and Discounts</li>
+                    <li>Get Coupon</li>
+                    <li>Contact Us</li>
+                </ul>
+            </div>
+            <div >
+                <h5>New Products</h5>
+                 <ul style="list-style: none;padding: 0;line-height:1.6;" >
+                    <li>Woman Cloth</li>
+                    <li>Fashion Accessories</li>
+                    <li>Man Accessories</li>
+                    <li>Rubber Made Toys</li>
+                </ul>
+            </div>
+            <div>
+                <h5>Support</h5>
+                 <ul style="list-style: none;padding: 0;line-height:1.6;">
+                    <li>FAQ</li>
+                    <li>Terms and Conditions</li>
+                    <li>Privacy Policy</li>
+                    <li>Refund Policy</li>
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+        
+    
+        
+<script>
+const tabs = document.querySelectorAll('[data-tab-target]')
+const tabContents = document.querySelectorAll('[data-tab-content]')
+
+tabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    const target = document.querySelector(tab.dataset.tabTarget)
+    tabContents.forEach(tabContent => {
+      tabContent.classList.remove('active')
+    })
+    tabs.forEach(tab => {
+      tab.classList.remove('active')
+    })
+    tab.classList.add('active')
+    target.classList.add('active')
+  })
+})        
+</script>     
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>       
+<script src="main.js"></script>  
+<!--
+<script>
+let hamburger= document.querySelector(".hamburger");
+let navLinks= document.querySelector(".nav-links");
+let links= document.querySelectorAll(".nav-links li");
+let load=document.querySelector(".loading");   
+ 
+hamburger.addEventListener("click",()=>{
+    navLinks.classList.toggle("open");
+
+    links.forEach(function(element){
+
+        element.classList.toggle("fade");
+    });
+
+    hamburger.classList.toggle("toggle");
+});
+    
+
+AOS.init();    
+
+function loadDone(){
+    
+      load.style.display="none";
+}  
+function getPrevPrice(min, max) {
+  return Math.random() * (max - min) + min;
+}
+
+function getHTML(prev_price, disc_price){
+    let html="<div class='similar-products-item-extension'><div class='product-label-sublabel' style='position: absolute;top:0;left:0;padding: 5px;'><p style='margin:0;font-size: 18px;'>Label</p><p2>Sub-Label</p2></div><span></span><div class='plus-minus-holder'><i class='fa-solid fa-plus'></i><i class='fa-solid fa-minus'></i><p style='line-height: 1px;font-size: 18px;margin-top:12px;height:2px;margin-left:5px;text-align: end;padding-right:5px;'>100</p></div><div class='shopping-cart-icon-holder'><i class='fa-solid fa-cart-plus'></i><p style='text-decoration-line: line-through;text-decoration-color: #464e59;margin-top:35px;'>$"+prev_price+"</p> <p style='margin-top:35px;margin-right:10px;' >$"+disc_price+"</p></div></div>";  
+    return html;
+}
+
+       
+</script>    
+-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>    
+<script>
+function magnify(imgID, zoom) {
+  var img, glass, w, h, bw;
+  img = document.getElementById(imgID);
+
+  /* Create magnifier glass: */
+  glass = document.createElement("DIV");
+  glass.setAttribute("class", "img-magnifier-glass");
+
+  /* Insert magnifier glass: */
+  img.parentElement.insertBefore(glass, img);
+
+  /* Set background properties for the magnifier glass: */
+  glass.style.backgroundImage = "url('" + img.src + "')";
+  glass.style.backgroundRepeat = "no-repeat";
+  glass.style.backgroundSize = (img.width * zoom) + "px " + (img.height * zoom) + "px";
+  bw = 3;
+  w = glass.offsetWidth / 2;
+  h = glass.offsetHeight / 2;
+
+  /* Execute a function when someone moves the magnifier glass over the image: */
+  glass.addEventListener("mousemove", moveMagnifier);
+  img.addEventListener("mousemove", moveMagnifier);
+
+  /*and also for touch screens:*/
+  glass.addEventListener("touchmove", moveMagnifier);
+  img.addEventListener("touchmove", moveMagnifier);
+  function moveMagnifier(e) {
+    var pos, x, y;
+    /* Prevent any other actions that may occur when moving over the image */
+    e.preventDefault();
+    /* Get the cursor's x and y positions: */
+    pos = getCursorPos(e);
+    x = pos.x;
+    y = pos.y;
+    /* Prevent the magnifier glass from being positioned outside the image: */
+    if (x > img.width - (w / zoom)) {x = img.width - (w / zoom);}
+    if (x < w / zoom) {x = w / zoom;}
+    if (y > img.height - (h / zoom)) {y = img.height - (h / zoom);}
+    if (y < h / zoom) {y = h / zoom;}
+    /* Set the position of the magnifier glass: */
+    glass.style.left = (x - w) + "px";
+    glass.style.top = (y - h) + "px";
+    /* Display what the magnifier glass "sees": */
+    glass.style.backgroundPosition = "-" + ((x * zoom) - w + bw) + "px -" + ((y * zoom) - h + bw) + "px";
+  }
+
+  function getCursorPos(e) {
+    var a, x = 0, y = 0;
+    e = e || window.event;
+    /* Get the x and y positions of the image: */
+    a = img.getBoundingClientRect();
+    /* Calculate the cursor's x and y coordinates, relative to the image: */
+    x = e.pageX - a.left;
+    y = e.pageY - a.top;
+    /* Consider any page scrolling: */
+    x = x - window.pageXOffset;
+    y = y - window.pageYOffset;
+    return {x : x, y : y};
+  }
+} 
+</script>    
+<script>
+    
+const handleOnMouseMove = e=>{
+    
+    const{currentTarget: target} =e;
+    
+    const rect= target.getBoundingClientRect(),
+          x=e.clientX-rect.left,
+          y=e.clientY-rect.top;
+          
+    console.log(x+","+y);
+    
+    target.style.setProperty("--mouse-x",'${x}px');
+    target.style.setProperty("--mouse-y",'${y}px');  
+    target.style.transformOrigin =" ${x} ${y}";
+      
+}
+
+const selectFromReelImage = e=>{
+    const{currentTarget: target} =e;
+    document.querySelector(".image-viewer img").setAttribute('src',target.getAttribute('src')); 
+    const element = document.querySelector('.img-magnifier-glass');
+    element.remove();
+    magnify("current-image", 1.5);  
+}
+reel_images=document.querySelectorAll(".image-reel img");   
+    for(reel_image of reel_images){
+        reel_image.onclick=e=>selectFromReelImage(e);  
+    }
+</script>    
+<script>
+   var curr_image_clicked=0;    
+   var curr_image=document.querySelector(".current-image");    
+   curr_image.addEventListener('click',()=>{
+       magnify("current-image", 1.5);
+       
+   });   
+ 
+</script>    
+    </body>       
+</html>
+    
