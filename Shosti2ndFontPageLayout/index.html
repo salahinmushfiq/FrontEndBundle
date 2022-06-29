@@ -10,7 +10,7 @@
       <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="fontawesome-free-5.15.3-web/css/all.css"/>
 <!--     <link rel="stylesheet" href="Ngsoftworks.css"/>-->
-    <link rel="shortcut icon" href="images/logo.png" />
+    <link rel="shortcut icon" href="images/logo-removebg-preview.png" />
     <title>Shosti</title>
 <style>
     body{
@@ -169,13 +169,16 @@
         .nav-links{
             position:fixed;
             flex-direction:column;
-            width:90%;
+            width:80%;
             height:75vh;
             color:white;
             top:12vh;
             align-content: center;
+            transform: translateX(100%);
+/*
             clip-path:circle(0 at 90% -10%); 
             -webkit-clip-path:circle(0 at 90% 10%);
+*/
             align-content: center;
             transition: all 1s ease-out;
             text-align: center;
@@ -200,8 +203,11 @@
         transition: all 1s ease-out;
         }
         .nav-links.open{
+/*
             clip-path:circle(1000px at 90% 10%); 
             -webkit-clip-path:circle(1000px at 90% 10%);
+*/
+            transform: translateX(0%);
             transition: all 1s ease-out;
             background: #165e5d;
             
@@ -1073,7 +1079,7 @@ button {
         <div class="cover">
         <div class="nav-wrapper">      
 <div class="nav">
-     <img class="logo" style="position: absolute;width:auto;height:inherit; z-index: 4;left: 30px;" src="images/logo.png">
+     <img class="logo" style="position: absolute;width:auto;height:inherit; z-index: 4;left: 30px;border-radius: 50%;box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;" src="images/logo-removebg-preview.png">
      
      <div class="hamburger">
            <div class="line line1"></div>

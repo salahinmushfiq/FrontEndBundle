@@ -1905,7 +1905,7 @@ function scrollFunction() {
 var main_categories=document.querySelectorAll('.main-list');
 var secondary_categories=document.querySelectorAll('.secondary-list');    
 var main_category_items=document.querySelectorAll('.similar-products-item');
-var main_category_item_images=document.querySelectorAll('.similar-products-item img');
+var similar_product_item_images=document.querySelectorAll('.similar-products-item img');
     
 for (let category of main_categories) {
          
@@ -1959,7 +1959,7 @@ function getHTML(prev_price, disc_price){
     let html="<div class='similar-products-item-extension'><div class='product-label-sublabel' style='position: absolute;top:0;left:0;padding: 5px;'><p style='margin:0;font-size: 18px;'>Label</p><p2>Sub-Label</p2></div><span></span><div class='plus-minus-holder'><i class='fa-solid fa-plus'></i><i class='fa-solid fa-minus'></i><p style='line-height: 1px;font-size: 18px;margin-top:12px;height:2px;margin-left:5px;text-align: end;padding-right:5px;'>100</p></div><div class='shopping-cart-icon-holder'><i class='fa-solid fa-cart-plus'></i><p style='text-decoration-line: line-through;text-decoration-color: dimgray;margin-top:35px;'>$"+prev_price+"</p> <p style='margin-top:35px;margin-right:10px;' >$"+disc_price+"</p></div></div>";  
     return html;
 }
-for(let product_image of main_category_item_images){
+for(let product_image of similar_product_item_images){
     
       let prev_price=Math.floor(getPrevPrice(900,2400));
       let disc_price=Math.floor(prev_price-((prev_price*10)/100));

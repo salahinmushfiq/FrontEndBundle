@@ -460,7 +460,7 @@ color: white;
 }
 
 .tab.active {
-  color: #e3dbd3;
+  color: #cdb9ab;
   text-decoration: underline;
 }
 
@@ -550,7 +550,7 @@ color: white;
         width:300px;
         margin:150px 15px 0 15px;
         background: rgba(0,0,0,.1);
-        background:#e3dbd3;
+        background:#cdb9ab;
         border:none;
     }
 
@@ -860,8 +860,8 @@ color: white;
             
             <div class="right-lightbox col-3">
                 <div>
-                    <h3 style="color:#e3dbd3;">Label</h3>
-                    <p3 style="color:#e3dbd3;">Sub Label</p3>  
+                    <h3 style="color:#cdb9ab;">Label</h3>
+                    <p3 style="color:#cdb9ab;">Sub Label</p3>  
 
                     <ul style="list-style: none;padding:0;margin:left:0;display: flex;width:100px;align-content: center;height:18px;
   line-height: 16px;
@@ -871,9 +871,9 @@ color: white;
                        <li style="flex:1;width:100%;color:goldenrod;"><i class="fa-solid fa-star"></i></li>
                        <li style="flex:1;width:100%;color:goldenrod;"><i class="fa-solid fa-star"></i></li>
                        <li style="flex:1;width:100%;color:goldenrod;"><i class="fa-solid fa-star-half-stroke"></i></li>
-                       <li style="flex:1;width:100%;font-family:Montserrat,monospace;font-size: 12px;color:#e3dbd3;"><p style="margin:0;">(CountOfReviews)</p></li>
+                       <li style="flex:1;width:100%;font-family:Montserrat,monospace;font-size: 12px;color:#cdb9ab;"><p style="margin:0;">(CountOfReviews)</p></li>
                     </ul> 
-                     <h3 style="color:#e3dbd3;margin-bottom:20px;">Price</h3>   
+                     <h3 style="color:#cdb9ab;margin-bottom:20px;">Price</h3>   
                     <p style="line-height:1.8;color:grey;" >Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore.</p>
                     <div style="padding:0;margin:left:0;display: flex;width:100%;flex-wrap: wrap;">
                         <div style="font-family: Raleway-SemiBold;font-size: 14px;color: grey;letter-spacing: 1px;line-height: 14px;border: 2px solid grey;border-radius: 40px;background: transparent;transition: all 0.3s ease 0s;padding: 8px;display: flex;align-content: center;justify-content: center;margin-right:10px;margin-bottom:15px;">
@@ -1191,8 +1191,8 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula 
            </div>
         </div>
         
-       <div class="similar-products" id="similar-products">
-           <h3 style="text-align: center;margin:30px;color:#e4dcd1;">Similar Products</h3>
+        <div class="similar-products">
+           <h3 style="text-align: center;margin:30px;color:#cdb9ab;">Similar Products</h3>
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-1">
@@ -1314,7 +1314,7 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula 
                 </div>
             </div>
         </div>
-        
+       
         <div class="about-wrapper" id="about" >
 <!--
             <div>
@@ -1517,7 +1517,24 @@ reel_images=document.querySelectorAll(".image-reel img");
        magnify("current-image", 1.5);
        
    });   
- 
+    
+function getPrevPrice(min, max) {
+  return Math.random() * (max - min) + min;
+}
+
+function getHTML(prev_price, disc_price){
+    let html="<div class='similar-products-item-extension'><div class='product-label-sublabel' style='position: absolute;top:0;left:0;padding: 5px;'><p style='margin:0;font-size: 18px;'>Label</p><p2>Sub-Label</p2></div><span></span><div class='plus-minus-holder'><i class='fa-solid fa-plus'></i><i class='fa-solid fa-minus'></i><p style='line-height: 1px;font-size: 18px;margin-top:12px;height:2px;margin-left:5px;text-align: end;padding-right:5px;'>100</p></div><div class='shopping-cart-icon-holder'><i class='fa-solid fa-cart-plus'></i><p style='text-decoration-line: line-through;text-decoration-color: dimgray;margin-top:35px;'>$"+prev_price+"</p> <p style='margin-top:35px;margin-right:10px;' >$"+disc_price+"</p></div></div>";  
+    return html;
+}    
+var similar_product_item_images=document.querySelectorAll('.similar-products-item img'); 
+for(let product_image of similar_product_item_images){
+    
+      let prev_price=Math.floor(getPrevPrice(900,2400));
+      let disc_price=Math.floor(prev_price-((prev_price*10)/100));
+      let html= getHTML(prev_price, disc_price);
+      product_image.insertAdjacentHTML("afterend", html);
+      
+}    
 </script>    
     </body>       
 </html>
