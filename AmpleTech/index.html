@@ -37,9 +37,9 @@
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: #0b5793;
+  background-color: rgba(0,80,115,1);
   border-radius: 20px;
-  border: 3px solid #0b5793;
+  border: 3px solid rgba(0,80,115,1);
 }
  * {
   scrollbar-width: thin;
@@ -494,6 +494,7 @@ body{
             transition: all 1s ease-out;
 /*            background: rgba(255,255,255,.1);*/
             background-color:rgba(0, 78, 140, 0.8);
+            background-color:rgb(0,80,115);
             box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
             
         }
@@ -631,6 +632,7 @@ body{
 }
         
 
+/*
 #cycle{
       
     animation: cycleAnimate 12s linear ;
@@ -640,7 +642,31 @@ body{
     
     
 }
-    
+*/
+    @keyframes changeColor{
+          
+             0% {
+                 
+                 fill:rgb(44, 88, 117);
+             }
+             25% {
+                
+                 fill:rgba(0, 78, 140, 0.8);
+             }
+             50% {
+                 
+                 fill:rgba(0, 78, 140, 0.8);
+             }
+             75% {
+                
+                 fill:rgba(0, 78, 140, 0.8);
+             }
+             100% {
+                
+                 fill:rgb(44, 88, 117);
+             }
+         
+         }    
 #planningText,#designText,#testingText,#maintenanceText,#implementationText,#analysisText{
       
     font-family: sans-serif;
@@ -659,6 +685,7 @@ body{
     animation-delay: 10s;
     
     }
+
 #analysisText { animation-delay: 2s }
 #designText{ animation-delay: 4s }
 #implementationText{ animation-delay: 6s } 
@@ -677,6 +704,55 @@ body{
     filter: drop-shadow(8px 8px 10px gray);
         
 }
+    
+    #planning  {
+        animation-name:changeColor ;
+        animation-duration:1s;
+        animation-delay:0s;
+        animation-fill-mode: both;
+        animation-iteration-count: 1;
+        animation-timing-function: ease-in;
+    } 
+    #analysis  {
+        animation-name:changeColor ;
+        animation-duration:1s;
+        animation-delay:1s;
+        animation-fill-mode: both;
+        animation-iteration-count: 1;
+        animation-timing-function: ease-in;
+    }
+    #design  {
+        animation-name:changeColor ;
+        animation-duration:1s;
+        animation-delay:2s;
+        animation-fill-mode: both;
+        animation-iteration-count: 1;
+        animation-timing-function: ease-in;
+    }
+    #implementation  {
+        animation-name:changeColor ;
+        animation-duration:1s;
+        animation-delay:3s;
+        animation-fill-mode: both;
+        animation-iteration-count: 1;
+        animation-timing-function: ease-in;
+    }
+    #testing  {
+        animation-name:changeColor ;
+        animation-duration:1s;
+        animation-delay:4s;
+        animation-fill-mode: both;
+        animation-iteration-count: 1;
+        animation-timing-function: ease-in;
+    }
+    #maintenance  {
+        animation-name:changeColor ;
+        animation-duration:1s;
+        animation-delay:5s;
+        animation-fill-mode: both;
+        animation-iteration-count: 1;
+        animation-timing-function: ease-in;
+    }
 @keyframes visibleImage{
           
              0% {
@@ -712,7 +788,7 @@ body{
     
     animation-delay: 0s;
     animation: visibleImage;  
-    animation-duration: 2s;
+    animation-duration: 1s;
     animation-iteration-count: 1;
     
     
@@ -721,8 +797,8 @@ body{
 #analysisImage{
     
     animation: visibleImage;  
-    animation-delay: 2s;
-    animation-duration: 2s;
+    animation-delay: 1s;
+    animation-duration: 1s;
     animation-iteration-count: 1;
     
     
@@ -730,8 +806,8 @@ body{
 #designImage{
        
         animation: visibleImage; 
-        animation-delay: 4s;
-        animation-duration: 2s;
+        animation-delay: 2s;
+        animation-duration: 1s;
         animation-iteration-count: 1;
         
         
@@ -739,8 +815,8 @@ body{
 #implementationImage{
     
     animation: visibleImage; 
-    animation-delay: 6s;
-    animation-duration: 2s;
+    animation-delay: 3s;
+    animation-duration: 1s;
     animation-iteration-count: 1;
     
     
@@ -748,8 +824,8 @@ body{
 #maintenanceImage{
     
     animation: visibleImage;  
-    animation-delay: 8s;
-    animation-duration: 2s;
+    animation-delay: 4s;
+    animation-duration: 1s;
     animation-iteration-count: 1;
     
     
@@ -757,13 +833,13 @@ body{
 #testingImage{
    
     animation: visibleImage;  
-    animation-delay: 10s;
-    animation-duration: 2s;
+    animation-delay: 5s;
+    animation-duration: 1s;
     animation-iteration-count: 1;
     
     
 
- }        
+ }       
 /*process ends */
     
     
@@ -771,6 +847,7 @@ body{
     
 .product-gallery .section-title,.team .section-title ,.process .section-title,.services .section-title{
     color: rgba(0, 78, 140, 0.8);
+    color: rgba(0,80,115,1);
     font-weight: bold;
     font: 44px/125% 'Oswald','Futura PT book';
     margin-bottom: 60px;
@@ -2126,7 +2203,7 @@ column-count: 5;
     <rect width="1201" height="1200" fill="white"/>
     </clipPath>
     </defs>
-    </svg>   
+    </svg> 
 </div>  
 
 <div id="products" class="product-gallery container pt-5 px-0" onmouseover="visitedDiv(this)" onmouseout="NotVisitedDiv(this)" data-aos="fade-up;" data-aos-mirror="true">   
@@ -2260,7 +2337,7 @@ column-count: 5;
         </div>        
     </div>
 </div>   
-<div id="about" class="about-wrapper container px-4" style="background-color: #0b5793;width:100%;margin:0;padding:0;max-width:2060px;box-shadow: rgba(0, 0, 0, 0.35) 0px 50px 36px -28px inset;color:white;align-content: center" data-aos="fade-up;" data-aos-mirror="true">
+<div id="about" class="about-wrapper container px-4" style="background-color: rgb(0,80,115);width:100%;margin:0;padding:0;max-width:2060px;box-shadow: rgba(0, 0, 0, 0.35) 0px 50px 36px -28px inset;color:white;align-content: center" data-aos="fade-up;" data-aos-mirror="true">
     <div class="row py-4" style="padding: 0;margin:0;">
         <div class="col-1">
             <img class="img-fluid" src="images/AmpleTech-removebg-preview.png">
@@ -2321,31 +2398,14 @@ function loadDone(){
         const links= document.querySelectorAll(".nav-links li");
      
      
-        const planningImage= document.querySelector("#planningImage");
-        const designImage= document.querySelector("#designImage");
-        const testingImage= document.querySelector("#testingImage");
-        const maintenanceImage= document.querySelector("#maintenanceImage");
-        const implementationImage= document.querySelector("#implementationImage");
-        const analysisImage= document.querySelector("#analysisImage");
+
         const planningText= document.querySelector("#planningText");
         const designText= document.querySelector("#designText");
         const testingText= document.querySelector("#testingText");
         const maintenanceText= document.querySelector("#maintenanceText");
         const implementationText= document.querySelector("#implementationText");
         const analysisText= document.querySelector("#analysisText");
-        planningImage.style.animationDelay="0s";
-        analysisImage.style.animationDelay="2s";
-        designImage.style.animationDelay="4s";
-        implementationImage.style.animationDelay="6s";
-        testingImage.style.animationDelay="8s";
-        maintenanceImage.style.animationDelay="10s";
-     
-        planningText.style.animationDelay="0s";
-        analysisText.style.animationDelay="2s";
-        designText.style.animationDelay="4s";
-        implementationText.style.animationDelay="6s";
-        testingText.style.animationDelay="8s";
-        maintenanceText.style.animationDelay="10s";
+        
         hamburger.addEventListener("click",()=>{
             navLinks.classList.toggle("open");
             
@@ -2357,26 +2417,62 @@ function loadDone(){
             hamburger.classList.toggle("toggle");
         });
         
-let refreshRate = 12000;        
-setInterval(imageChange, refreshRate);   
-function imageChange(){
+     const planningImage= document.querySelector("#planningImage");
+     const analysisImage= document.querySelector("#analysisImage");
+     const designImage= document.querySelector("#designImage");
+     const implementationImage= document.querySelector("#implementationImage");
+     const testingImage= document.querySelector("#testingImage");
+     const maintenanceImage= document.querySelector("#maintenanceImage");
+     const planning= document.querySelector("#planning");
+     const analysis= document.querySelector("#analysis");
+     const design= document.querySelector("#design");
+     const implementation= document.querySelector("#implementation");
+     const testing= document.querySelector("#testing");
+     const maintenance= document.querySelector("#maintenance");
+        
+        let refreshRate = 6000;        
+        setInterval(colorChange, refreshRate); 
+        function colorChange(){
+            var today = new Date();
+            var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+            var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+            var dateTime = date+' '+time;
 
-    planningImage.style.animationDelay=parseInt(planningImage.style.animationDelay.split("s")[0])+12+"s";
-    analysisImage.style.animationDelay=parseInt(analysisImage.style.animationDelay.split("s")[0])+12+"s";
-    designImage.style.animationDelay=parseInt(designImage.style.animationDelay.split("s")[0])+12+"s";
-    implementationImage.style.animationDelay=parseInt(implementationImage.style.animationDelay.split("s")[0])+12+"s";
-    testingImage.style.animationDelay=parseInt(testingImage.style.animationDelay.split("s")[0])+12+"s";
-    maintenanceImage.style.animationDelay=parseInt(maintenanceImage.style.animationDelay.split("s")[0])+12+"s";
-    
-    planningText.style.animationDelay=parseInt(planningText.style.animationDelay.split("s")[0])+12+"s";
-    analysisText.style.animationDelay=parseInt(analysisText.style.animationDelay.split("s")[0])+12+"s";
-    designText.style.animationDelay=parseInt(designText.style.animationDelay.split("s")[0])+12+"s";
-    implementationText.style.animationDelay=parseInt(implementationText.style.animationDelay.split("s")[0])+12+"s";
-    testingText.style.animationDelay=parseInt(testingText.style.animationDelay.split("s")[0])+12+"s";
-    maintenanceText.style.animationDelay=parseInt(maintenanceText.style.animationDelay.split("s")[0])+12+"s";
-    
+            console.log("Time: "+dateTime)
+            console.log("colorChange called");
 
-}   
+            planningImage.style.animationName="none";
+            designImage.style.animationName="none";
+            testingImage.style.animationName="none";
+            maintenanceImage.style.animationName="none";
+            implementationImage.style.animationName="none";
+            analysisImage.style.animationName="none";
+
+            planning.style.animationName="none";
+            design.style.animationName="none";
+            testing.style.animationName="none";
+            maintenance.style.animationName="none";
+            implementation.style.animationName="none";
+            analysis.style.animationName="none";
+             requestAnimationFrame(()=>{
+                setTimeout(() => { 
+                    console.log("requestAnimationFrame called");
+                    planningImage.style.animationName="";
+                    analysisImage.style.animationName="";
+                    designImage.style.animationName="";
+                    implementationImage.style.animationName="";
+                    testingImage.style.animationName="";
+                    maintenanceImage.style.animationName="";
+                    
+                    planning.style.animationName="";
+                    analysis.style.animationName="";
+                    design.style.animationName="";
+                    implementation.style.animationName="";
+                    testing.style.animationName="";
+                    maintenance.style.animationName="";
+               }, 0);
+            });
+        }  
  // nav button to sections starts//   
 const productImageViewModal=document.querySelector(".modal");     
 window.onscroll = function() {
@@ -2385,12 +2481,12 @@ window.onscroll = function() {
 function scrollFunction() {
 
         if ((document.body.scrollTop > 500 || document.documentElement.scrollTop > 500)) {
-            document.querySelector(".nav-wrapper").style.backgroundColor = "rgba(0,78,140,.9)";
+            document.querySelector(".nav-wrapper").style.backgroundColor = "rgba(0,80,115,1);";
        
         }
         else{
         
-            document.querySelector(".nav-wrapper").style.backgroundColor = "rgba(0, 78, 140, 0.8);";
+            document.querySelector(".nav-wrapper").style.backgroundColor = "rgba(0,80,115,.8);";
         }
 
 }      
