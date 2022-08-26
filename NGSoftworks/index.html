@@ -207,36 +207,7 @@
             text-align: center; 
             margin:30px;
         }
-      
-/*   cursor follower*/
-    .circle {
-
-      position: absolute;
-      
-      width: 30px; 
-      height: 30px; 
-      border-radius: 50%; 
-      background:linear-gradient(rgba(255, 255, 255,.2) , rgba(255, 255, 255,0.5));  
-      background: url("images/bubble.png"); 
-      z-index: 20;
-      right: 15px;
-      box-shadow: .5px .5px .5px .5px rgba(0,0,0,0.2);
-      transform: scale(.5);
-
-
-    }
-    .circle2 {
-      position: absolute;
-      width: 35px; 
-      height: 35px;
-      background: rgba(0,0,0,0.1);
-      transform: translate(-3px,-3px);  
-      border-radius: 50%;
-
-    } 
-
-
-/*   cursor follower*/
+  
  
     
         
@@ -295,13 +266,13 @@
         left:0;
         height:100px;
         width: 100%;
-            
+        padding-top:20px;     
+        z-index: 100;
         }
         nav{
-        height: 10vh;
+/*        height: 10vh;*/
         position:relative;
-        
-            
+           
     }
         
        .nav-links{
@@ -326,11 +297,21 @@
         margin-left:0px;
         list-style: none;
         width:100%;
+        height:50px;
+        line-height: 50px;
         background: linear-gradient(rgba(255, 255, 255,.2) , rgba(255, 255, 255,0.1));
 /*        border-bottom: solid 2px white;*/
         position: relative;
         margin:5px;
+        font-weight: 500;
     }
+       .nav-links li a{
+           left:0;
+           top:0;
+           position: absolute;
+           width:100%;
+           height:100%;
+       }   
        .nav-links li:before{
            content:"";
            position: absolute;
@@ -856,13 +837,12 @@ svg #programmer path:nth-child(n+48):nth-child(-n+83){
 
 .gallery .img-fluid{
     margin-top: 16px;
-  
     padding:5px;
-    border: 2px solid lightgray;
+    border: none;
     border-radius: 2px;
-/*    width: calc(100%-10px);*/
     transform:scale(1.00);
     width: 100%;
+    background: transparent;
 }     
 .gallery .img-fluid:hover{
     transform:scale(1.01);
@@ -888,7 +868,28 @@ svg #programmer path:nth-child(n+48):nth-child(-n+83){
     
     
 }
+.services{
+    
+    padding: 50px;
+    
+    text-align:center;
+    color: white;
+}
+       
+.each-services{
+    background: var(--primary_color_accent);
+    position: relative;
+    padding: 30px;
+    box-shadow:  rgb(0 0 0 / 24%) 0px 3px 8px;
 
+} 
+     
+.each-services img{
+    
+    width:50%;
+    height:auto;
+    
+}
 /* Responsive layout - makes a two column-layout instead of four columns */
 /*
 @media screen and (max-width: 1200px) {
@@ -1118,9 +1119,9 @@ svg #programmer path:nth-child(n+48):nth-child(-n+83){
 /*     contact form starts   */   
 .contacts-wrapper{
         position:relative; 
-        
         width:100%;
         background: var(--primary_color_accent);
+        padding-top:50px;
 }       
 .contacts{
            display:flex; 
@@ -1248,10 +1249,11 @@ button {
   padding: 10px 0;
   margin: 0;
   width: 290px;
-  color: #3c3c3c;
+  color: #135d8a;
   text-transform: uppercase;
   font-family: Trebuchet MS;
   font-size: 15px;
+  font-weight: 800;    
   border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   position: relative;
@@ -1991,7 +1993,7 @@ button {
                         <button type="button" class="img_to_demo_btn" id="gallery-image-modal-go-to" href="#"><i class="fas fa-solid fa-link"></i>Demo</button>
                     </div> 
                     <div class="image_holder">  
-                        <img class="img-fluid" src="Shosti.PNG">
+                        <img class="img-fluid" src="shosti.PNG">
                         <button type="button" class="img_to_demo_btn" id="gallery-image-modal-go-to" href="#"><i class="fas fa-solid fa-link"></i>Demo</button>
                     </div>
 
@@ -2019,6 +2021,36 @@ button {
             </div>
             
      </div>
+        
+        
+        <div class="services">
+        <div class="container">
+            <h1 class="section-h1">Our digital services</h1>
+            <div class="row py-2">
+                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                    <div class="each-services col-12 mx-2 my-2">
+                        <img class="col-12 my-2" src="web.png" alt="service1">
+                        <h3 class="col-12 my-2">Web Application Design &amp; Development</h3>
+                        <p class="col-12">You can have your own website right when you want, exactly how you want.</p>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                    <div class="each-services col-12 mx-2 my-2">
+                        <img class="col-12 my-2" src="web-design.png" alt="service2">
+                        <h3 class="col-12 my-2">Enterprise Software Development</h3>
+                        <p class="col-12"></p>Digitize your business with a enterprise solution, like never before.<p></p>
+                    </div>
+                </div>
+                 <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                    <div class="each-services col-12 mx-2 my-2">
+                        <img class="col-12 my-2" src="android.png" alt="service3">
+                        <h3 class="col-12 my-2">Mobile Application Development</h3>
+                        <p class="col-12">We Build Native,cross-platform android application for your startup &amp; Enterprise.</p>
+                    </div>
+                </div> 
+            </div>
+        </div>
+        </div>
         
         <div class="packages-wrapper" id="packages">
             <h1 class="section-h1">Packages</h1>
@@ -2098,7 +2130,7 @@ button {
                  <div class="contact-us" >
                      <h1 class="section-h1">Contact Us</h1>
                      <p style=" color:#135d8a;text-align: center; margin:30px;">We want to be a part of your journey.</p>
-                     <ul class="social-links" style="list-style-type: none;width: 50%;display:inline-flex;justify-content: center;padding:0; " data-aos="slide-right"  data-aos-mirror="true">
+                     <ul class="social-links" style="list-style-type: none;width: 50%;display:inline-flex;justify-content: center;padding:0;">
                         <li style="width:auto;padding:10px;"> <i class="fab fa-facebook-square"></i></li>
                           <li style="width:auto;padding:10px;"><i class="fab fa-instagram-square"></i></li>
                          <li style="width:auto;padding:10px;"><i class="fab fa-linkedin"></i></li>
@@ -2171,38 +2203,8 @@ function loadDone(){
     
       load.style.display="none";
 }
-    // cursor follower starts//
-    
-var mouseX = 0, mouseY = 0;
-var xp = 0, yp = 0;
 
-$(document).mousemove(function(e){
-mouseX = e.pageX-5 ;
-mouseY = e.pageY-10; 
-});
 
-setInterval(function(){
-xp += ((mouseX - xp)/6);
-yp += ((mouseY - yp)/6);
-$("#circle").css({left: xp +'px', top: yp +'px'});
-}, 5);
-
-const cursor=document.querySelector('.circle2');       
-document.addEventListener('click',()=>{ 
-
-    cursor.classList.add("pulse");
-//    console.log("pulse added");
-    
-setTimeout(()=>{
- 
-        cursor.classList.remove("pulse");
-//        console.log("pulse removed");
-    },500);
-    
-    
-}) ;  
-
-    // cursor follower ends//  
     const binary_line1= document.querySelector("#binary_line1 #v_line1");
     const binary_line2= document.querySelector("#binary_line2 #v_line2");
     const binary_line3= document.querySelector("#binary_line3 #v_line3");
@@ -2329,9 +2331,14 @@ const observer = new IntersectionObserver(entries => {
 //      console.log("Scrollheight"+entry.target.scrollHeight);
       
       if((viewHeight<5)){
+          if(entry.target.classname=".header" && viewHeight>0){
+              console.log("header");
+              document.querySelector(".nav-wrapper").style="height:auto;";
+          }
           entry.target.style="opacity: 0;";
           entry.target.style.transform="translate3d(0,10vh,0)";
           entry.target.style.transition="all 1s ease";
+          
       }
       else{
           entry.target.style="opacity: 1;";
@@ -2342,6 +2349,7 @@ const observer = new IntersectionObserver(entries => {
 }, { threshold: [0,.10,.15, .25, .5, .75,.85,.95, 1] });
 observer.observe(document.querySelector(".gallery"));
 observer.observe(document.querySelector(".header"));
+observer.observe(document.querySelector(".services"));    
 observer.observe(document.querySelector(".product-wrapper"));   
 </script>
 </body>
