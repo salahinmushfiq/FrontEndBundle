@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
@@ -207,9 +207,6 @@
             text-align: center; 
             margin:30px;
         }
-  
- 
-    
         
          main{
             
@@ -222,22 +219,19 @@
         } 
         
         .logo{
-            position: absolute;
-            margin-left: 0;
-            height: 400px;
-            left: 10%;
-            top:150px;
+            z-index: 2;
             
         }
+       
 /*        wave banner starts*/
         .header{
 
-            height:800px;
+            height:fit-content;
             width:inherit;
             margin-left: 0;
             margin-right: 0;
             position: relative;
-            background: var(--primary_color_accent);
+            
 
         }
         
@@ -248,20 +242,18 @@
             animation-timing-function: ease-in;
             animation-iteration-count: 1;
         }
-        
+       
         .cover{
-        position:absolute;
-        width:inherit;
-        height:inherit; 
-           
+            position:absolute;
+            height:100%;
+            width:100%;
+            background: var(--primary_color_accent);
         }
 
-        
-
-        
+    
 /*        Sliding door nav starts*/
         .nav-wrapper{
-        position:absolute;
+        position:fixed;
         top:0;
         left:0;
         height:100px;
@@ -275,9 +267,10 @@
            
     }
         
-       .nav-links{
+        .nav-links{
         display: flex;
-        width:50%;
+        width:70%;
+        max-width: 750px;
         height:100%;
         margin:2px;
         justify-content: space-around;
@@ -293,26 +286,38 @@
         
         color: white;
         text-decoration: none;
-        font-size: 18px;
+        
         margin-left:0px;
         list-style: none;
         width:100%;
+        min-width: 80px;
         height:50px;
         line-height: 50px;
         background: linear-gradient(rgba(255, 255, 255,.2) , rgba(255, 255, 255,0.1));
-/*        border-bottom: solid 2px white;*/
+        border-bottom: solid 3px rgba(255, 255, 255,0.05);
+        border-top: solid 2px rgba(255, 255, 255,.2);
         position: relative;
         margin:5px;
         font-weight: 500;
+        transition: all .1s ease;
+        
     }
-       .nav-links li a{
+    .nav-links li:hover {
+        
+        border-top: solid 0px rgba(255, 255, 255,.2);
+        border-bottom: solid 6px rgba(255, 255, 255,0.05);
+        
+    }   
+        .nav-links li a{
            left:0;
            top:0;
            position: absolute;
            width:100%;
            height:100%;
+               
        }   
-       .nav-links li:before{
+/*
+        .nav-links li:before{
            content:"";
            position: absolute;
            width:100%;
@@ -322,15 +327,10 @@
            transform: scaleX(0);
            transform-origin: right;
            border-radius: 5px;
-           
-/*
-           border-right: solid 2px white; 
-           border-bottom: solid 2px white;
-*/
            transition: all .5s ease;  
            box-shadow: white 1.95px 1.95px 2.6px;
        }
-       .nav-links li:after{
+        .nav-links li:after{
            content:"";
            position: absolute;
            width:100%;
@@ -341,13 +341,9 @@
            transform-origin: left;
            border-radius: 5px;
            transition: transform .5s .5s ease;  
-/*
-           border-left: solid 2px white; 
-           border-top: solid 2px white;
-*/
           box-shadow: white -1px -1px 2.6px;
        } 
-       .nav-links li:hover::after{
+        .nav-links li:hover::after{
            transform: scaleX(1);
        } 
         .nav-links li:hover::before,.nav-links li:hover{
@@ -355,6 +351,7 @@
            color:white;
            
        }
+*/
       
     
 /*    navbar button effect*/
@@ -368,8 +365,7 @@
         
     .headline-1{
     position: absolute;
-    top: 350px;  
-    left:50%;
+    
     width: 24em;
     margin: 0 auto;
     border-right: 2px solid rgba(255,255,255,.75);
@@ -382,8 +378,7 @@
 }
     .headline-2{
     position: absolute;
-    top: 420px;  
-    left:50%;
+
     width: 24em;
     margin: 0 auto;
     border-right: 2px solid rgba(255,255,255,.75);
@@ -1414,7 +1409,7 @@ button {
         background: blue;
         z-index: 10;    
     }
-        .btn-item:hover{
+    .btn-item:hover{
         
         z-index: 20;
         border-right-style: solid;
@@ -1422,9 +1417,10 @@ button {
         
         border-left-style: solid;
         border-left-color: white;
-        border-left-width: 12px;
-        border-right-width: 12px;
+        border-left-width: 6px;
+        border-right-width: 6px;
         border-top-width: 0;
+        border-bottom-width: 0;
         width: 87%; 
         color:black;
         animation-play-state: paused;
@@ -1515,7 +1511,7 @@ button {
         width:0;
     }
    .nav-links li a{
-        font-size: 20px;
+        line-height:50px;
     }
     .nav-links li:nth-child(1){
         transform: translateX(0px);
@@ -1545,8 +1541,8 @@ button {
         opacity:1;
     }
     .fade:not(.show) {
-    opacity: 1;
-}
+        opacity: 1;
+    }
     .toggle .line1{
         transform: rotate(-45deg) translate(-5px,6px);
     }
@@ -1557,6 +1553,7 @@ button {
         transform: rotate(45deg) translate(-5px,-6px);
     }
     .logo{
+/*
         position: absolute;
         left: auto;
         right: auto;
@@ -1564,24 +1561,33 @@ button {
         align-content: center;
         top:150px;
         z-index: -1;
+*/
 
     }
+    .header-holder{
+        flex-direction: column;
+    }
+    .header-holder{
+        padding-top:100px;
+        padding-bottom: 100px;
+    }
     .headline-1,.headline-2{
-        display: none;
+/*        display: none;*/
+/*
         left:0px;height:0;
         width:0;
         padding: 0;
         margin: 0;
         border-width: 0;
+*/
     }
 
+/*
     .header{
         height:600px;
     }
-    .cover{
-        height:inherit;
-        width:100%;
-    }
+*/
+
     .product-wrapper{
 
         padding-top:0;
@@ -1735,30 +1741,37 @@ button {
     
     <main>
          <div class="header" id="home">
-            <h1 class="headline-1 anim-typewriter">You dream</h1>
-            <h1 class="headline-2 anim-typewriter">We execute</h1>
+
              
             <div class="cover" >
 
             </div>
             <div class="nav-wrapper">
             <nav>
-                <div class="hamburger">
+               <div class="hamburger">
                    <div class="line line1"></div>
                    <div class="line line2"></div>
                    <div class="line line3"></div>
                </div>
                <ul class="nav-links">
                    <li class="btn btn-item homeBtn"><a href="#home" style="text-decoration: none;color:white;">Home</a></li>
-                   <li class="btn btn-item productBtn"><a href="#products" style="text-decoration: none;color:white;">Products</a></li>
                    <li class="btn btn-item developmentBtn"><a href="#process" style="text-decoration: none;color:white;">Process</a></li>
                    <li class="btn btn-item galleryBtn"><a href="#gallery" style="text-decoration: none;color:white;">Gallery</a></li>
+                   <li class="btn btn-item productBtn"><a href="#services" style="text-decoration: none;color:white;">Services</a></li>
                    <li class="btn btn-item packagesBtn"><a href="#packages" style="text-decoration: none;color:white;">Packages</a></li>
                    <li class="btn btn-item contactBtn"><a href="#contacts" style="text-decoration: none;color:white;">Contacts</a></li>
                 </ul>
             </nav>
             </div>
-            <img class="logo" src="images/logoCropped.png" />
+            <div class="header-content" style="display:flex; width:100%;height:100%;flex-wrap: wrap;flex-direction: row;justify-content: space-around;align-items: center;padding-top:60px;padding-bottom: 60px;">
+                
+                <img class="logo" src="images/logoCropped.png" style="flex:1;width:100%;max-width: 700px;max-height: 700px;"/>
+                <div class="header-holder" style="flex:1;width:30%;position: relative;height:100%;display:flex;flex-direction: column; margin-left:auto;margin-right: auto;min-width: 340px;top:0;justify-content:space-around;align-items: center;">
+                    <h1 class="headline-1 anim-typewriter" style="width:100%;position: absolute;">You dream</h1>
+                    <h1 class="headline-2 anim-typewriter" style="width:100%;position: absolute;margin-top:130px;">We execute</h1>
+                </div>
+            </div> 
+           
         </div>
         <div class="product-wrapper" id="products">
             <svg viewBox="0 0 16412 8391" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -2023,8 +2036,8 @@ button {
      </div>
         
         
-        <div class="services">
-        <div class="container">
+        <div class="services" id="services">
+            <div class="container">
             <h1 class="section-h1">Our digital services</h1>
             <div class="row py-2">
                 <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
@@ -2054,9 +2067,9 @@ button {
         
         <div class="packages-wrapper" id="packages">
             <h1 class="section-h1">Packages</h1>
-        <div class="packages" data-aos="fade-right"  data-aos-mirror="true">
+        <div class="packages" >
         <div class="pricing pricing-palden" >
-            <div class="pricing-item features-item ja-animate" data-animation="move-from-bottom" data-delay="item-0" style="min-height: 397px;">
+            <div class="pricing-item features-item ja-animate" style="min-height: 397px;">
                 <div class="pricing-deco">
                     <svg class="pricing-deco-img" enable-background="new 0 0 300 100" height="100px" id="Layer_1" preserveAspectRatio="none" version="1.1" viewBox="0 0 300 100" width="300px" x="0px" xml:space="preserve" y="0px">
                         <path class="deco-layer deco-layer--1" d="M30.913,43.944c0,0,42.911-34.464,87.51-14.191c77.31,35.14,113.304-1.952,146.638-4.729c48.654-4.056,69.94,16.218,69.94,16.218v54.396H30.913V43.944z" fill="#FFFFFF" opacity="0.6"></path>
@@ -2077,7 +2090,7 @@ button {
                 </ul>
                 <button class="pricing-action">Choose plan</button>
             </div>
-            <div class="pricing-item features-item ja-animate pricing__item--featured" data-animation="move-from-bottom" data-delay="item-1" style="min-height: 497px;">
+            <div class="pricing-item features-item ja-animate pricing__item--featured" style="min-height: 497px;">
                 <div class="pricing-deco" style="background: linear-gradient(135deg,#a93bfe,#584efd)">
                     <svg class="pricing-deco-img" enable-background="new 0 0 300 100" height="100px" id="Layer_1" preserveAspectRatio="none" version="1.1" viewBox="0 0 300 100" width="300px" x="0px" xml:space="preserve" y="0px">
                         <path class="deco-layer deco-layer--1" d="M30.913,43.944c0,0,42.911-34.464,87.51-14.191c77.31,35.14,113.304-1.952,146.638-4.729c48.654-4.056,69.94,16.218,69.94,16.218v54.396H30.913V43.944z" fill="#FFFFFF" opacity="0.6"></path>
@@ -2098,7 +2111,7 @@ button {
                 </ul>
                 <button class="pricing-action">Choose plan</button>
             </div>
-            <div class="pricing-item features-item ja-animate" data-animation="move-from-bottom" data-delay="item-2" style="min-height: 397px;">
+            <div class="pricing-item features-item ja-animate" style="min-height: 397px;">
                 <div class="pricing-deco">
                     <svg class="pricing-deco-img" enable-background="new 0 0 300 100" height="100px" id="Layer_1" preserveAspectRatio="none" version="1.1" viewBox="0 0 300 100" width="300px" x="0px" xml:space="preserve" y="0px">
                         <path class="deco-layer deco-layer--1" d="M30.913,43.944c0,0,42.911-34.464,87.51-14.191c77.31,35.14,113.304-1.952,146.638-4.729c48.654-4.056,69.94,16.218,69.94,16.218v54.396H30.913V43.944z" fill="#FFFFFF" opacity="0.6"></path>
@@ -2173,10 +2186,18 @@ AOS.init();
 const hamburger= document.querySelector(".hamburger");
 const navLinks= document.querySelector(".nav-links");
 const links= document.querySelectorAll(".nav-links li");
-
+var mediaQuery = window.matchMedia("(max-width: 768px)");
+var headerScrollHeight=document.querySelector(".header").scrollHeight;
+console.log("viewHeight of header: "+headerScrollHeight);  
+    
+    
 hamburger.addEventListener("click",()=>{
     navLinks.classList.toggle("open");
-
+    scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    console.log(scrollTop);
+    if(navLinks.classList.contains('open') && (scrollTop>=headerScrollHeight)){
+       document.querySelector(".nav-links.open").style="background-color:#135d8a;transition:all .5s ease;";
+    }
     links.forEach(function(element){
 
         element.classList.toggle("fade");
@@ -2184,13 +2205,7 @@ hamburger.addEventListener("click",()=>{
 
         hamburger.classList.toggle("toggle");
 });
-    
-    
-    
-    
-    
-    
-    
+        
 let image_gallery_wrapper = document.getElementById('image-gallery-wrapper');
 let image_gallery_images = document.querySelectorAll('.gallery .img-fluid');
 const gallery_image_modal_close=document.getElementById("gallery-image-modal-close")
@@ -2202,8 +2217,8 @@ const load=document.getElementById("loading");
 function loadDone(){
     
       load.style.display="none";
+      location.href = "#home";
 }
-
 
     const binary_line1= document.querySelector("#binary_line1 #v_line1");
     const binary_line2= document.querySelector("#binary_line2 #v_line2");
@@ -2311,10 +2326,11 @@ function loadDone(){
 //}  
 gallery_image_modal_close.addEventListener('click',galleryImageOnClose);
 function galleryImageOnClose(){
+    
         gallery_image_modal.style.transform = "scale(0)";
         gallery_image_modal.style.display = "none";
         gallery_image_modal.style.transition="all 1s ease";
-       
+        document.querySelector(".nav-links.open").style="background-color:none;"; 
     
     }
 gallery_image_modal_go_to.addEventListener('click',galleryImageOnGoTo);
@@ -2323,34 +2339,172 @@ function galleryImageOnGoTo(){
          window.location.href = gallery_image_modal_go_to.href;
     
 }
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-      const intersecting = entry.isIntersecting;
-      var viewHeight= Math.round(entry.intersectionRatio * 100);
-//      console.log("Viewheight"+viewHeight);
-//      console.log("Scrollheight"+entry.target.scrollHeight);
-      
-      if((viewHeight<5)){
-          if(entry.target.classname=".header" && viewHeight>0){
-              console.log("header");
-              document.querySelector(".nav-wrapper").style="height:auto;";
-          }
-          entry.target.style="opacity: 0;";
-          entry.target.style.transform="translate3d(0,10vh,0)";
-          entry.target.style.transition="all 1s ease";
+
+const cover_observer = new IntersectionObserver(entries => {
+  
+      entries.forEach(entry => {
+         var viewHeight= Math.round(entry.intersectionRatio * 100);
+//         console.log(viewHeight);
+//         console.log(screen.width);
           
-      }
-      else{
-          entry.target.style="opacity: 1;";
-          entry.target.style.transform="translate3d(0,0vh,0) "; 
-          entry.target.style.transition="all 1s ease";
-      }
-  })
-}, { threshold: [0,.10,.15, .25, .5, .75,.85,.95, 1] });
-observer.observe(document.querySelector(".gallery"));
-observer.observe(document.querySelector(".header"));
-observer.observe(document.querySelector(".services"));    
-observer.observe(document.querySelector(".product-wrapper"));   
+         
+         if (!mediaQuery.matches)
+         {
+
+             if(viewHeight>=0 && viewHeight<=5 ){
+                 entry.target.style="opacity: 0;";
+                 entry.target.style.transform="translate3d(0,10vh,0)";
+                 entry.target.style.transition="all .3s ease";
+                 document.querySelector(".nav-wrapper").style="background-color:var(--secondary_color_accent);padding-top:0px;padding-bottom:0;height:fit-content;align-self:center;width:70%;border-bottom-left-radius:10px;border-bottom-right-radius:10px;margin-left:15%;margin-right:15%;"        
+                 document.querySelector(".line.line1").style="background-color:var(--secondary_color_accent);transition:all .5s ease;"; 
+                 document.querySelector(".line.line2").style="background-color:var(--secondary_color_accent);transition:all .5s ease;"; 
+                 document.querySelector(".line.line3").style="background-color:var(--secondary_color_accent);transition:all .5s ease;"; 
+                 document.querySelector(".nav-links").style="background-color:var(--secondary_color_accent);transition:all .5s ease;justify-content:center; align-content:center;max-width:100%;width:100%;margin:0px 0px 0px 0px;padding:0px 10px 0px 10px;";
+                 if(document.querySelector(".nav-links.open")!=null)
+                 {
+                     document.querySelector(".nav-links.open").style="background-color:#135d8a;transition:all .5s ease;";
+                 }
+             }
+             else{
+                
+                 entry.target.style="opacity: 1;";
+                 entry.target.style.transform="translate3d(0,0,0)";
+                 entry.target.style.transition="all .3s ease";
+
+                 document.querySelector(".line.line1").style="background-color:white;transition:all .5s ease;"; 
+                 document.querySelector(".line.line2").style="background-color:white;transition:all .5s ease;"; 
+                 document.querySelector(".line.line3").style="background-color:white;transition:all .5s ease;";
+                 document.querySelector(".nav-links").style="background-color:transparent;transition:all .5s ease;";
+                 if(document.querySelector(".nav-links.open")!=null)
+                 {
+                     document.querySelector(".nav-links.open").style="background-color:transparent;transition:all .5s ease;";
+                 }
+                             document.querySelector(".nav-wrapper").style="background-color:transparent;padding-top:20px;height:100px;transition:all .5s ease;";
+             }
+         }
+          else if(mediaQuery.matches){
+
+              if(viewHeight>=0 && viewHeight<=5 ){
+                 entry.target.style="opacity: 0;";
+                 entry.target.style.transform="translate3d(0,10vh,0)";
+                 entry.target.style.transition="all .3s ease";
+                 if(document.querySelector(".nav-links.open")!=null)
+                 {
+                     document.querySelector(".nav-links.open").style="background-color:var(--secondary_color_accent);transition:all .5s ease;";
+                     document.querySelector(".line.line1").style="background-color:var(--secondary_color_accent);transition:all .5s ease;"; 
+                     document.querySelector(".line.line2").style="background-color:var(--secondary_color_accent);transition:all .5s ease;"; 
+                     document.querySelector(".line.line3").style="background-color:var(--secondary_color_accent);transition:all .5s ease;"; 
+                 }
+                      document.querySelector(".line.line1").style="background-color:var(--secondary_color_accent);transition:all .5s ease;"; 
+                      document.querySelector(".line.line2").style="background-color:var(--secondary_color_accent);transition:all .5s ease;"; 
+                      document.querySelector(".line.line3").style="background-color:var(--secondary_color_accent);transition:all .5s ease;"; 
+                  
+              }
+              else
+                 {
+                     entry.target.style="opacity: 1;";
+                     entry.target.style.transform="translate3d(0,0,0)";
+                     entry.target.style.transition="all .3s ease";
+                     if(document.querySelector(".nav-links.open")!=null){
+                          document.querySelector(".nav-links.open").style="background-color:transparent;transition:all .5s ease;";
+                          document.querySelector(".line.line1").style="background-color:white;transition:all .5s ease;"; 
+                          document.querySelector(".line.line2").style="background-color:white;transition:all .5s ease;"; 
+                          document.querySelector(".line.line3").style="background-color:white;transition:all .5s ease;";
+                     }
+                          document.querySelector(".line.line1").style="background-color:white;transition:all .5s ease;"; 
+                          document.querySelector(".line.line2").style="background-color:white;transition:all .5s ease;"; 
+                          document.querySelector(".line.line3").style="background-color:white;transition:all .5s ease;";
+                    
+                 }
+          }
+  });
+  
+}, { threshold: [0,.5,.25, .35, 1] });
+const packages_wrapper = new IntersectionObserver(entries => {
+      //         console.log(viewHeight);
+//         console.log(screen.width);
+      entries.forEach(entry => { 
+          
+            var viewHeight= Math.round(entry.intersectionRatio * 100);
+            if (!mediaQuery.matches){
+                if(viewHeight>=0 && viewHeight<=5 ){
+                     entry.target.style="opacity: 0;";
+                     entry.target.style.transform="translate3d(0,10vh,0)";
+                     entry.target.style.transition="all .3s ease";
+                }
+              else{
+                     entry.target.style="opacity: 1;";
+                     entry.target.style.transform="translate3d(0,0,0)";
+                     entry.target.style.transition="all .3s ease";
+              }
+            }else if(mediaQuery.matches){
+               if(viewHeight>=0 && viewHeight<=5 ){
+                     entry.target.style="opacity: 0;";
+                     entry.target.style.transform="translate3d(0,5vh,0)";
+                     entry.target.style.transition="all .5s ease";
+                }
+               else{
+                     entry.target.style="opacity: 1;";
+                     entry.target.style.transform="translate3d(0,0,0)";
+                     entry.target.style.transition="all .5s ease";
+              } 
+            }
+      });
+}, { threshold: [0,.10,.15, .25, .35,.4,.5,.6,.75,.85,.95, 1] });
+const services_observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => { 
+            var viewHeight= Math.round(entry.intersectionRatio * 100);
+            if(viewHeight>=0 && viewHeight<=5 ){
+                 entry.target.style="opacity: 0;";
+                 entry.target.style.transform="translate3d(0,10vh,0)";
+                 entry.target.style.transition="all .5s ease";
+            }
+            else{
+                 entry.target.style="opacity: 1;";
+                 entry.target.style.transform="translate3d(0,0,0)";
+                 entry.target.style.transition="all .5s ease";
+            }
+      });
+}, { threshold: [0,.10,.15, .25, .35,.4,.5,.6,.75,.85,.95, 1] });
+const development_observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => { 
+            var viewHeight= Math.round(entry.intersectionRatio * 100);
+            if(viewHeight>=0 && viewHeight<=5 ){
+                 entry.target.style="opacity: 0;";
+                 entry.target.style.transform="translate3d(0,10vh,0)";
+                 entry.target.style.transition="all .5s ease";
+            }
+          else{
+                 entry.target.style="opacity: 1;";
+                 entry.target.style.transform="translate3d(0,0,0)";
+                 entry.target.style.transition="all .5s ease";
+          }
+      });
+}, { threshold: [0,.10,.15, .25, .35,.4,.5,.6,.75,.85,.95, 1] });
+const image_gallery_wrapper_observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => { 
+            var viewHeight= Math.round(entry.intersectionRatio * 100);
+            if(viewHeight>=0 && viewHeight<=5 ){
+                 entry.target.style="opacity: 0;";
+                 entry.target.style.transform="translate3d(0,10vh,0)";
+                 entry.target.style.transition="all .5s ease";
+            }
+          else{
+                 entry.target.style="opacity: 1;";
+                 entry.target.style.transform="translate3d(0,0,0)";
+                 entry.target.style.transition="all .5s ease";
+          }
+      });
+}, { threshold: [0,.10,.15,.95, 1] });
+    
+cover_observer.observe(document.querySelector(".cover"));         
+//product_wrapper_observer.observe(document.querySelector(".product-wrapper"));    
+development_observer.observe(document.querySelector(".development-wrapper")); 
+image_gallery_wrapper_observer.observe(document.querySelector(".image-gallery-wrapper"));     
+services_observer.observe(document.querySelector(".services")); 
+//contacts_wrapper_observer.observe(document.querySelector(".contacts-wrapper"));    
+packages_wrapper.observe(document.querySelector(".packages-wrapper"));        
+    
 </script>
 </body>
 </html>
